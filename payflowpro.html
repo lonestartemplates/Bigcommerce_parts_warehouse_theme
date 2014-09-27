@@ -1,0 +1,49 @@
+<p class="InfoMessage">
+	%%LNG_PayflowProPaymentIntro%%
+</p>
+<p class="ErrorMessage" style="display:%%GLOBAL_HidePayflowProError%%">
+	%%LNG_PayflowProProcessingError%%<br />
+	<strong>%%GLOBAL_PayflowProErrorMessage%%</strong>
+</p>
+<form action="%%GLOBAL_ShopPathSSL%%/checkout.php?action=process_payment" method="post" onsubmit="return check_payflowpro_payment_form()">
+	<div class="FormContainer HorizontalFormContainer">
+		<dl>
+			<dt><span class="Required">*</span> %%LNG_PayflowProCardHoldersName%%:</dt>
+			<dd><input type="text" name="PayflowPro_name" id="PayflowPro_name" value="%%GLOBAL_PayflowProName%%" size="30" /></dd>
+
+			<dt><span class="Required">*</span> %%LNG_PayflowProCreditCardNo%%:</dt>
+			<dd>
+				<input type="text" name="PayflowPro_ccno" id="PayflowPro_ccno" value="%%GLOBAL_PayflowProNum%%" size="30" />
+				<br />
+				<small>%%LNG_PayflowProCreditCardNoHelp%%</small>
+			</dd>
+
+			<dt><span class="Required">*</span> %%LNG_PayflowProExpirationDate%%:</dt>
+			<dd>
+				<select name="PayflowPro_ccexpm" id="PayflowPro_ccexpm">
+					<option value=""></option>
+					%%GLOBAL_PayflowProMonths%%
+				</select>
+				<select name="PayflowPro_ccexpy" id="PayflowPro_ccexpy">
+					<option value=""></option>
+					%%GLOBAL_PayflowProYears%%
+				</select>
+			</dd>
+
+			<dt style="display: %%GLOBAL_PayflowProHideCVV2%%"><span class="Required">*</span> %%LNG_PayflowProCreditCardCCV2%%:</dt>
+			<dd id="CVV2Input" style="display: %%GLOBAL_PayflowProHideCVV2%%">
+				<input type="text" class="Textbox" name="PayflowPro_cccode" id="PayflowPro_cccode" value="%%GLOBAL_PayflowProCCV2%%" size="4" />
+				&nbsp;<small><a href="#" id="CVV2Help">%%LNG_WhatsThis%%</a></small>
+			</dd>
+
+			<dt>&nbsp;&nbsp; %%LNG_PayflowProTotalAmount%%:</dt>
+			<dd>
+				<em class="ProductPrice">%%GLOBAL_OrderAmount%%</em>
+			</dd>
+		</dl>
+		<p class="Submit">
+			<input class="btn" type="submit" value="%%LNG_PayflowProPayForOrder%%" />
+		</p>
+	</div>
+</form>
+%%Panel.PayflowProPaymentJavaScript%%

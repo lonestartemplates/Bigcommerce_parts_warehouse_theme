@@ -1,0 +1,98 @@
+<a href="#" onclick="show_product_review_form(); return false;" class="btn">%%LNG_HC_writereview%%</a>
+
+<div class="BlockContent">
+
+    %%GLOBAL_ProductReviewFlashMessages%%
+    <a id="write_review"></a>
+    <script type="text/javascript">
+        lang.ReviewNoRating = "%%LNG_ReviewNoRating%%";
+        lang.ReviewNoTitle = "%%LNG_ReviewNoTitle%%";
+        lang.ReviewNoText = "%%LNG_ReviewNoText%%";
+        lang.ReviewNoCaptcha = "%%LNG_NoCaptcha%%";
+        lang.ReviewNoEmail = "%%LNG_ReviewNoEmail%%";
+        var RecaptchaOptions = {
+            theme : 'clean'
+        };
+    </script>
+    <form action="%%GLOBAL_ShopPath%%/postreview.php" style="display: none;" method="post" class="ProductReviewForm" id="rating_box" onsubmit="return check_product_review_form();">
+        <input type="hidden" name="action" value="post_review"/>
+        <input type="hidden" name="product_id" value="%%GLOBAL_ProductId%%"/>
+        <input type="hidden" name="throttleToken" value="%%GLOBAL_throttleToken%%"/>
+        <h5>%%LNG_WriteYourOwnReview%%</h5>
+        <div class="FormContainer VerticalFormContainer">
+            <dl class="ProductReviewFormContainer">
+                <dt>%%LNG_HowRateProduct%%</dt>
+                <dd>
+                    <select name="revrating" id="revrating">
+                        <option value=""> </option>
+                        <option value="5"
+                        %%GLOBAL_ReviewRating5%%>%%LNG_Rate5Stars%%</option>
+                        <option value="4"
+                        %%GLOBAL_ReviewRating4%%>%%LNG_Rate4Stars%%</option>
+                        <option value="3"
+                        %%GLOBAL_ReviewRating3%%>%%LNG_Rate3Stars%%</option>
+                        <option value="2"
+                        %%GLOBAL_ReviewRating2%%>%%LNG_Rate2Stars%%</option>
+                        <option value="1"
+                        %%GLOBAL_ReviewRating1%%>%%LNG_Rate1Star%%</option>
+                    </select>
+                </dd>
+
+                <dt>%%LNG_WriteAHeadline%%</dt>
+                <dd><input name="revtitle" id="revtitle" type="text" class="Textbox" value="%%GLOBAL_RevTitle%%"/></dd>
+
+                <dt>%%LNG_WriteYourReview%%</dt>
+                <dd><textarea name="revtext" id="revtext" rows="8" cols="50">%%GLOBAL_RevText%%</textarea></dd>
+
+                <dt style="display: %%GLOBAL_HideReviewEmail%%">%%LNG_ReviewEnterYourEmail%%</dt>
+                <dd style="display: %%GLOBAL_HideReviewEmail%%">
+                    <input type="text" name="email" id="email" class="Textbox" value="%%GLOBAL_CustomerEmail%%">
+                    <p class="ReviewEmailHint">%%LNG_ReviewEmailHint%%</p>
+                </dd>
+
+                <dt>%%LNG_ReviewEnterYourName%%</dt>
+                <dd><input name="revfromname" id="revfromname" type="text" class="Textbox" value="%%GLOBAL_CustomerName%%"/></dd>
+
+                <dt style="display: %%GLOBAL_HideReviewCaptcha%%">%%LNG_EnterTheCodeBelow%%</dt>
+                <dd style="display: %%GLOBAL_HideReviewCaptcha%%">
+                    <script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k=%%GLOBAL_ReCaptchaAPIKeyPublic%%"></script>
+                    <noscript>
+                        <iframe src="https://www.google.com/recaptcha/api/noscript?k=%%GLOBAL_ReCaptchaAPIKeyPublic%%" height="300" width="500" frameborder="0"></iframe>
+                        <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+                        </textarea>
+                        <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+                    </noscript>
+                </dd>
+            </dl>
+            <p class="Submit">
+                <input type="submit" value="%%LNG_SaveMyReview%%" class="btn" />
+            </p>
+        </div>
+    </form>
+
+    <p style="display: %%GLOBAL_HideNoReviewsMessage%%">
+        %%GLOBAL_NoReviews%%
+    </p>
+
+    %%GLOBAL_ProductReviewPaging%%
+
+    %%GLOBAL_ProductReviewList%%
+
+    %%GLOBAL_ProductReviewPaging%%
+
+    <script type="text/javascript">
+        //<![CDATA[
+        var HideReviewCaptcha = "%%GLOBAL_HideReviewCaptcha%%";
+
+        // Should we automatically open the review form?
+        if ("%%GLOBAL_AutoShowReviewForm%%" == "1") {
+            show_product_review_form();
+        }
+
+        if ("%%GLOBAL_JumpToReviews%%" == "1") {
+            jump_to_product_reviews();
+        }
+        //]]>
+    </script>
+    
+</div>

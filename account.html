@@ -1,0 +1,69 @@
+%%Panel.HTMLHead%%
+    <body>
+        %%Panel.DrawerMenu%%
+        <div class="page">
+            %%Panel.Header%%
+            <div class="main">
+                <div class="inner">
+                    %%Panel.WrapperBanner%%
+                    <div class="Block Breadcrumb Moveable Panel" id="AccountBreadcrumb">
+                        <ul>
+                            <li class="Breadcrumb_home"><a href="%%GLOBAL_ShopPathNormal%%/">%%LNG_Home%%</a></li>
+                            <li>%%LNG_YourAccount%%</li>
+                        </ul>
+                    </div>
+                    <h1 class="TitleHeading">%%LNG_YourAccount%%</h1>
+                    <div class="full-width page-content">
+                        <div class="Left" id="LayoutColumn1">
+                            %%Panel.SideAccountMenu%%
+                            %%Panel.SideAccountStoreCredit%%
+                        </div>
+                        <div class="Content" id="LayoutColumn2">
+                            <div class="Block YourAccount">
+                                <div class="BlockContent">
+                                    <p class="txt24">%%LNG_YourAccountHelpIntro%%</p>
+                                    <ul class="list">
+                                        <li style="display: %%GLOBAL_HideMessagesMenu%%">
+                                            <h4><a href="%%GLOBAL_ShopPath%%/account.php?action=inbox">%%LNG_ViewMessages%%</a></h4>
+                                            <p>%%LNG_ViewMessagesDescription%%</p>
+                                        </li>
+                                        <li>
+                                            <h4><a href="%%GLOBAL_ShopPath%%/account.php?action=order_status">%%LNG_ViewYourOrderStatus%%</a></h4>
+                                            <p>%%LNG_ViewOrderStatusDescription%%</p>
+                                        </li>
+                                        <li>
+                                            <h4><a href="%%GLOBAL_ShopPath%%/account.php?action=view_orders">%%LNG_CompletedOrders%%</a></h4>
+                                            <p>%%LNG_CompletedOrdersDescription%%</p>
+                                        </li>
+                                        <li style="display: %%GLOBAL_HideReturnRequestsMenu%%">
+                                            <h4><a href="%%GLOBAL_ShopPath%%/account.php?action=view_returns">%%LNG_ReturnRequests%%</a></h4>
+                                            <p>%%LNG_ReturnRequestsDescription%%</p>
+                                        </li>
+                                        <li>
+                                            <h4><a href="%%GLOBAL_ShopPath%%/account.php?action=address_book">%%LNG_YourAddressBook%%</a></h4>
+                                            <p>%%LNG_AddressBookDescription%%</p>
+                                        </li>
+                                        <li style="display:%%GLOBAL_HideWishlist%%">
+                                            <h4><a href="%%GLOBAL_ShopPath%%/wishlist.php">%%LNG_WishLists%%</a></h4>
+                                            <p>%%LNG_WishListsDescription%%</p>
+                                        </li>
+                                        <li>
+                                            <h4><a href="%%GLOBAL_ShopPath%%/account.php?action=account_details">%%LNG_YourAccountDetails%%</a></h4>
+                                            <p>%%LNG_AccountDetailsDescription%%</p>
+                                        </li>
+                                        <li>
+                                            <h4><a href="%%GLOBAL_ShopPath%%/account.php?action=recent_items">%%LNG_RecentlyViewedItems%%</a></h4>
+                                            <p>%%LNG_RecentlyViewedItemsDescription%%</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            %%Panel.Footer%%
+        </div>
+    </body>
+</html>

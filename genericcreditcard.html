@@ -1,0 +1,84 @@
+	<p class="InfoMessage">
+		%%LNG_CreditCardPaymentIntro%%
+	</p>
+
+	<p class="ErrorMessage" style="display: %%GLOBAL_HideCreditCardError%%">
+		<strong>%%LNG_CreditCardProcessingError%%</strong><br />
+		%%GLOBAL_CreditCardErrorMessage%%
+	</p>
+
+	<p class="InfoMessage" style="display: %%GLOBAL_HideCreditCardError%%">
+		<a href="checkout.php?action=choose_billing_address">%%LNG_HC_clicktochangebilling%%</a>
+	</p>
+
+	<form action="%%GLOBAL_ShopPathSSL%%/checkout.php?action=process_payment" method="post" onsubmit="return check_creditcard_payment_form()">
+
+		<div class="FormContainer HorizontalFormContainer">
+			<dl>
+				<dt><span class="Required">*</span> %%LNG_CreditCardCardType%%:</dt>
+				<dd>
+					<select name="creditcard_cctype" id="creditcard_cctype" onchange="updateCreditCardType()">
+						<option value="">%%LNG_CreditCardPleaseChoose%%</option>
+						%%GLOBAL_CCTypes%%
+					</select>
+				</dd>
+
+				<dt><span class="Required">*</span> %%LNG_CreditCardCardHoldersName%%:</dt>
+				<dd><input type="text" class="Textbox" name="creditcard_name" id="creditcard_name" value="%%GLOBAL_CreditCardName%%" size="30" /></dd>
+
+				<dt><span class="Required">*</span> %%LNG_CreditCardCreditCardNo%%:</dt>
+				<dd>
+					<input type="text" class="Textbox" name="creditcard_ccno" id="creditcard_ccno" value="%%GLOBAL_CreditCardNum%%" size="30" />
+					<br />
+					<small>%%LNG_CreditCardCreditCardNoHelp%%</small>
+				</dd>
+
+				<dt class="CreditCardIssueNo"><span class="Required">&nbsp;</span> %%LNG_CreditCardCreditCardIssueNo%%:</dt>
+				<dd class="CreditCardIssueNo">
+					<input type="text" class="Textbox" name="creditcard_issueno" id="creditcard_issueno" value="%%GLOBAL_CreditCardIssueNo%%" size="4" />
+					<br />
+					<small>%%LNG_CreditCardCreditCardIssueNoHelp%%</small>
+				</dd>
+
+				<dt class="CreditCardIssueDate"><span class="Required">&nbsp;</span> %%LNG_CreditCardIssueDate%%:</dt>
+				<dd class="CreditCardIssueDate">
+					<select name="creditcard_issuedatem" id="creditcard_issuedatem">
+						<option value=""></option>
+						%%GLOBAL_CreditCardIssueDateMonths%%
+					</select>
+					<select name="creditcard_issuedatey" id="creditcard_issuedatey">
+						<option value=""></option>
+						%%GLOBAL_CreditCardIssueDateYears%%
+					</select>
+					<br />
+					<small>%%LNG_CreditCardIssueDateHelp%%</small>
+				</dd>
+
+				<dt><span class="Required">*</span> %%LNG_CreditCardExpirationDate%%:</dt>
+				<dd>
+					<select name="creditcard_ccexpm" id="creditcard_ccexpm">
+						<option value=""></option>
+						%%GLOBAL_CreditCardMonths%%
+					</select>
+					<select name="creditcard_ccexpy" id="creditcard_ccexpy">
+						<option value=""></option>
+						%%GLOBAL_CreditCardYears%%
+					</select>
+				</dd>
+
+				<dt class="CVV2Input" style="display: %%GLOBAL_CreditCardHideCardCode%%"><span class="Required">*</span> %%LNG_CreditCardCardCode%%:</dt>
+				<dd class="CVV2Input" id="CardCodeInput" style="display: %%GLOBAL_CreditCardHideCardCode%%">
+					<input type="text" class="Textbox" name="creditcard_cccvd" id="creditcard_cccvd" value="%%GLOBAL_CreditCardCardCode%%" size="4" />
+					&nbsp;<small><a href="#" id="CVV2Help">%%LNG_WhatsThis%%</a></small>
+				</dd>
+
+				<dt>&nbsp;&nbsp; %%LNG_CreditCardTotalAmount%%:</dt>
+				<dd><em class="ProductPrice">%%GLOBAL_OrderAmount%%</em></dd>
+			</dl>
+			<p class="Submit">
+				<input class="btn" type="submit" value="%%LNG_CreditCardPayForOrder%%" />
+			</p>
+		</div>
+	</form>
+	%%GLOBAL_AdditionalPaymentPageContents%%
+%%Panel.GenericCreditCardPaymentJavaScript%%

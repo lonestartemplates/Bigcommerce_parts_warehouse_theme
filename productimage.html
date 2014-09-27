@@ -1,0 +1,232 @@
+%%Panel.DOCTYPE%%
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<link href="%%GLOBAL_popupCssPath%%" type="text/css" rel="stylesheet" />
+		<script type="text/javascript" src="%%GLOBAL_jQueryPath%%"></script>
+		<title>%%GLOBAL_ProductName%%</title>
+		<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/jCarousel/jCarousel.js?%%GLOBAL_JSCacheToken%%"></script>
+
+		<script type="text/javascript">//<![CDATA[
+			var ThumbURLs = new Array();
+			var ImageDescriptions = new Array();
+			var currentImageIndex = '%%GLOBAL_CurrentImageIndex%%';
+			//if the image index is not variation then it should be a number
+			if(currentImageIndex != 'variation' && currentImageIndex != 'rule') {
+				currentImageIndex = parseInt(currentImageIndex);
+			}
+			var ProductMaxImageHeight = %%GLOBAL_ProductMaxImageHeight%%;
+			var ProductMaxImageWidth = %%GLOBAL_ProductMaxImageWidth%%;
+			var currentCarouselStart = 0;
+			var VariationImage = '%%GLOBAL_VariationImage%%';
+			var RuleImage = '%%GLOBAL_RuleImage%%';
+			var imagePreloader = new Image;
+			%%GLOBAL_ProdImageJavascript%%
+
+			function CloseImagePopup() {
+				if(parent.top.$('#fancy_close').attr('id')) {
+					parent.top.$('#fancy_close').trigger('click');
+				} else {
+					window.parent.focus();
+					window.close();
+				}
+			}
+
+			function showProductZoomImage(ImageIndex) {
+				if(ImageIndex=='variation' || ImageIndex == 'rule' || ThumbURLs[ImageIndex]) {
+
+					if(ImageDescriptions[ImageIndex]) {
+						$('.ProductImageDescription').html(ImageDescriptions[ImageIndex]);
+					}
+
+
+					$('.ProductImageDescription').html(ImageDescriptions[ImageIndex]);
+
+					imagePreloader = new Image;
+					if (ImageIndex == 'variation') {
+						imagePreloader.src = VariationImage;
+					} else if (ImageIndex == 'rule') {
+						imagePreloader.src = RuleImage;
+					} else {
+						imagePreloader.src = ThumbURLs[ImageIndex];
+					}
+					$(".ProductZoomImage").html('');
+
+					if (imagePreloader.complete) {
+						loadImageToContainer();
+					} else {
+						$(imagePreloader).unbind().bind('load', function() {
+							loadImageToContainer();
+						});
+					}
+
+					if(ImageIndex=='variation' || ImageIndex == 'rule') {
+						$('.Nav').hide();
+						$('.ImageCount').hide();
+						return;
+					}
+					$('.Nav').show();
+					$('.ImageCount').show();
+
+					//image on the left of the visible carousel list
+					if (ImageIndex < currentCarouselStart) {
+						$('#ImageScrollPrev').trigger('click');
+					}
+
+					//image on the right of the visible carousel list
+					if (ImageIndex > currentCarouselStart+9) {
+						$('#ImageScrollNext').trigger('click');
+					}
+
+					highlightProductTinyImage(ImageIndex);
+					if(ImageIndex >= ThumbURLs.length-1) {
+						$('.NextLink').addClass('disabled');
+					} else {
+						$('.NextLink').removeClass('disabled');
+					}
+
+					if(ImageIndex == 0) {
+						$('.PrevLink').addClass('disabled');
+					} else {
+						$('.PrevLink').removeClass('disabled');
+					}
+
+
+					$('.CurrentImageIndex').html(ImageIndex+1);
+					currentImageIndex = ImageIndex;
+				}
+				return false;
+			}
+
+
+			function loadImageToContainer() {
+				var w = $(window).width();
+				//less body margin 20
+				var h = $(window).height()-20;
+
+
+				//resize the image container if the window size is changed
+				var ImageBoxSize = getImageContainerSize();
+
+				if($(".ProductZoomImageBox").width() != ImageBoxSize[0] || $(".ProductZoomImageBox").height() != ImageBoxSize[1]) {
+					$(".ProductZoomImageBox").width(ImageBoxSize[0]);
+					$(".ProductZoomImageBox").height(ImageBoxSize[1]);
+
+				//	$(".ProductZoomImageBox").css('line-height', ImageBoxSize[1]+'px');
+				//	alert(ImageBoxSize[1]);
+				}
+
+				var wr = Math.min(ImageBoxSize[0], imagePreloader.width) / imagePreloader.width;
+				var hr = Math.min(ImageBoxSize[1], imagePreloader.height) / imagePreloader.height;
+
+				//resize the image
+				var r = Math.min(wr, hr);
+
+
+
+				var width = Math.round(r * imagePreloader.width);
+				var height = Math.round(r * imagePreloader.height);
+
+
+				$(".ProductZoomImage").width(width);
+				$(".ProductZoomImage").height(height);
+
+				$(".ProductZoomImage").html('<img src="'+imagePreloader.src+'"  width="'+width+'" height="'+height+'" alt="'+ImageDescriptions[currentImageIndex]+'" />');
+
+			}
+
+			function initiateImageCarousel()
+			{
+
+				var circular = true;
+				var visible = 10;
+				var buttonWidth = 0;
+				if(ThumbURLs.length <= 10) {
+					visible = ThumbURLs.length;
+				} else {
+					$("#ImageScrollPrev").show();
+					$("#ImageScrollNext").show();
+					buttonWidth = $("#ImageScrollPrev").width()*2;
+				}
+				var scroll = Math.round(visible);
+				$(".ProductTinyImageList").jCarouselLite({
+					btnNext: ".next",
+					btnPrev: ".prev",
+					visible: visible,
+					scroll: scroll,
+					circular: false,
+					speed: 200,
+					afterEnd: function(a) {
+						currentCarouselStart=parseInt($(a).find('img').attr('id').replace('TinyImage_', ''));
+					}
+				});
+
+				// IE 6 doesn't render the carousel properly, the following code is the fix for IE6
+				if($.browser.msie && $.browser.version.substr(0,1) == 6) {
+					$(".ProductTinyImageList").width($(".ProductTinyImageList").width()+4);
+					var liHeight = $(".ProductTinyImageList li").height();
+					$(".ProductTinyImageList").height(liHeight+2);
+				}
+
+				var TinyListWidth = $(".ProductTinyImageList").width();
+				$(".ImageCarousel").width(TinyListWidth+buttonWidth+20);
+				highlightProductTinyImage(currentImageIndex);
+			}
+
+
+			function getImageContainerSize()
+			{
+				var w = $(window).width();
+				var h = $(window).height() - 30;
+
+				var carouselH = $('.ProductTinyImageList').height()+30;
+				var titleH = $('.Title').height() +10;
+				var imageCountH = $('.ImageCount').height();
+				var navH = $('.Nav').height();
+
+				var width = w-20;
+				var height = h - carouselH - titleH - imageCountH - navH;
+
+				var size = new Array(width, height);
+				return size;
+			}
+
+
+
+			function highlightProductTinyImage(ThumbIndex) {
+				$('.ProductTinyImageList li').attr('class', 'normal');
+				
+
+				$('#TinyImageBox_'+ThumbIndex).attr('class', 'selected');
+			}
+
+			var loop=1;
+			function initiateImageGallery() {
+
+				var containerSize = getImageContainerSize();
+				if(loop <= 5 && (containerSize[0] <= 0 || containerSize[1] <= 0)){
+					setTimeout(initiateImageGallery, 500);
+					return false;
+				}
+
+				$('.ImageCarousel').fadeIn('normal');
+				$('.ProductZoomImageBox').fadeIn('normal');
+				$(".ProductZoomImageBox").width(containerSize[0]);
+				$(".ProductZoomImageBox").height(containerSize[1]);
+
+				showProductZoomImage(currentImageIndex);
+				if(ThumbURLs.length <= 0) {
+					$(".Nav").hide();
+				} else {
+					initiateImageCarousel();
+				}
+			}
+
+			$(document).ready(function() {
+				initiateImageGallery();
+			});
+		//]]></script>
+	</head>
+	<body>
+		%%Panel.ProductImagePopup%%
+	</body>
+</html>

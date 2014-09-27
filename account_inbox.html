@@ -1,0 +1,32 @@
+%%Panel.HTMLHead%%
+    <body>
+        %%Panel.DrawerMenu%%
+        <div class="page">
+            %%Panel.Header%%
+            <div class="main">
+                <div class="inner">
+                    %%Panel.WrapperBanner%%
+                    <div class="Block Breadcrumb Moveable Panel" id="AccountBreadcrumb">
+                        <ul>
+                            <li class="Breadcrumb_home"><a href="%%GLOBAL_ShopPathNormal%%/">%%LNG_Home%%</a></li>
+                            <li><a href="%%GLOBAL_ShopPath%%/account.php">%%LNG_YourAccount%%</a></li>
+                            <li>%%LNG_Inbox%%</li>
+                        </ul>
+                    </div>
+                    <h1 class="TitleHeading">%%LNG_YourAccount%%</h1>
+                    <div class="full-width page-content">
+                        <div class="Left" id="LayoutColumn1">
+                            %%Panel.SideAccountMenu%%
+                            %%Panel.SideAccountStoreCredit%%
+                        </div>
+                        <div class="Content" id="LayoutColumn2">
+                            %%Panel.AccountInbox%%
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            %%Panel.Footer%%
+        </div>
+    </body>
+</html>

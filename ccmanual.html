@@ -1,0 +1,78 @@
+<p class="InfoMessage">
+	%%LNG_CCManualPaymentIntro%%
+</p>
+
+<p class="ErrorMessage" style="display: %%GLOBAL_HideCCManualError%%">
+	%%GLOBAL_CCErrorMessage%%
+</p>
+
+<form action="%%GLOBAL_ShopPathSSL%%/checkout.php?action=process_payment" method="post" onsubmit="return check_cc_payment_form()">
+	<div class="FormContainer HorizontalFormContainer">
+		<dl>
+			<dt><span class="Required">*</span> %%LNG_CCManualCardHoldersName%%:</dt>
+			<dd><input type="text" class="Textbox" name="cc_name" id="cc_name" value="%%GLOBAL_CCName%%" size="30" /></dd>
+
+			<dt><span class="Required">*</span> %%LNG_CCManualCreditCardType%%:</dt>
+			<dd>
+				<select name="cc_cctype" id="cc_cctype" style="width:175px" onchange="updateCreditCardType()">
+					<option value="">%%LNG_CCManualPleaseChoose%%</option>
+					%%GLOBAL_CCTypes%%
+				</select>
+			</dd>
+
+			<dt><span class="Required">*</span> %%LNG_CCManualCreditCardNo%%:</dt>
+			<dd>
+				<input type="text" class="Textbox" name="cc_ccno" id="cc_ccno" value="%%GLOBAL_CCNum%%" size="30" />
+				<br />
+				<small>%%LNG_CCManualCreditCardNoHelp%%</small>
+			</dd>
+
+			<dt class="CVV2Input"><span class="Required">*</span> %%LNG_CCManualCreditCardCCV2%%:</dt>
+			<dd class="CVV2Input">
+				<input type="text" class="Textbox" name="cc_cvv2" id="cc_cvv2" value="%%GLOBAL_CCCVV2%%" size="4" />
+				<br />
+				<small>%%LNG_CCManualCreditCardCVV2Help%%</small>
+			</dd>
+
+			<dt class="CCIssueNo"><span class="Required">&nbsp;</span> %%LNG_CCManualCreditCardIssueNo%%:</dt>
+			<dd class="CCIssueNo">
+				<input type="text" class="Textbox" name="cc_issueno" id="cc_issueno" value="%%GLOBAL_CCIssueNo%%" size="4" />
+				<br />
+				<small>%%LNG_CCManualCreditCardIssueNoHelp%%</small>
+			</dd>
+
+			<dt><span class="Required">*</span> %%LNG_CCManualExpirationDate%%:</dt>
+			<dd>
+				<select name="cc_ccexpm" id="cc_ccexpm">
+					<option value=""></option>
+					%%GLOBAL_CCMonths%%
+				</select>
+				<select name="cc_ccexpy" id="cc_ccexpy">
+					<option value=""></option>
+					%%GLOBAL_CCYears%%
+				</select>
+			</dd>
+
+			<dt class="CCIssueDate"><span class="Required">&nbsp;</span> %%LNG_CCManualIssueDate%%:</dt>
+			<dd class="CCIssueDate">
+				<select name="cc_issuedatem" id="cc_issuedatem">
+					<option value=""></option>
+					%%GLOBAL_CCIssueDateMonths%%
+				</select>
+				<select name="cc_issuedatey" id="cc_issuedatey">
+					<option value=""></option>
+					%%GLOBAL_CCIssueDateYears%%
+				</select>
+				<br />
+				<small>%%LNG_CCManualIssueDateHelp%%</small>
+			</dd>
+
+			<dt>&nbsp;&nbsp; %%LNG_CCManualTotalAmount%%:</dt>
+			<dd><em class="ProductPrice">%%GLOBAL_OrderAmount%%</em></dd>
+		</dl>
+		<p class="Submit">
+			<input class="btn" type="submit" value="%%LNG_CCManualPayForOrder%%" />
+		</p>
+	</div>
+</form>
+%%Panel.CCManualPaymentJavaScript%%

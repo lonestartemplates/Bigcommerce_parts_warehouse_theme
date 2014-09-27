@@ -1,0 +1,89 @@
+%%Panel.HTMLHead%%
+    <body>
+        %%Panel.DrawerMenu%%
+        <div class="page">
+            %%Panel.Header%%
+            <div class="main">
+                <div class="inner">
+                    %%Panel.WrapperBanner%%
+                    <div class="Block Breadcrumb Moveable Panel" id="AccountBreadcrumb">
+                        <ul>
+                            <li class="Breadcrumb_home"><a href="%%GLOBAL_ShopPathNormal%%/">%%LNG_Home%%</a></li>
+                            <li><a href="%%GLOBAL_ShopPath%%/account.php">%%LNG_YourAccount%%</a></li>
+                            <li>%%LNG_WishLists%%</li>
+                        </ul>
+                    </div>
+                    <h1 class="TitleHeading">%%LNG_YourAccount%%</h1>
+                    <div class="full-width page-content">
+                        <div class="Left" id="LayoutColumn1">
+                            %%Panel.SideAccountMenu%%
+                            %%Panel.SideAccountStoreCredit%%
+                        </div>
+                        <div class="Content" id="LayoutColumn2">
+                            %%Panel.WishListItems%%
+                            %%Panel.WishLists%%
+                            %%Panel.WishListAddForm%%
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            %%Panel.Footer%%
+        </div>
+        <script type="text/javascript">
+        //<![CDATA[
+        function ValidateWishListForm(formtype)
+        {
+        var wishlistname = g("wishlistname");
+
+        wishlistname.value = wishlistname.value.replace(/^\s+|\s+$/g, '') ;
+        if(wishlistname.value == "") {
+            alert("%%LNG_EnterWishListName%%");
+            wishlistname.focus();
+            wishlistname.select();
+            return false;
+        } else {
+            return true;
+        }
+        }
+        
+        function ValidateDeleteWishlist(bulkDelete, wishlistId)
+        {
+        if (bulkDelete == true) {
+            var deleteWishList = g("wishlistsform").elements;
+
+            var wishlistSelected = false;
+            for(i = 0; i < deleteWishList.length; i++) {
+                if (deleteWishList[i].checked == true) {
+                    wishlistSelected = true;
+                    break;
+                }
+            }
+            if (wishlistSelected == true) {
+                return window.confirm('%%LNG_ConfirmDeleteWishLists%%');
+            } else {
+                alert('%%LNG_SelectAWishListToDelete%%');
+                return false
+            }
+        } else {
+            if (window.confirm('%%LNG_ConfirmDeleteWishLists%%') == true) {
+                window.location = 'wishlist.php?action=deletewishlist&wishlistid='+wishlistId;
+                return true;
+            } else {
+                return false;
+            }
+        }
+        }
+
+        function ToggleWishListDeleteBoxes(Status)
+        {
+        var deleteWishList = g("wishlistsform").elements;
+
+        for(i = 0; i < deleteWishList.length; i++) {
+            deleteWishList[i].checked = Status;
+        }
+        }
+        //]]>
+        </script>
+    </body>
+</html>

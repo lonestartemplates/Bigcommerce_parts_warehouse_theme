@@ -1,0 +1,40 @@
+%%Panel.HTMLHead%%
+    <body class="productPage">
+		<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/validate/jquery.validate.js?%%GLOBAL_JSCacheToken%%"></script>
+		<script type="text/javascript" src="%%GLOBAL_TPL_PATH%%/js/product.functions.js?%%GLOBAL_JSCacheToken%%"></script>
+		<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/product.js?%%GLOBAL_JSCacheToken%%"></script>
+        %%Panel.DrawerMenu%%
+        <div class="page">
+            %%Panel.Header%%
+            <div class="main">
+                <div class="inner">
+                    %%Panel.WrapperBanner%%
+                    %%Panel.ProductBreadcrumb%%
+                    %%Panel.ProductDetails%%
+                    
+                    <div class="clear"></div>
+                </div>
+            </div>
+            %%Panel.Footer%%
+
+            <script type="text/javascript">
+
+            $(document).ready(function() {
+                if($('.videoRow').size() > 0) {
+                    $('.videoRow').bind('click', function () {
+                        var videoId = $(this).attr('id').replace('video_', '');
+                        $('#FeaturedVideo').html('<object width="398" height="330">'
+                            + '<param name="movie" value="http://www.youtube.com/v/' + videoId + '?fs=1"></param>'
+                            + '<param name="allowFullScreen" value="true"></param>'
+                            + '<param name="allowscriptaccess" value="always"></param>'
+                            + '<embed src="http://www.youtube.com/v/'  + videoId + '?&fs=1&autoplay=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="398" height="330"></embed>'
+                            + '</object>'
+                            );
+                        selectCurrentVideo(videoId);
+                    });
+                }
+            });
+            </script>
+        </div>
+    </body>
+</html>

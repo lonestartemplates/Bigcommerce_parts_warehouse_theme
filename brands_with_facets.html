@@ -1,0 +1,33 @@
+%%Panel.HTMLHead%%
+    <body>
+        %%Panel.DrawerMenu%%
+        <div class="page">
+            %%Panel.Header%%
+            <div class="main">
+                <div class="inner">
+                    %%Panel.WrapperBanner%%
+                    %%Panel.BrandBreadcrumb%%
+                    <div class="productlist-page">
+                        %%Banner.TopBanner%%
+                        <h1 class="TitleHeading">%%GLOBAL_TrailBrandName%%</h1>
+                        <button class="js-faceted-search-action btn">Refine</button>                        
+                        <div class="Left js-faceted-search-column">
+                            %%Panel.FacetedSearch%%
+                        </div>
+                        <div class="Content Wide %%GLOBAL_ExtraCategoryClass%%" id="LayoutColumn1">
+                            <div class="product-nav">
+                                    %%SNIPPET_CategorySortBox%%
+                                    %%SNIPPET_BrandPaging%%
+                                <div class="clear"></div>
+                            </div>
+                            %%Panel.BrandContent%%
+                        </div>
+                        <div class="clear"></div>
+                        %%Banner.BottomBanner%%
+                    </div>
+                </div>
+            </div>
+            %%Panel.Footer%%
+        </div>
+    </body>
+</html>

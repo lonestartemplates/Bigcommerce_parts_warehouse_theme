@@ -1,0 +1,12 @@
+
+Recommended logo image size:
+250px wide x 100px high
+
+Recommended storewide product thumbnail size:
+230px wide x 260px high
+
+Recommended top banner size:
+980px wide x Any height
+
+Recommended bottom banner size:
+580px wide x Any height

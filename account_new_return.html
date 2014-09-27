@@ -1,0 +1,58 @@
+%%Panel.HTMLHead%%
+    <body>
+        %%Panel.DrawerMenu%%
+        <div class="page">
+            %%Panel.Header%%
+            <div class="main">
+                <div class="inner">
+                    %%Panel.WrapperBanner%%
+                    %%Panel.AccountNewReturnBreadcrumb%%
+                    <h1 class="TitleHeading">%%LNG_SubmitNewReturn%%</h1>
+                    <div class="full-width">
+                        <div class="Left" id="LayoutColumn1">
+                            %%Panel.SideAccountMenu%%
+                        </div>
+                        <div class="Content" id="LayoutColumn2">
+                            <form action="%%GLOBAL_ShopPath%%/account.php?action=save_new_return" method="post" onsubmit="return check_return_form()">
+                                <input type="hidden" name="order_id" value="%%GLOBAL_OrderId%%" />
+                                <div class="Block">
+                                    
+                                    <div class="BlockContent">
+                                        <p class="ErrorMessage" style="display:%%GLOBAL_HideErrorMessage%%">
+                                            %%GLOBAL_ErrorMessage%%
+                                        </p>
+                                        %%Panel.AccountNewReturnProducts%%
+                                        %%Panel.AccountNewReturnInfo%%
+                                    </div>
+                                </div>
+                            </form>
+                            <script type="text/javascript">
+                            function check_return_form() {
+                                var sel = false;
+                                $('.ReturnQty').each(function() {
+                                    if($(this).val() > 0) {
+                                        sel = true;
+                                    }
+                                });
+
+                                if(sel == false) {
+                                    alert('%%LNG_SelectOneMoreItemsReturn%%');
+                                    return false;
+                                }
+
+                                if($('#return_reason').val() == '') {
+                                    alert('%%LNG_SelectReturnReason%%');
+                                    $('#return_reason').focus();
+                                    return false;
+                                }
+                            }
+                            </script>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            %%Panel.Footer%%
+        </div>
+    </body>
+</html>

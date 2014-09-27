@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="%%GLOBAL_STYLE_PATH%%/printinvoice.css" type="text/css">
+<div id="Logo">
+	%%GLOBAL_HeaderLogo%%
+</div>
+
+<div class="PackingSlip">
+	<div class="PackingSlipTitle">
+		%%GLOBAL_StoreName%% %%GLOBAL_PackingSlipTitle%%
+	</div>
+	
+	<div class="StoreAddress">
+		%%GLOBAL_StoreAddressFormatted%%
+	</div>
+	
+	<div class="AddressRow">
+		<div class="BillingAddress">
+			<div class="PackingSlipHeading">%%LNG_BillTo%%</div>
+			%%GLOBAL_BillingAddress%%
+			<div style="%%GLOBAL_HideBillingPhone%%">
+				%%LNG_Phone%%: %%GLOBAL_BillingPhone%%
+			</div>
+		</div>
+		<div class="ShippingAddress">
+			<div class="PackingSlipHeading">%%LNG_ShipTo%%</div>
+			%%GLOBAL_ShippingAddress%%
+			<div style="%%GLOBAL_HideShippingPhone%%">
+				%%LNG_Phone%%: %%GLOBAL_ShippingPhone%%
+			</div>
+		</div>
+	</div>
+
+	<div class="PackingSlipDetails">
+		<div class="PackingSlipDetailsLeft">
+			<div class="DetailRow">
+				<div class="Label">%%LNG_Order%%:</div>
+				<div class="Value">#%%GLOBAL_OrderId%%</div>
+			</div>
+			<div class="DetailRow">
+				<div class="Label">%%LNG_ShipmentOrderDate%%:</div>
+				<div class="Value">%%GLOBAL_OrderDate%%</div>
+			</div>
+		</div>
+		<div class="PackingSlipDetailsRight">
+			<div class="DetailRow" style="%%GLOBAL_HideShippingMethod%%">
+				<div class="Label">%%LNG_ShippingMethod%%:</div>
+				<div class="Value">%%GLOBAL_ShippingMethod%%</div>
+			</div>
+			<div class="DetailRow" style="%%GLOBAL_HideShippingDate%%">
+				<div class="Label">%%LNG_DateShipped%%:</div>
+				<div class="Value">%%GLOBAL_DateShipped%%</div>
+			</div>
+			<div class="DetailRow" style="%%GLOBAL_HideTrackingNo%%">
+				<div class="Label">%%LNG_TrackingNumber%%:</div>
+				<div class="Value">%%GLOBAL_TrackingNo%%</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="PackingSlipItems">
+		<div class="PackingSlipHeading">%%LNG_ShippedItems%%</div>
+		<table class="PackingSlipTable">
+			<thead>
+				<tr>
+					<th class="ProductQuantity">%%LNG_Quantity%%</th>
+					<th class="ProductSku">%%LNG_Code%%</th>
+					<th class="ProductDetails">%%LNG_ProdName%%</th>
+					<th class="ProductDetails">%%LNG_ProdBin%%</th>
+				</tr>
+			</thead>
+			<tbody class="PackingSlipItemList">
+				%%GLOBAL_ProductsTable%%
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="PackingSlipComments" style="%%GLOBAL_HideComments%%">
+		<div class="PackingSlipHeading">%%LNG_Comments%%</div>
+		<blockquote>
+			%%GLOBAL_Comments%%
+		</blockquote>
+	</div>
+</div>

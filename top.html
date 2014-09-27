@@ -1,0 +1,40 @@
+%%Panel.HTMLHead%%
+    <body>
+
+        <!-- The top.html and bottom.html files are *ONLY* used when ActiveKB -->
+        <!-- is integrated into your store. If you haven't integrated ActiveKB -->
+        <!-- then they don't need to be changed and wont affect anything. -->
+        
+        <!-- Overwrite default ActiveKB min-height and width styles -->
+        <style>
+            .TitleHeading { padding-left:-25px; }
+            .Content img { padding-right:10px; }
+            #LayoutColumn2 #livesearch { display:none; }
+            #LayoutColumn2 #question_crumbs, #LayoutColumn2 .Box { border:none; background-color:#FFF; }
+            #LayoutColumn2 #question_crumbs { margin-left:0px; }
+        </style>
+        <!-- End styles -->
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#livesearch').css('width', '200px');
+                $('#livesearch').css('display', 'inline');
+            });
+        </script>
+
+        <!-- Positioning hack for FireFox (IE doesn't support comment tags) -->
+        <comment>
+            <style>
+                .TitleHeading { margin-left:-27px; }
+            </style>
+        </comment>
+        <!-- End IE hack -->
+
+        %%Panel.DrawerMenu%%
+        <div class="page">
+            %%Panel.Header%%
+            <div class="main">
+                <div class="inner">
+                    %%Panel.WrapperBanner%%
+                    <div class="Content Widest" id="LayoutColumn1">
+                    <!-- End Top Template -->

@@ -1,0 +1,49 @@
+<p class="InfoMessage">
+	%%LNG_NMIPaymentIntro%%
+</p>
+<p class="ErrorMessage" style="display:%%GLOBAL_HideNMIError%%">
+	%%LNG_NMIProcessingError%%<br />
+	<strong>%%GLOBAL_NMIErrorMessage%%</strong>
+</p>
+<form action="%%GLOBAL_ShopPathSSL%%/checkout.php?action=process_payment" method="post" onsubmit="return check_NMI_payment_form()">
+	<div class="FormContainer HorizontalFormContainer">
+		<dl>
+			<dt><span class="Required">*</span> %%LNG_NMICardHoldersName%%:</dt>
+			<dd><input type="text" name="NMI_name" id="NMI_name" value="%%GLOBAL_NMIName%%" size="30" /></dd>
+
+			<dt><span class="Required">*</span> %%LNG_NMICreditCardNo%%:</dt>
+			<dd>
+				<input type="text" name="NMI_ccno" id="NMI_ccno" value="%%GLOBAL_NMINum%%" size="30" />
+				<br />
+				<small>%%LNG_NMICreditCardNoHelp%%</small>
+			</dd>
+
+			<dt><span class="Required">*</span> %%LNG_NMIExpirationDate%%:</dt>
+			<dd>
+				<select name="NMI_ccexpm" id="NMI_ccexpm">
+					<option value=""></option>
+					%%GLOBAL_NMIMonths%%
+				</select>
+				<select name="NMI_ccexpy" id="NMI_ccexpy">
+					<option value=""></option>
+					%%GLOBAL_NMIYears%%
+				</select>
+			</dd>
+
+			<dt style="display: %%GLOBAL_NMIHideCVV2%%"><span class="Required">*</span> %%LNG_NMICreditCardCCV2%%:</dt>
+			<dd id="CVV2Input" style="display: %%GLOBAL_NMIHideCVV2%%">
+				<input type="text" class="Textbox" name="NMI_cccode" id="cc_cvv2" value="%%GLOBAL_NMICCV2%%" size="4" />
+				&nbsp;<small><a href="#" id="CVV2Help">%%LNG_WhatsThis%%</a></small>
+			</dd>
+
+			<dt>&nbsp;&nbsp; %%LNG_NMITotalAmount%%:</dt>
+			<dd>
+				<em class="ProductPrice">%%GLOBAL_OrderAmount%%</em>
+			</dd>
+		</dl>
+		<p class="Submit">
+			<input class="btn" type="submit" value="%%LNG_NMIPayForOrder%%" />
+		</p>
+	</div>
+</form>
+%%Panel.NMIPaymentJavaScript%%

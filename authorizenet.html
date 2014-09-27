@@ -1,0 +1,49 @@
+<p class="InfoMessage">
+	%%LNG_AuthorizeNetPaymentIntro%%
+</p>
+<p class="ErrorMessage" style="display:%%GLOBAL_HideAuthorizeNetError%%">
+	%%LNG_AuthorizeNetProcessingError%%<br />
+	<strong>%%GLOBAL_AuthorizeNetErrorMessage%%</strong>
+</p>
+<form action="%%GLOBAL_ShopPathSSL%%/checkout.php?action=process_payment" method="post" onsubmit="return check_authorizenet_payment_form()">
+	<div class="FormContainer HorizontalFormContainer">
+		<dl>
+			<dt><span class="Required">*</span> %%LNG_AuthorizeNetCardHoldersName%%:</dt>
+			<dd><input class="Textbox" type="text" name="AuthorizeNet_name" id="AuthorizeNet_name" value="%%GLOBAL_AuthorizeNetName%%" size="30" /></dd>
+
+			<dt><span class="Required">*</span> %%LNG_AuthorizeNetCreditCardNo%%:</dt>
+			<dd>
+				<input class="Textbox" type="text" name="AuthorizeNet_ccno" id="AuthorizeNet_ccno" value="%%GLOBAL_AuthorizeNetNum%%" size="30" />
+				<br />
+				<small>%%LNG_AuthorizeNetCreditCardNoHelp%%</small>
+			</dd>
+
+			<dt><span class="Required">*</span> %%LNG_AuthorizeNetExpirationDate%%:</dt>
+			<dd>
+				<select name="AuthorizeNet_ccexpm" id="AuthorizeNet_ccexpm">
+					<option value=""></option>
+					%%GLOBAL_AuthorizeNetMonths%%
+				</select>
+				<select name="AuthorizeNet_ccexpy" id="AuthorizeNet_ccexpy">
+					<option value=""></option>
+					%%GLOBAL_AuthorizeNetYears%%
+				</select>
+			</dd>
+
+			<dt style="display: %%GLOBAL_AuthorizeNetHideCVV2%%"><span class="Required">*</span> %%LNG_AuthorizeNetCreditCardCCV2%%:</dt>
+			<dd id="CVV2Input" style="display: %%GLOBAL_AuthorizeNetHideCVV2%%">
+				<input type="text" class="Textbox" name="AuthorizeNet_cccode" id="cc_cvv2" value="%%GLOBAL_AuthorizeNetCCV2%%" size="4" />
+				&nbsp;<small><a href="#" id="CVV2Help">%%LNG_WhatsThis%%</a></small>
+			</dd>
+
+			<dt>&nbsp;&nbsp; %%LNG_AuthorizeNetTotalAmount%%:</dt>
+			<dd>
+				<em class="ProductPrice">%%GLOBAL_OrderAmount%%</em>
+			</dd>
+		</dl>
+		<p class="Submit">
+			<input class="btn" type="submit" value="%%LNG_AuthorizeNetPayForOrder%%" />
+		</p>
+	</div>
+</form>
+%%Panel.AuthorizeNetPaymentJavaScript%%

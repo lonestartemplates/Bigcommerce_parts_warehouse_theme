@@ -1,0 +1,58 @@
+<p class="InfoMessage">
+	%%LNG_eSelectPlusDPPaymentIntro%%
+</p>
+<p class="ErrorMessage" style="display:%%GLOBAL_HideeSelectPlusDPError%%">
+	%%LNG_eSelectPlusDPProcessingError%%<br />
+	<strong>%%GLOBAL_eSelectPlusDPErrorMessage%%</strong>
+</p>
+<form action="%%GLOBAL_ShopPathSSL%%/checkout.php?action=process_payment" method="post" onsubmit="return check_eselectplusdp_payment_form()">
+	<div class="FormContainer HorizontalFormContainer">
+		<dl>
+			<dt><span class="Required">*</span> %%LNG_eSelectPlusDPCreditCardNo%%:</dt>
+			<dd>
+				<input type="text" name="cc_num" id="cc_num" value="%%GLOBAL_eSelectPlusDPNum%%" size="30" />
+				<br />
+				<small>%%LNG_eSelectPlusDPCreditCardNoHelp%%</small>
+			</dd>
+
+			<dt><span class="Required">*</span> %%LNG_eSelectPlusDPExpirationDate%%:</dt>
+			<dd>
+				<select name="expMonth" id="expMonth">
+					<option value=""></option>
+					%%GLOBAL_eSelectPlusDPMonths%%
+				</select>
+				<select name="expYear" id="expYear">
+					<option value=""></option>
+					%%GLOBAL_eSelectPlusDPYears%%
+				</select>
+			</dd>
+
+			<dt><span class="Required">*</span> %%LNG_eSelectPlusDPCreditCardCCV2%%:</dt>
+			<dd id="CVV2Input">
+				<input type="text" class="Textbox" name="cvd_value" id="cvd_value" value="%%GLOBAL_eSelectPlusDPCCV2%%" size="4" />
+				&nbsp;<small><a href="#" id="CVV2Help">%%LNG_WhatsThis%%</a></small>
+			</dd>
+
+			<dt><span class="Required">*</span> %%LNG_eSelectPlusDPCardHoldersName%%:</dt>
+			<dd><input type="text" name="cardholder" id="cardholder" value="%%GLOBAL_eSelectPlusDPCardHolderName%%" size="20" /></dd>
+
+			<dt><span class="Required">*</span> %%LNG_eSelectPlusDPStreetName%%:</dt>
+			<dd>
+				<input type="text" name="avs_street_number" id="avs_street_number" value="%%GLOBAL_eSelectPlusDPBillStNum%%" size="20" class="Textbox" />
+				<input type="text" name="avs_street_name" id="avs_street_name" value="%%GLOBAL_eSelectPlusDPBillStName%%" size="20" />
+				</dd>
+
+			<dt><span class="Required">*</span> %%LNG_eSelectPlusDPZip%%:</dt>
+			<dd><input type="text" name="avs_zipcode" id="avs_zipcode" value="%%GLOBAL_eSelectPlusDPBillZip%%" size="6" /></dd>
+
+			<dt>&nbsp;&nbsp; %%LNG_eSelectPlusDPTotalAmount%%:</dt>
+			<dd>
+				<em class="ProductPrice">%%GLOBAL_OrderAmount%%</em>
+			</dd>
+		</dl>
+		<p class="Submit">
+			<input class="btn" type="submit" value="%%LNG_eSelectPlusDPPayForOrder%%" />
+		</p>
+	</div>
+</form>
+%%Panel.eSelectPlusDPPaymentJavaScript%%

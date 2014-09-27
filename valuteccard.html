@@ -1,0 +1,29 @@
+	<p class="InfoMessage">
+		%%LNG_CreditCardPaymentIntro%%
+	</p>
+
+	<p class="ErrorMessage" style="display: %%GLOBAL_HideCreditCardError%%">
+		<strong>%%LNG_CreditCardProcessingError%%</strong><br />
+		%%GLOBAL_CreditCardErrorMessage%%
+	</p>
+
+	<p class="InfoMessage" style="display: %%GLOBAL_HideCreditCardError%%">
+		<a href="checkout.php?action=choose_billing_address">%%LNG_HC_clicktochangebilling%%</a>
+	</p>
+
+	<form action="%%GLOBAL_ShopPathSSL%%/checkout.php?action=process_payment" method="post" onsubmit="return check_creditcard_payment_form()">
+		<div class="FormContainer HorizontalFormContainer">
+			<dl>
+				<dt><span class="Required">*</span> %%LNG_ValutecNumber%%:</dt>
+				<dd>
+					<input type="text" class="Textbox" name="creditcard_ccno" id="creditcard_ccno" value="%%GLOBAL_CreditCardNum%%" size="30" />
+				</dd>
+				<dt>&nbsp;&nbsp; %%LNG_CreditCardTotalAmount%%:</dt>
+				<dd><em class="ProductPrice">%%GLOBAL_OrderAmount%%</em></dd>
+			</dl>
+			<p class="Submit">
+				<input class="btn" type="submit" value="%%LNG_CreditCardPayForOrder%%" />
+			</p>
+		</div>
+	</form>
+%%Panel.ValutecCardPaymentJavaScript%%
