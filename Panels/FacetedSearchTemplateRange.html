@@ -1,0 +1,42 @@
+<div class="facet-container facet-container-range js-accordion-container {{ facetState }}">
+    <div class="facet-header js-facet-accordion-action">
+        <h6 class="facet-header-title">{{ title }}</h6>
+    </div>
+    <div class="facet-body">
+        <form action="" id="facet-range-form" class="facet-form js-facet-range-from {{#if currentViewRange }} current {{/if}}">
+            <fieldset>
+                <input
+                    placeholder="Min."
+                    min="0"
+                    class="js-facet-range-input-from"
+                    required
+                    type="number"
+                    {{#if currentViewRange }} value="{{ currentViewRange.attributes.from }}" {{/if}}
+                />
+                -
+                <input
+                    placeholder="Max."
+                    min="0"
+                    class="js-facet-range-input-to"
+                    required
+                    type="number"
+                    {{#if currentViewRange }} value="{{ currentViewRange.attributes.to }}" {{/if}}
+                />
+                <button class="btn js-btn-facet-range-update" type="submit">Update</button>
+                <a href="#" class="btn js-btn-facet-range-clear">Clear</a>
+            </fieldset>
+        </form>
+        <ul class="facet-options-list">
+            {{#options}}
+                <li class="facet-option js-facet-option {{#if attributes.selected }} selected {{/if}}" >
+                    <a data-id="{{ attributes.id }}" href="#" class="js-facet-range-option">
+                        {{ attributes.title }}
+                        {{#if ../showCount}}
+                            <span class="facet-option-product-count">({{ attributes.count }})</span>
+                        {{/if}}
+                    </a>
+                </li>
+            {{/options}}
+        </ul>
+    </div>
+</div>

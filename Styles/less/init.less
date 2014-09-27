@@ -1,0 +1,310 @@
+/**
+ *   Bigcommerce Blueprint
+ *   Style Initialisation
+ */
+
+
+.SortBox,
+.AddToWishlistLink .wishlist-button {
+    color: @color-primary;
+}
+
+.TopMenu {
+    color: lighten(@color-top-header-background,20%);
+    background: @top-header-background;
+}
+
+.TopMenu li {
+    border-right: 1px solid lighten(@color-top-header-background,25%);
+}
+
+.TopMenu a {
+    color: lighten(@color-top-header-background,40%);
+}
+
+.TopMenu a:hover {
+    color: lighten(@color-top-header-background,25%);
+}
+
+.PageMenu .inner {
+    background: @header-nav-background;
+}
+
+.PageMenu li ul {
+    background: @header-nav-dropdown-background;
+}
+
+.PageMenu li ul li a {
+    color: lighten(@color-header-nav-dropdown-background,40%);
+}
+
+.PageMenu li ul:before {
+    border-color: transparent transparent @header-nav-dropdown-background transparent;
+}
+
+.header {
+    background: @header-background;
+}
+
+.page {
+    background: @page-background;
+}
+
+.footer-main {
+    background: @footer-background;
+}
+
+.footer-links {
+    background: @footer-links-background;
+    color: lighten(@color-footer-links-background,25%);
+}
+
+.footer-links a {
+    color: lighten(@color-footer-links-background, 40%);
+}
+
+.footer-links a:hover {
+    color: lighten(@color-footer-links-background, 25%);
+}
+
+.newsletter-subscription {
+    background-color: @color-tertiary;
+}
+
+
+body,
+input, select, textarea,
+input.Textbox, input[type="text"],
+#SearchForm input,
+.HorizontalFormContainer dd .selector span,
+.fastCartTop div,
+.list-icon li {
+    color: @color-page-text;
+}
+
+#SearchForm .Button {
+    background: url(../images/searchIcon.png) 50% 50% no-repeat @color-btn-alt;
+}
+
+#ModalContent,
+.ModalContent,
+.CurrencyChooser a span {
+    color: @color-page-text !important;
+}
+
+a,
+.header-logo a,
+.Left li li a,
+.Left #SideCategoryList li a,
+.Left .slist li a,
+.Left .afterSideShopByBrand a,
+.Left #GiftCertificatesMenu li a,
+.Left #SideAccountMenu li a,
+.Left #SideCategoryList li li a,
+.Left .slist li li a,
+.TabNav li.Active a,
+.ModalContent h4 a:hover,
+.footer a:hover {
+    color: @color-link;
+}
+
+.page-content #LayoutColumn2 a.pname,
+#ModalContent a,
+.ModalContent a,
+.recaptchatable a {
+    color: @color-link !important;
+}
+
+.Left li a.active:hover{
+    border-color: @color-link;
+}
+
+.icon-add:hover {
+    background-color: @color-link !important;
+}
+
+.multiStep li a {
+    color: lighten(@color-link, 25%);
+}
+
+.Left li a.active,
+a:hover,
+a.alt, p a, a.NextLink,
+.currency-converter p span,
+.BlockContent.PageContent a,
+.page-content #LayoutColumn2 a,
+.Left #SideCategoryList li a:hover,
+.Left .slist li a:hover,
+.Left .afterSideShopByBrand a:hover,
+.Left #GiftCertificatesMenu li a:hover,
+.Left #SideAccountMenu li a:hover,
+.PageMenu li ul li a:hover,
+.Breadcrumb li a {
+    color: @color-link-alt;
+}
+
+.recaptchatable a:hover,
+.page-content #LayoutColumn2 a.pname:hover,
+#ModalContent a:hover,
+.ModalContent a:hover,
+.Breadcrumb li a:hover {
+    color: @color-link-alt !important;
+}
+
+a.alt:hover {
+    background-color: @color-link-alt;
+    color: lighten(@color-link-alt,100%);
+}
+
+.multiStep li.ActivePage h4 {
+    border-bottom: 4px solid @color-link-alt;
+}
+
+.icon-add {
+    background: @color-link-alt url("../images/add.png") no-repeat scroll 50% 50%;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    font-family: @font-heading-text;
+    color: @color-heading-text;
+}
+
+h1, .h1 {
+    font-family: @font-heading;
+    color: @color-heading;
+}
+
+.productOptionViewProductPickListWithImage td {
+    border-bottom: 1px dotted @color-border;
+}
+
+.TopMenu li.Flag img.Selected {
+    border: 2px solid @color-border;
+}
+
+.productOptionViewRectangle .option.selectedValue label {
+    border: 1px solid darken(@color-border,20%) !important;
+}
+
+.productOptionPickListSwatch .selectedValue .textureContainer,
+.productOptionPickListSwatch .selectedValue .swatchColours {
+    border: @border-style !important;
+    border-color: darken(@color-border,65%) !important;
+}
+
+.productOptionPickListSwatch .textureContainer,
+.productOptionPickListSwatch .swatchColours,
+.productOptionViewRectangle .option label,
+.recaptchatable #recaptcha_response_field,
+.zoomWrapper,
+#ProductDetails .ProductTinyImageList ul li.selected {
+    border: @border-style !important;
+}
+
+.CurrencyList dd,
+#SearchForm .Button,
+#SearchForm input.Textbox,
+select,
+hr,
+input.Textbox, textarea,
+input[type="text"],
+input[type="password"],
+.QuickSearch,
+.SharePublicWishList,
+.ExpressCheckoutBlock .ExpressCheckoutTitle,
+.TabNav li a,
+.HowToPay,
+.NotifyMessage,
+.QuickSearchResult .QuickSearchResultImage,
+.CurrencyChooser,
+.selected-currency,
+div.uploader,
+div.selector,
+.recaptchatable {
+    border: @border-style;
+}
+
+.ExpressCheckoutBlockCompleted .ExpressCheckoutCompletedContent,
+div.uploader span.action {
+    border-left: @border-style;
+}
+
+.TitleHeading,
+.TabNav {
+    border-bottom: @border-style;
+}
+
+.ProductList.List .ProductDetails {
+    border-top: @border-style;
+}
+
+.btn {
+    background-color: @color-btn;
+    color: lighten(@color-btn, 100%);
+}
+
+.btn:hover {
+    background-color: @color-btn-hover;
+    color: lighten(@color-btn, 100%);
+}
+
+.btn.alt {
+    background-color: @color-btn-alt;
+    color: lighten(@color-btn-alt, 100%);
+}
+
+a.btn.alt {
+    color: lighten(@color-btn-alt, 100%);
+}
+
+.btn.alt:hover {
+    background-color: @color-btn-alt-hover;
+}
+
+.btn.text {
+    color: lighten(@color-btn, 20%);
+}
+
+.TopMenu > .inner, #Header > .inner, .PageMenu > .inner, .main > .inner, .footer-main > .inner, .footer-links > .inner, .newsletter-subscription > .inner {
+    max-width: @setting-page-max-width;
+    width: @setting-page-width;
+}
+
+#home .ProductList li,
+.productPage .ProductList li {
+    width: @product-column-width;
+}
+
+/* --- Responsive --- */
+
+/* 768px */
+@media screen and (max-width: 768px) {
+
+    .TabNav li.Active a {
+        border-bottom: @border-style;
+    }
+}
+
+/* 600px */
+@media screen and (max-width: 600px) {
+
+    .BillingDetails, .ShippingDetails {
+        border-top: @border-style;
+    }
+
+}
+
+/* 480px */
+@media screen and (max-width: 480px) {
+
+    #cart-amount .Cart .total {
+        background: @color-primary;
+        color: lighten(@color-primary, 100%);
+    }
+
+    #cart-amount .Cart .bag-handle {
+        border: 2px solid @color-primary;
+    }
+
+}
+

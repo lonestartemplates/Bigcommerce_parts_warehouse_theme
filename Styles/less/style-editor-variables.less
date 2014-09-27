@@ -1,0 +1,120 @@
+/**
+ *   Bigcommerce Blueprint with Less
+ *
+ *   For compatability with the Bigcommerce Style Editor:
+ *    + Import your Google fonts first
+ *
+ *    + Declare your fonts for use in the editor by using '@font-declaration' (JSON format)
+ *      eg @font-declaration: '{ "Open Sans":["Open Sans","Arial","sans-serif"], "Freckle Face":["Freckle Face","cursive"] }'
+ *
+ *    + Declare your color palette for use in the editor by using '@color-declaration'
+ *      eg @color-declaration: '["#333", "#1399BE", "#EDEDED", "#FFF"]';
+ *
+ *    + Prefix fonts with '@font-' for the style editor to make it editable by the end user
+ *
+ *    + Prefix colors with '@color-' for the style editor to make it editable by the end user
+ *
+ *    + Prefix settings with '@setting-' for the style editor to make it adjustable by the end user
+ */
+
+
+/**
+ *   Import Google Fonts
+ */
+
+@import url(//fonts.googleapis.com/css?family=Audiowide|Freckle+Face|Exo+2|Hammersmith+One|Ceviche+One|Open+Sans);
+
+
+/**
+ *   Declarations
+ */
+
+@font-declaration: '{ "Open Sans":["\"Open Sans\"", "Arial", "sans-serif"], "Freckle Face":["\"Freckle Face\"", "cursive"], "Exo 2":["\"Exo 2\"", "sans-serif"], "Hammersmith One":["\"Hammersmith One\"", "sans-serif"], "Ceviche One":["\"Ceviche One\"", "cursive"] }';
+
+@color-declaration: '["#333", "#1399BE", "#EDEDED", "#FFF"]';
+
+
+/**
+ *   Colors
+ *   Prefix with '@color-'
+ */
+
+@color-primary:                                #333333;       // Dark gray
+@color-secondary:                              #cccccc;    // Blue
+@color-tertiary:                               #ededed;    // Light gray
+
+// Header
+@color-top-header-background:               @color-primary;
+@color-header-background:                   @color-page-background;
+@color-header-nav-background:               @color-tertiary;
+@color-header-nav-dropdown-background:      @color-primary;
+
+// Page
+@color-page-background:                        #ffffff;    
+@color-newsletter-subscription-background:  @color-tertiary;
+
+// Footer
+@color-footer-background:                   @color-secondary;
+@color-footer-links-background:             @color-primary;
+
+// TEXT
+@color-page-text:                           @color-primary;
+@color-link:                                @color-primary;
+@color-link-alt:                            @color-secondary;
+@color-heading:                             @color-secondary;
+@color-heading-text:                        @color-primary;
+
+// DESIGN ELEMENTS
+@color-border:                              lighten(@color-page-text,65%);
+
+// UI ELEMENTS
+@color-btn:                                 @color-primary;
+@color-btn-hover:                           darken(@color-btn, 10%);
+@color-btn-alt:                             @color-secondary;
+@color-btn-alt-hover:                       darken(@color-btn-alt,10%);
+
+
+/**
+ *   Fonts
+ *   Prefix with '@font-'
+ */
+
+@font-page-text:                               "Open Sans", Arial, Sans-serif;
+@font-heading:                                 "Open Sans", Arial, Sans-serif;
+@font-heading-text:                         @font-page-text;
+
+
+/**
+ *   Settings
+ *   Prefix with '@setting-'
+ */
+
+@setting-page-width:                           960;
+@setting-page-max-width:                       960;
+@setting-product-columns:                      3;
+
+
+/**
+ *   CSS Assignments
+ */
+
+// HEADER
+@top-header-background:                     @color-top-header-background;
+@header-background:                         @color-header-background;
+@header-nav-background:                     @color-header-nav-background;
+@header-nav-dropdown-background:            @color-header-nav-dropdown-background;
+
+//PAGE
+@page-background:                           @color-page-background;
+
+// FOOTER
+@newsletter-subscription-background:        @color-newsletter-subscription-background;
+@footer-background:                         @color-footer-background;
+@footer-links-background:                   @color-footer-links-background;
+
+// DESIGN ELEMENTS
+@border-style:                                 3;
+
+// LAYOUT
+@product-column-width:                      percentage(100/@setting-product-columns/100);
+

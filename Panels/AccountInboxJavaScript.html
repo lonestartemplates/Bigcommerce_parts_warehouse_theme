@@ -1,0 +1,24 @@
+<script type="text/javascript">
+//<![CDATA[
+	/* Make sure the message has a subject and body */
+	function check_message_form() {
+
+		var message_subject = g("message_subject");
+		var message_content = g("message_content");
+
+		if(message_subject.value == "") {
+			alert("%%LNG_MessageEnterSubject%%");
+			message_subject.focus();
+			return false;
+		}
+
+		if(message_content.value == "") {
+			alert("%%LNG_MessageEnterContent%%");
+			message_content.focus();
+			return false;
+		}
+
+		return true;
+	}
+//]]>
+</script>

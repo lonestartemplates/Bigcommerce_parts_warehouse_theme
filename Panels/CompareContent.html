@@ -1,0 +1,17 @@
+<div class="Block Moveable Panel" id="CompareContent">
+	<h3>%%GLOBAL_ComparisonHeading%%</h3>
+	<div class="BlockContent">
+		<p class="InfoMessage">%%LNG_ProductComparisonIntro%%</p>
+		<p class="ErrorMessage" style="display: %%GLOBAL_HideTooManyProductsMessage%%">
+			%%GLOBAL_TooManyProductsMessage%%
+		</p>
+		<table cellspacing="0" cellpadding="0" class="ComparisonTable">
+			%%SNIPPET_ComparisonList%%
+		</table>
+
+		<script type="text/javascript">
+			var num_compare_items = %%GLOBAL_NumCompareItems%%;
+			lang.CompareTwoProducts = "%%LNG_CompareTwoProducts%%";
+		</script>
+	</div>
+</div>

@@ -1,0 +1,172 @@
+<script type="text/javascript">
+//<![CDATA[
+	/* Make sure all credit card details have been provided and are valid */
+	function check_creditcard_payment_form() {
+		var creditcard_name = g("creditcard_name");
+		var creditcard_ccno = g("creditcard_ccno");
+		var creditcard_cctype = g("creditcard_cctype");
+		var creditcard_ccexpm = g("creditcard_ccexpm");
+		var creditcard_ccexpy = g("creditcard_ccexpy");
+		var creditcard_cccvd = g("creditcard_cccvd");
+		var creditcard_issuedatem = g("creditcard_issuedatem");
+		var creditcard_issuedatey = g("creditcard_issuedatey");
+
+		if(creditcard_name.value == "") {
+			alert("%%LNG_CreditCardEnterName%%");
+			creditcard_name.focus();
+			return false;
+		}
+
+		if(creditcard_cctype.selectedIndex == 0) {
+			alert("%%LNG_CreditCardChooseCardType%%");
+			creditcard_cctype.focus();
+			return false;
+		}
+
+		if(isNaN(creditcard_ccno.value) || creditcard_ccno.value == "") {
+			alert("%%LNG_CreditCardEnterCardNumber%%");
+			creditcard_ccno.focus();
+			creditcard_ccno.select();
+			return false;
+		}
+
+		if(creditcard_ccexpm.selectedIndex == 0) {
+			alert("%%LNG_CreditCardEnterCreditCardMonth%%");
+			creditcard_ccexpm.focus();
+			return false;
+		}
+
+		if(creditcard_ccexpy.selectedIndex == 0) {
+			alert("%%LNG_CreditCardEnterCreditCardYear%%");
+			creditcard_ccexpy.focus();
+			return false;
+		}
+
+		if(requiresCVV2() && ($('#creditcard_cccvd').val() == '' || isNaN($('#creditcard_cccvd').val()) || $('#creditcard_cccvd').val().length > 4)) {
+			alert('%%LNG_CreditCardEnterCardCode%%');
+			$('#creditcard_cccvd').focus();
+			$('#creditcard_cccvd').select();
+			return false;
+		}
+
+		// either issue number or issue date needs to be entered
+		if (hasIssueNo() && ($('#creditcard_issueno').val() == '' || isNaN($('#creditcard_issueno').val()))) {
+			if (hasIssueDate() && (creditcard_issuedatem.selectedIndex == 0 || creditcard_issuedatey.selectedIndex == 0)) {
+				alert('%%LNG_CreditCardEnterIssueNoOrDate%%');
+				$('#creditcard_issueno').focus();
+				$('#creditcard_issueno').select();
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	function validateCreditCard(number) {
+		// Strip any non-digits (useful for credit card numbers with spaces and hyphens)
+		var number=number.replace(/\D/g, '');
+
+		// Set the string length and parity
+		var number_length=number.length;
+		var parity=number_length % 2;
+
+		// Loop through each digit and do the maths
+		var total=0;
+		for (i=0; i < number_length; i++) {
+			var digit=number.charAt(i);
+			// Multiply alternate digits by two
+			if (i % 2 == parity) {
+				digit=digit * 2;
+				// If the sum is two digits, add them together (in effect)
+				if (digit > 9) {
+					digit=digit - 9;
+				}
+			}
+			// Total up the digits
+			total = total + parseInt(digit);
+		}
+
+		// If the total mod 10 equals 0, the number is valid
+		if (total % 10 == 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	function requiresCVV2() {
+		var type = $('#creditcard_cctype').val();
+		if(type) {
+			if($('#CCType_'+type).hasClass('requiresCVV2')) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		else {
+			return false;
+		}
+	}
+
+	function hasIssueNo() {
+		var type = $('#creditcard_cctype').val();
+		if(type) {
+			if($('#CCType_'+type).hasClass('hasIssueNo')) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		else {
+			return false;
+		}
+	}
+
+	function hasIssueDate() {
+		var type = $('#creditcard_cctype').val();
+		if(type) {
+			if($('#CCType_'+type).hasClass('hasIssueDate')) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		else {
+			return false;
+		}
+	}
+
+	function updateCreditCardType() {
+		if(requiresCVV2()) {
+			$('.CVV2Input').show();
+		}
+		else {
+			$('.CVV2Input').hide();
+		}
+		if(hasIssueNo()) {
+			$('.CreditCardIssueNo').show();
+		}
+		else {
+			$('.CreditCardIssueNo').hide();
+		}
+		if(hasIssueDate()) {
+			$('.CreditCardIssueDate').show();
+		}
+		else {
+			$('.CreditCardIssueDate').hide();
+		}
+	}
+
+	$(document).ready(function() {
+		updateCreditCardType();
+
+		$('#CVV2Help').click(function() {
+			alert('%%LNG_CreditCardCVV2Help%%');
+			return false;
+		});
+	});
+//]]>
+</script>

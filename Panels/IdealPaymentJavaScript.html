@@ -1,0 +1,16 @@
+<script type="text/javascript">
+//<![CDATA[
+	// check that an issuer has been selected
+	function check_ideal_payment_form() {
+		var ideal_issuer = g('Ideal_issuer');
+
+		if (ideal_issuer.value == "") {
+			alert('%%LNG_IdealIssuerNotSelected%%');
+			ideal_issuer.focus();
+			return false;
+		}
+
+		return true;
+	}
+//]]>
+</script>

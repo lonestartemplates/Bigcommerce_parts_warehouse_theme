@@ -1,0 +1,134 @@
+#co-app {
+  font-family: @font-page-text;
+
+  .co-header {
+    background: @co-header-bg-color;
+    border-bottom: @border-style;
+  }
+    .co-header--title {
+      > h2 {
+        color: @co-header-title-color;
+        font-family: @font-heading;
+      }
+    }
+
+    .co-steps-nav li.is-active a {
+      color: @co-header-menu-color;
+    }
+    .co-steps-nav li.is-disabled a,
+    .co-steps-nav li.is-disabled a:hover,
+    .co-steps-nav li.is-disabled a:active,
+    .co-steps-nav li.is-disabled a:focus {
+      color: @co-header-menu-color;
+      opacity: 0.5;
+    }
+    .co-steps-nav a {
+      color: @co-header-menu-color;
+      font-family: @font-heading-text;
+    }
+
+    .co-steps-nav--divider {
+      color: @co-header-menu-color;
+    }
+
+    .bui-modal-content {
+      background-color: @co-page-bg-color;
+    }
+
+  .co-selectable-panel {
+    -ms-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+  }
+
+  input, select {
+    -ms-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+  }
+
+  .bui-button {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: normal;
+    height: 35px;
+    line-height: 35px;
+    letter-spacing: 1px;
+    padding: 0 1.2em;
+    vertical-align: middle;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    .bui-icon {
+      line-height: inherit;
+    }
+  }
+
+  .bui-button-primary {
+    border: 1px solid @color-btn;
+    background: @color-btn;
+    color: contrast(@color-btn);
+
+    -ms-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+  }
+
+  .bui-button.bui-button-primary:hover,
+  .bui-button.bui-button-primary:focus {
+    border-color: @color-btn-hover;
+    background: @color-btn-hover;
+  }
+
+  .bui-button-link, .bui-button-secondary {
+    background-color: transparent;
+    border: 3px solid @color-primary;
+    color: @color-primary;
+
+    line-height: 29px;
+
+    -ms-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+  }
+
+  .bui-button.bui-button-link:hover,
+  .bui-button.bui-button-link:focus,
+  .bui-button.bui-button-secondary:hover,
+  .bui-button.bui-button-secondary:focus {
+    border: 3px solid @color-secondary;
+    background-color: transparent;
+    color: @color-secondary;
+    text-decoration: none;
+  }
+
+  .co-side--finishchangeitems {
+    height: 21px;
+    padding: 3px 6px 3px;
+    line-height: 14px;
+  }
+}
+
+//Tablet only
+@media (max-width: 1019px) {
+  #co-app {
+    .co-side {
+      background-color: @co-header-bg-color;
+    }
+  }
+}
+
+//Desktop only
+@media (min-width: 1020px) {
+  #co-app {
+    .co-main {
+      border-right: @border-style;
+    }
+  }
+}

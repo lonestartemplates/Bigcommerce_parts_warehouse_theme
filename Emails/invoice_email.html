@@ -1,0 +1,44 @@
+<html><body style="font-family:Arial; font-size:12px; margin: 0; padding: 20px;">
+	<div>
+		%%GLOBAL_NoPaymentTaken%%
+		<h2 style="font-size:22px; height:30px; color:#cc6600; border-bottom:dashed 1px gray">%%LNG_ThanksForYourOrder%%</h2>
+		<div style="width:100%; padding:10px; background-color:#FFF4EA">
+			<img src="%%GLOBAL_IMG_PATH%%/info.png" />&nbsp;
+			%%LNG_YourOrderIDIs%% <strong>#%%GLOBAL_OrderNumber%%</strong>. %%GLOBAL_ViewOrderStatusMsg%%
+		</div>
+		%%GLOBAL_PendingPaymentNotice%%
+		<br />
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td id="Left" width="50%" valign="top">
+					<h3 style="font-family:Arial; font-size:18px">%%LNG_ShippingAddress%%</h3>
+					<div style="font-family:Arial; font-size:12px">%%GLOBAL_ShippingAddress%%</div>
+					<!--
+					<div style="%%GLOBAL_HideShippingEmail%%">%%LNG_Email%%: %%GLOBAL_ShippingEmail%%</div>
+					-->
+				</td>
+				<td id="Right" width="50%" valign="top">
+					<h3 style="font-family:Arial; font-size:18px">%%LNG_BillingAddress%%</h3>
+					<div style="font-family:Arial; font-size:12px">%%GLOBAL_BillingAddress%%</div>
+					<!--
+					<div style="%%GLOBAL_HideBillingEmail%%">%%LNG_Email%%: %%GLOBAL_BillingEmail%%</div>
+					-->
+				</td>
+			</tr>
+		</table>
+		<br /><br />
+		%%GLOBAL_PendingPaymentDetails%%
+
+		%%GLOBAL_OrderCommentBlock%%
+
+		<h3 style="font-size:18px">%%LNG_YourOrderContainsTheFollowingItems%%</h3>
+		%%GLOBAL_CartItemColumns%%
+
+		%%SNIPPET_CartItems%%
+		%%SNIPPET_TotalRows%%
+		%%SNIPPET_PaymentMethod%%
+
+		%%GLOBAL_EmailFooter%%
+	</div>
+</body>
+</html>

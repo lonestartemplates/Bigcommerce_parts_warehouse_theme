@@ -1,0 +1,45 @@
+<script type="text/javascript">
+//<![CDATA[
+	// If the product for an order no longer exists, tell the customer
+	function product_removed() {
+		alert("%%LNG_OrderedItemRemovedFromStore%%");
+	}
+	function product_giftcertificate() {
+		alert("%%LNG_CantReorderGiftCertificateAlert%%");
+	}
+
+	function print_invoice(order_id) {
+		var l = screen.availWidth / 2 - 450;
+		var t = screen.availHeight / 2 - 320;
+		var win = window.open('%%GLOBAL_ShopPath%%/account.php?action=print_invoice&order_id='+order_id, 'orderInvoice', 'width=900,height=650,left='+l+',top='+t+',scrollbars=1');
+	}
+
+	function ShowItemMessage(checkbox, item_id)
+	{
+		//alert($(checkbox).attr('class'));
+		if($(checkbox).attr('class') == "Disabled") {
+			$('#ItemMessage_'+item_id).show();
+
+			$(checkbox).attr("checked",false);
+		}
+		return false;
+	}
+
+	function ValidateReorderForm(form)
+	{
+		var checkboxes = $(form).find('input[type=checkbox]:checked');
+		if(checkboxes.length <= 0) {
+			alert('%%LNG_SelectItemsToReorder%%');
+			return false;
+		}
+		checkboxes.each(function() {
+			if($(this).attr('class') == 'Disabled') {
+				alert('%%LNG_CantReorderItems%%');
+				return false;
+			}
+		});
+		return true;
+	}
+
+//]]>
+</script>

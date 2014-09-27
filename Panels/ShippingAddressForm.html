@@ -1,0 +1,47 @@
+	<div class="Block Moveable Panel" id="ShippingAddressForm">
+		<h2>%%GLOBAL_ShippingAddressFormTitle%%</h2>
+		<div class="BlockContent">
+			<p class="InfoMessage" style="display: %%GLOBAL_HideAddShippingAddressIntroMessage%%">
+				%%GLOBAL_ShippingAddressFormIntro%%
+			</p>
+
+			<div style="display: %%GLOBAL_HideAddShippingAddressMessage%%">%%GLOBAL_Message%%</div>
+
+			<form id="AddressEditForm" method="post" action="%%GLOBAL_ShopPathSSL%%/account.php?action=%%GLOBAL_ShippingAddressFormAction%%" onsubmit="return check_shipping_address_form()">
+				<input type="hidden" name="shipid" value="%%GLOBAL_ShipId%%" />
+
+				<div class="FormContainer HorizontalFormContainer form">
+					<dl>
+						%%GLOBAL_ShipCustomFields%%
+						<dt>&nbsp;</dt>
+						<dd><input type="submit" value="%%LNG_SaveAddress%%" class="btn" /></dd>
+					</dl>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+
+	<script type="text/javascript">
+		lang.ConfirmAddressTypeChange = '%%LNG_ConfirmAddressTypeChange%%';
+	</script>
+
+	%%Panel.AddShippingAddressJavaScript%%
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+		// live change to watch for newly created dom elements
+		$('#FormField_11, #FormField_21').live('change',function(){
+			$.uniform.restore('select.JSHidden');
+		});
+	});
+	$(document).ajaxComplete(function(event,request, settings) {
+		$('select').not('.UniApplied').uniform();
+		$('input[type=checkbox], input[type=radio]').not('.UniApplied').uniform();
+	});
+	$(window).load(function() {
+		$('select').not('.UniApplied').uniform();
+	});
+	</script>

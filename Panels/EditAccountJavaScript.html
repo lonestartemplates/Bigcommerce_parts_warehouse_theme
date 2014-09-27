@@ -1,0 +1,69 @@
+<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/formfield.js?%%GLOBAL_JSCacheToken%%"></script>
+<script type="text/javascript">
+//<![CDATA[
+	/* Make sure all new account details are filled in */
+	function check_edit_account_form() {
+
+		var account_firstname = g("account_firstname");
+		var account_lastname = g("account_lastname");
+		var account_phone = g("account_phone");
+
+		if(account_firstname.value == "") {
+			alert("%%LNG_AccountEnterFirstName%%");
+			account_firstname.focus();
+			return false;
+		}
+
+		if(account_lastname.value == "") {
+			alert("%%LNG_AccountEnterLastName%%");
+			account_lastname.focus();
+			return false;
+		}
+
+		if(account_phone.value == "") {
+			alert("%%LNG_AccountEnterPhoneNumber%%");
+			account_phone.focus();
+			return false;
+		}
+
+		/**
+		 * Validate our form fields
+		 */
+		var emailField, passwordField, confirmField, formfields = FormField.GetValues(%%GLOBAL_EditAccountAccountFormFieldID%%);
+
+		for (var i=0; i<formfields.length; i++) {
+			var rtn = FormField.Validate(formfields[i].field);
+
+			if (!rtn.status) {
+				alert(rtn.msg);
+				FormField.Focus(formfields[i].field);
+				return false;
+			}
+
+			if (formfields[i].privateId == 'EmailAddress') {
+				emailField = formfields[i];
+			} else if (formfields[i].privateId == 'Password') {
+				passwordField = formfields[i];
+			} else if (formfields[i].privateId == 'ConfirmPassword') {
+				confirmField = formfields[i];
+			}
+		}
+
+		if(emailField.value.indexOf("@") == -1 || emailField.value.indexOf(".") == -1) {
+			alert("%%LNG_AccountEnterValidEmail%%");
+			FormField.Focus(emailField.field);
+			return false;
+		}
+
+		if((passwordField.value != "" || confirmField.value != "") && (passwordField.value != confirmField.value)) {
+			alert("%%LNG_AccountPasswordsDontMatch%%");
+			FormField.Focus(confirmField.field);
+			return false;
+		}
+
+		return true;
+	}
+
+	%%GLOBAL_FormFieldRequiredJS%%
+//]]>
+</script>

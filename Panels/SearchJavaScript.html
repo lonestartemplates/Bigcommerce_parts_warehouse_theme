@@ -1,0 +1,229 @@
+<script type="text/javascript">
+//<![CDATA[
+	$(document).ready(function() {
+
+	    /*
+	     * BIG-4435
+	     * Reconstruct any related or similar item search links
+	     */
+	    $('.nofollow').click(function(){
+	        this.href += $(this).data('params');
+	    });
+
+		$('.ToggleSearchFormLink').css('visibility', 'visible');
+
+		$("#category").jstree({
+			json_data: {
+				data: [
+					%%GLOBAL_CategoryOptions%%
+				],
+				ajax: {
+					url: "remote.php?w=getChildCategoriesJSON",
+					data: function (n) {
+						var selectedCategoryId = 0;
+						if (n.attr) {
+							selectedCategoryId = n.data('id');
+						}
+
+						var data = {
+							selectedCategoryId: selectedCategoryId,
+							prefix: 'category'
+						};
+
+						return data;
+					},
+					global: false
+				}
+			},
+			ui: {
+				%%GLOBAL_SelectedCategoryOptions%%
+			},
+			themes: {
+				theme: "interspire",
+				url: config.ShopPath + '/javascript/jquery/plugins/jstree/themes/interspire/style.css'
+			},
+			checkbox: {
+				two_state: true,
+				override_ui: true,
+				real_checkboxes: true,
+				real_checkboxes_names: function(n) {
+					return ["category[]", n.data('id')];
+				}
+			},
+			plugins: [ "themes", "json_data", "ui", "checkbox" ]
+		});
+
+		if("%%GLOBAL_AutoHideSearchForm%%" == "true") {
+			ToggleSearchForm();
+		}
+	});
+
+	// Toggle the advanced search form
+	function ToggleSearchForm() {
+		if($('.AdvancedSearch').css('display') == 'none') {
+			$('.AdvancedSearch').show();
+			$('#toggle_form_image').attr({src:"%%GLOBAL_IMG_PATH%%/ArrowUp.gif"});
+			$('#toggle_form_link').text('%%LNG_HideSearchForm%%');
+			$('#search_query_adv').focus();
+		}
+		else {
+			$('.AdvancedSearch').hide();
+			$('#toggle_form_image').attr({src:"%%GLOBAL_IMG_PATH%%/ArrowDown.gif"});
+			$('#toggle_form_link').text('%%LNG_ShowSearchForm%%');
+		}
+	}
+
+	function showSearchTabs(section)
+	{
+		var showSection, hideSection;
+
+		if (typeof(section) == 'undefined' || (section.toLowerCase() !== 'product' && section.toLowerCase() !== 'content')) {
+			return;
+		}
+
+		if (section.toLowerCase() == 'product') {
+			showSection = 'Product';
+			hideSection = 'Content';
+		} else {
+			showSection = 'Content';
+			hideSection = 'Product';
+		}
+
+		$('#Search' + showSection + '_Tab').attr('class', 'Active');
+		$('#Search' + showSection + '_Container').show();
+		$('#Search' + hideSection + '_Tab').attr('class', '');
+		$('#Search' + hideSection + '_Container').hide();
+	}
+
+	function AjaxSearchPagingClick()
+	{
+		var parent = $(this).parents('.SearchContainer');
+
+		var url = this.href;
+		url = url.replace(/#.*$/, '');
+
+		url += '&ajax=1';
+
+		$(this).parents('.SearchContainer').load(url, {}, function() {
+			BindAjaxSearch();
+		});
+
+		return false;
+	}
+
+	function AjaxSearchSortingChange()
+	{
+		var url = location.pathname;
+		var search = location.search.substr(1).split('&');
+
+		for (var i = search.length; i--;) {
+			// remove existing values that we'll overwrite later
+			if (/^(sortby|section|ajax)=/i.test(search[i])) {
+				search.splice(i, 1);
+			}
+		}
+
+		search.push('ajax=1');
+		search.push('sortBy=' + encodeURIComponent($(this).val()));
+
+		var id = $(this).attr('id');
+
+		if (id.toLowerCase().indexOf('product') !== -1) {
+			search.push('section=product');
+		} else {
+			search.push('section=content');
+		}
+
+		search = search.join('&');
+
+		url += '?' + search;
+
+		$(this).parents('.SearchContainer').load(url, {}, BindAjaxSearch);
+
+		return false;
+	}
+
+	function BindAjaxSearch()
+	{
+		// onchange is not currently supported by live/die so this needs to be run whenever the search results dom changes
+		$('.CategoryPagination a').click(AjaxSearchPagingClick);
+		$('.SearchSortingList').change(AjaxSearchSortingChange);
+		window.scrollTo(0, 0);
+		setProductListHeights();
+	}
+
+	$(document).ready(function() {
+		BindAjaxSearch();
+	});
+
+	// Make sure any advanced search fields are valid
+	function CheckAdvancedSearchForm() {
+		if($('#search_query_adv').val() == '') {
+			alert('%%LNG_EmptySmallSearch%%');
+			$('#search_query_adv').focus();
+			return false;
+		}
+
+		if(isNaN($('#price_from').val())) {
+			alert('%%LNG_EnterValidFromPrice%%');
+			$('#price_from').focus();
+			$('#price_from').select();
+			return false;
+		}
+
+		if(isNaN($('#price_to').val())) {
+			alert('%%LNG_EnterValidToPrice%%');
+			$('#price_to').focus();
+			$('#price_to').select();
+			return false;
+		}
+
+		var form = $('#AdvancedSearchForm');
+
+		// disable redundant fields
+		var disabled = [];
+
+		form.find('[name]').each(function(){
+			if (typeof this.disabled === 'undefined' || this.disabled) {
+				// skip elements that can't be disabled, or are already disabled
+				return;
+			}
+
+			if (this.name.substr(0, 20) != 'ISSelectReplacement_') {
+				// these aren't the fields you're looking for
+				return;
+			}
+
+			disabled.push(this);
+			this.disabled = true;
+		});
+
+		if (disabled.length) {
+			// fields were disabled need to be re-enabled so that using the back button doesn't result in a form with disabled fields
+			// needs to be a timeout so the fields are re-enabled after the form is dispatched
+			window.setTimeout(function(){
+				for (var i = disabled.length; i--;) {
+					disabled[i].disabled = false;
+				}
+			}, 1);
+		}
+
+		return true;
+	}
+
+	// Track a search click
+	$(document).ready(function()
+	{
+		$('.TrackLink').mousedown(function(event)
+		{
+			// Only care for left clicks
+			if(event.button && event.button != 1)
+			{
+				return;
+			}
+
+			isc_TrackSearchClick('%%GLOBAL_SearchId%%');
+		});
+	});
+//]]>
+</script>

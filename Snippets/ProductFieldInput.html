@@ -1,0 +1,27 @@
+<div class="DetailRow">
+	<div class="Label">
+		%%GLOBAL_ProductFieldRequired%%%%GLOBAL_ProductFieldName%%:
+	</div>
+	<div class="Value">
+		<input type="%%GLOBAL_ProductFieldType%%" name="ProductFields[%%GLOBAL_ProductFieldId%%]" class="Textbox %%GLOBAL_FieldRequiredClass%%" size="%%GLOBAL_ProductFieldInputSize%%" value="%%GLOBAL_ProductFieldValue%%" />
+
+		<span id="CartFileName_%%GLOBAL_ProductFieldId%%" style="%%GLOBAL_HideCartFileName%%">
+			<br />
+			%%LNG_Currently%%:
+			<a href="%%GLOBAL_ShopPath%%/viewfile.php?cartitem=%%GLOBAL_ItemId%%&amp;prodfield=%%GLOBAL_ProductFieldId%%" target="_blank">
+				%%GLOBAL_ProductFieldFileValue%%
+			</a>
+
+			<a onclick="Cart.DeleteUploadedFile(%%GLOBAL_ProductFieldId%%, %%GLOBAL_ItemId%%); return false;" href="#" style="%%GLOBAL_HideDeleteFileLink%%">
+				%%LNG_Delete%%
+			</a>
+		</span>
+
+		<em style="%%GLOBAL_HideFileHelp%%">
+			<br />
+			(%%LNG_Size%%: %%GLOBAL_FileSize%%. %%LNG_Type%%: %%GLOBAL_FileTypes%%)
+		</em>
+	</div>
+</div>
+<input type="hidden" id="ProductFileType_%%GLOBAL_ProductFieldId%%" value="%%GLOBAL_FileTypes%%" />
+<input type="hidden" id="CurrentProductFile_%%GLOBAL_ProductFieldId%%" name="CurrentProductFile_%%GLOBAL_ProductFieldId%%" value="%%GLOBAL_CurrentProductFile%%" />

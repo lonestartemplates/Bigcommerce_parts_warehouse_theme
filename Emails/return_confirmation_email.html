@@ -1,0 +1,38 @@
+<html><body style="font-family:Arial; font-size:12px">
+	<div style="padding:0px 20px 20px 20px">
+		<h2 style="font-size:22px; height:30px; color:#cc6600; border-bottom:dashed 1px gray">%%LNG_NotificationConfirmationForReturn%% #%%GLOBAL_OrderId%%</h2>
+		<div style="width:100%; padding:10px; background-color:#FFF4EA">
+			<img src="%%GLOBAL_IMG_PATH%%/info.png" />&nbsp;
+			%%LNG_NotificationAReturnSummaryIsShownBelow%% <a href="%%GLOBAL_ShopPath%%/account.php?view=returns">%%LNG_ClickHere%%</a>.
+		</div>
+
+		<br />
+
+		<table width="100%" cellspacing="0" cellpadding="4">
+			<tr>
+				<td style="font-family:Arial; font-size: 12px; font-weight: bold;" nowrap="nowrap" width="25%">%%LNG_ReturnReason%%:</td>
+				<td style="font-family:Arial; font-size: 12px;">%%GLOBAL_ReturnReason%%</td>
+			</tr>
+			<tr style="display: %%GLOBAL_HideReturnAction%%">
+				<td style="font-family:Arial; font-size: 12px; font-weight: bold;" nowrap="nowrap" width="25%">%%LNG_ReturnAction%%:</td>
+				<td style="font-family:Arial; font-size: 12px;">%%GLOBAL_ReturnAction%%</td>
+			</tr>
+			<tr>
+				<td style="font-family:Arial; font-size: 12px; font-weight: bold;" nowrap="nowrap" valign="top">%%LNG_YourComments%%:</td>
+				<td style="font-family:Arial; font-size: 12px;">%%GLOBAL_ReturnComments%%</td>
+			</tr>
+		</table>
+
+		<h3 style="font-size:13px; color:#cc6600;">%%LNG_NotificationYourReturnContainsTheFollowingItems%%</h3>
+		<table width="100%" id="CheckoutCartGrid" cellspacing="0" cellpadding="0">
+			<tr>
+				<td style="font-family:Arial; font-size:12px; background-color:#020B6F; color:white; padding:5px; font-weight:bold" nowrap>%%LNG_ReturnItems%%</td>
+				<td style="font-family:Arial; font-size:12px; background-color:#020B6F; color:white; padding:5px; font-weight:bold" nowrap="nowrap" width="120">%%LNG_Qty%%</td>
+			</tr>
+		</table>
+		%%SNIPPET_ReturnItems%%
+
+		%%GLOBAL_EmailFooter%%
+	</div>
+</body>
+</html>

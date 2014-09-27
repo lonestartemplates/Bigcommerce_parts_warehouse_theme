@@ -1,0 +1,38 @@
+%%GLOBAL_OptimizerLinkScript%%
+<div class="TopMenu">
+    <div class="inner">
+        <div class="js-drawermenu-store-phone-container">
+                Toll Free: 866.965.9922
+        </div>
+        <div class="last CartLink js-drawermenu-cart" style="display:%%GLOBAL_HideCartOptions%%">
+            <i class="icon" title="View Cart">&nbsp;</i><a href="%%GLOBAL_ShopPathNormal%%/cart.php" title="%%LNG_ViewCart%%"><span>%%GLOBAL_CartItems%%</span></a>
+        </div>
+        <a href="javascript:void(0);" class="toggle-menu"><span></span><span></span><span></span></a>
+        <ul style="display:%%GLOBAL_HidePurchasingOptions%%">            
+            <li style="%%GLOBAL_LiveChatCodeEnabled%%" class="HeaderLiveChat">
+                %%GLOBAL_LiveChatCode%%
+            </li>             
+            %%SNIPPET_TopMenuGiftCertificates%%
+            <li style="display:%%GLOBAL_HideWishlist%%" class="wishLink">
+            
+            <a href="%%GLOBAL_ShopPath%%/wishlist.php">Wish Lists</a>
+            </li>
+            <li style="display:%%GLOBAL_HideAccountOptions%%" class="First"> 
+                <a href="%%GLOBAL_ShopPath%%/account.php">%%LNG_YourAccount%%</a>
+            </li>
+            <li>
+                <a href="/account.php?action=order_status">Order Status</a>
+            </li>
+            <li style="display:%%GLOBAL_HideAccountOptions%%">
+                <div>%%GLOBAL_LoginOrLogoutText%%</div>
+            </li>
+            <li class="js-drawermenu-currency-converter" style="display:none;">
+                <div class="currency-converter">
+                    <p>%%LNG_HC_allprices%% <a href="#">%%GLOBAL_AllPricesAreInCurrency%%</a></p>
+                    %%Panel.SideCurrencySelector%%
+                </div>
+            </li>
+        </ul>
+        
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<html><body style="font-family:Arial; font-size:12px">
+	<div style="padding:0px 20px 20px 20px">
+		<h2 style="font-size:22px; height:30px; color:#cc6600; border-bottom:dashed 1px gray">%%LNG_NotificationNewReturnRequest%% - #%%GLOBAL_OrderId%%</h2>
+		<div style="width:100%; padding:10px; background-color:#FFF4EA">
+			<img src="%%GLOBAL_IMG_PATH%%/info.png" />&nbsp;
+			%%LNG_NotificationReturnRequestSubmitted%% %%GLOBAL_StoreName%%. <a href='%%GLOBAL_ShopPath%%/admin/index.php?ToDo=viewReturns&amp;returnid=%%GLOBAL_ReturnId%%'>%%LNG_NotificationClickHereViewReturn%%%%GLOBAL_ReturnId%%</a>.
+		</div>
+		<br />
+		<table width="100%" cellspacing="0" cellpadding="4">
+			<tr>
+				<td style="font-family:Arial; font-size: 12px; font-weight: bold;" nowrap="nowrap" valign="top" width="25%">%%LNG_NotificationCustomerDetails%%:</td>
+				<td style="font-family:Arial; font-size: 12px;">%%GLOBAL_CustomerName%% (<a href="mailto:%%GLOBAL_CustomerEmail%%">%%GLOBAL_CustomerEmail%%</a>)</td>
+			</tr>
+			<tr>
+				<td style="font-family:Arial; font-size: 12px; font-weight: bold;" nowrap="nowrap" width="25%">%%LNG_ReturnReason%%:</td>
+				<td style="font-family:Arial; font-size: 12px;">%%GLOBAL_ReturnReason%%</td>
+			</tr>
+			<tr style="display: %%GLOBAL_HideReturnAction%%">
+				<td style="font-family:Arial; font-size: 12px; font-weight: bold;" nowrap="nowrap" width="25%">%%LNG_ReturnAction%%:</td>
+				<td style="font-family:Arial; font-size: 12px;">%%GLOBAL_ReturnAction%%</td>
+			</tr>
+			<tr>
+				<td style="font-family:Arial; font-size: 12px; font-weight: bold;" nowrap="nowrap" width="25%">%%LNG_YourComments%%:</td>
+				<td style="font-family:Arial; font-size: 12px;">%%GLOBAL_ReturnComments%%</td>
+			</tr>
+		</table>
+
+		<h3 style="font-size:13px; color:#cc6600;">%%LNG_NotificationTheReturnContainsTheFollowingItems%%</h3>
+		<table width="100%" id="CheckoutCartGrid" cellspacing="0" cellpadding="0">
+			<tr>
+				<td style="font-family:Arial; font-size:12px; background-color:#020B6F; color:white; padding:5px; font-weight:bold" nowrap>%%LNG_ReturnItems%%</td>
+				<td style="font-family:Arial; font-size:12px; background-color:#020B6F; color:white; padding:5px; font-weight:bold" nowrap="nowrap" width="120">%%LNG_Qty%%</td>
+			</tr>
+			%%SNIPPET_ReturnItems%%
+		</table>
+
+		%%GLOBAL_EmailFooter%%
+	</div>
+</body>
+</html>

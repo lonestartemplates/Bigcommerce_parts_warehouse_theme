@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=%%GLOBAL_CharacterSet%%" />
+    <style type="text/css">
+    body, td {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        color: #000;
+    }
+
+    .GiftCertificate {
+        border: 1px solid #ddd;
+        width: 560px;
+        border-collapse: collapse;
+        margin: auto;
+        background: url('%%GLOBAL_SHARED_GIFT_THEME_PATH%%/Birthday.background.gif') right bottom no-repeat;
+    }
+
+    .GiftCertificateHeader {
+        background: #ED9A3F;
+        color: #fff;
+        padding: 4px;
+    }
+
+    .GiftIntro {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .GiftCertificateCode {
+        float: right;
+        text-align: right;
+        width: 200px;
+        font-size: 14px;
+    }
+
+    #GiftCertificateCode {
+        font-weight: bold;
+    }
+
+    .GiftCertificateBody, .GiftCertificateDetails, .GiftCertificateMessage, .GiftCertificateShopNow {
+        padding: 10px;
+    }
+
+    .GiftCertificateMessage, .GiftCertificateShopNow {
+        padding-top: 0;
+    }
+
+    .GiftCertificateBody {
+        height: 80px;
+    }
+
+    .StoreInfo, .StoreInfo a, h1, h1 a {
+        color: #000;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+    }
+
+    h1 {
+        font-size: 38px; letter-spacing: -2px; font-weight: normal; margin: 0px; font-family:  font, Helvetica, Arial, sans-serif;
+    }
+
+    #GiftCertificateAmount {
+        font-weight: bold;
+        float: right;
+        font-size: 40px;
+    }
+
+    .GiftCertificateFrom {
+    float: right;
+    text-align: right;
+    }
+
+    #GiftCertificateTo, #GiftCertificateFrom {
+        font-weight: bold;
+    }
+
+    .GiftCertificateShopNow {
+        text-align: right;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        background: #ED9A3F;
+        color: #fff;
+        font-weight: bold
+    }
+
+    .GiftCertificateShopNow a {
+        color: #fff;
+        font-weight: normal;
+    }
+
+    .GiftCertificateExpiry {
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    </style>
+</head>
+<body>
+    <table class="GiftCertificate">
+        <tr>
+            <td class="GiftCertificateHeader">
+                <div class="GiftCertificateCode">%%LNG_CertificateCode%%:
+                    <span id="GiftCertificateCode">%%GLOBAL_GiftCertificateCode%%</span>
+                </div>
+                <div class="GiftIntro">%%LNG_GiftCertificate%%</div>
+            </td>
+        </tr>
+        <tr>
+            <td class="GiftCertificateBody">
+                <div id="GiftCertificateAmount">%%GLOBAL_GiftCertificateAmount%%</div>
+                <div class="StoreInfo">
+                    %%GLOBAL_HeaderLogo%%
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="GiftCertificateDetails">
+                <div class="GiftCertificateFrom">
+                    %%LNG_CertificateFrom%%:
+                    <span id="GiftCertificateFrom">%%GLOBAL_GiftCertificateFrom%%</span>
+                </div>
+                <div class="GiftCertificateTo">
+                    %%LNG_CertificateTo%%:
+                    <span id="GiftCertificateTo">%%GLOBAL_GiftCertificateTo%%</span>
+                </div>
+            </td>
+        <tr>
+        <tr>
+            <td class="GiftCertificateMessage">
+                <div id="GiftCertificateMessage">
+                %%GLOBAL_GiftCertificateMessage%%
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table class="GiftCertificate">
+        <tr>
+            <td class="GiftCertificateShopNow">
+                <div class="GiftCertificateExpiry">%%GLOBAL_GiftCertificateExpiryInfo%%</div>
+                %%LNG_RedeemGiftCertificateAt%% <a href="%%GLOBAL_ShopPath%%/">%%GLOBAL_ShopPath%%/</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

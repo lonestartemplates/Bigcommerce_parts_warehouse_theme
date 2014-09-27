@@ -1,0 +1,220 @@
+<div class="Block Moveable Panel PurchaseGiftCertificate" id="PurchaseGiftCertificate">
+	<h2>%%GLOBAL_CertificateTitle%%</h2>
+	<div class="BlockContent">
+		<p><strong>%%LNG_GiftCertificateEmailedAfterPurchase%%</strong></p>
+		<p class="ErrorMessage" style="display: %%GLOBAL_HideErrorMessage%%">
+			%%GLOBAL_ErrorMessage%%
+		</p>
+		<form method="post" action="%%GLOBAL_ShopPath%%/giftcertificates.php?action=do_purchase" onsubmit="return CheckGiftCertificateForm()"  style="display: %%GLOBAL_HideGiftCertificateForm%%;" id="frmGiftCertificate">
+			<input type="hidden" name="cartitemid" value="%%GLOBAL_CartItemId%%" />
+
+			<div class="FormContainer HorizontalFormContainer form">
+				<dl>
+					<dt><span class="Required">*</span> %%LNG_GiftCertificateTo%%:</dt>
+					<dd><input type="text" name="to_name" id="to_name" value="%%GLOBAL_CertificateTo%%" class="Textbox" /></dd>
+
+					<dt><span class="Required">*</span> %%LNG_GiftCertificateToEmail%%:</dt>
+					<dd><input type="text" name="to_email" id="to_email" value="%%GLOBAL_CertificateToEmail%%" class="Textbox" /></dd>
+
+					<dt><span class="Required">*</span> %%LNG_GiftCertificateFrom%%:</dt>
+					<dd><input type="text" name="from_name" id="from_name" value="%%GLOBAL_CertificateFrom%%" class="Textbox" /></dd>
+
+					<dt><span class="Required">*</span> %%LNG_GiftCertificateFromEmail%%:</dt>
+					<dd><input type="text" name="from_email" id="from_email" value="%%GLOBAL_CertificateFromEmail%%" class="Textbox" /></dd>
+
+					<dt>&nbsp;&nbsp; %%LNG_GiftCertificateMessage%%:<br />&nbsp;&nbsp; <small>(%%LNG_Optional%%)</small></dt>
+					<dd class="pbn">
+						<textarea name="message" id="message" rows="3" cols="40">%%GLOBAL_CertificateMessage%%</textarea>
+						<div>
+							<small>(<span id="remaining">200</span> %%LNG_CharactersRemaining%%)</small>
+						</div>
+					</dd>
+					<dt><span class="Required">*</span> %%LNG_GiftCertificateAmount%%:</dt>
+					<dd class="pbn">
+						<div id="AmountSelectVisible" style="display: %%GLOBAL_HideGiftCertificateAmountSelect%%">
+							<select name="selected_amount" id="selected_amount">
+								%%GLOBAL_GiftCertificateAmountSelect%%
+							</select>
+						</div>
+						<div id="CustomAmountVisible" style="display: %%GLOBAL_HideGiftCertificateCustomAmount%%">
+							<input name="certificate_amount" id="certificate_amount" class="Textbox" style="width: 60px;" value="%%GLOBAL_CustomCertificateAmount%%" />
+						</div>
+						<div>
+							<small>(%%GLOBAL_GiftCertificateRange%%)</small>
+						</div>
+					</dd>
+
+					<dt>&nbsp;</dt>
+					<dd>
+						<div id="expiryInfo" style="display: %%GLOBAL_HideExpiryInfo%%">
+							<label><input type="checkbox" class="CheckBox" name="agree" id="agree" value="1" %%GLOBAL_AgreeChecked%% /> * %%GLOBAL_GiftCertificateTerms%%</label>
+						</div>
+						<div>
+							<label><input type="checkbox" class="CheckBox" name="agree2" id="agree2" value="1" %%GLOBAL_AgreeChecked%% /> * %%LNG_GiftCertificateTerms2%%</label>
+						</div>
+					</dd>
+
+					<dt id="themeSelect" style="display: %%GLOBAL_HideThemeSelect%%">
+						<span class="Required">*</span> %%LNG_GiftCertificateTheme%%:</dt>
+					<dd style="display: %%GLOBAL_HideThemeSelect%%" class="GiftCertificateThemeList">
+						<div>%%GLOBAL_GiftCertificateThemes%%</div>
+					</dd>
+					<dt>&nbsp;</dt>
+					<dd>
+						<input type="button" value="%%LNG_Preview%%" onclick="PreviewGiftCertificate()" class="btn alt" />
+						<input type="submit" value="%%GLOBAL_SaveGiftCertificateButton%%" id="SaveCertificate" class="btn" />
+					</dd>
+				</dl>
+			</div>
+		</form>
+	</div>
+</div>
+<script type="text/javascript">
+function ToggleCertificateAmount() {
+	if($('#CustomAmountVisible label').css('display') != "none" && $('#AmountSelectVisible label').css('display') != "none") {
+		if($('#custom_amount').prop('checked') == true) {
+			$('#SelectAmount').hide();
+			$('#CustomAmount').show();
+		}
+		else {
+			$('#SelectAmount').show();
+			$('#CustomAmount').hide();
+		}
+	}
+}
+
+function CheckGiftCertificateForm() {
+	if($('#to_name').val() == "") {
+		alert('%%LNG_EnterValidCertificateToName%%');
+		$('#to_name').focus();
+		$('#to_name').select();
+		return false;
+	}
+
+	if($('#to_email').val() == "" || $('#to_email').val().indexOf('.') == -1 || $('#to_email').val().indexOf('@') == -1) {
+		alert('%%LNG_EnterValidCertificateToEmail%%');
+		$('#to_email').focus();
+		$('#to_email').select();
+		return false;
+	}
+
+	if($('#from_name').val() == "") {
+		alert('%%LNG_EnterValidCertificateFromName%%');
+		$('#from_name').focus();
+		$('#from_name').select();
+		return false;
+	}
+
+	if($('#from_email').val() == "" || $('#from_email').val().indexOf('.') == -1 || $('#from_email').val().indexOf('@') == -1) {
+		alert('%%LNG_EnterValidCertificateFromEmail%%');
+		$('#from_email').focus();
+		$('#from_email').select();
+		return false;
+	}
+
+	if($('#message').val().length > 200) {
+		alert('%%LNG_GiftCertificateMessageTooLong%%');
+		$('#message').focus();
+		$('#message').select();
+		return false;
+	}
+
+	if($('#CustomAmountVisible').css('display') == "none") {
+		if($('#selected_amount').val() == '') {
+			alert('%%LNG_SelectValidGiftCertificateAmount%%');
+			$('#selected_amount').focus();
+			return false;
+		}
+	}
+	else if($('#AmountSelectVisible').css('display') == "none") {
+		if(isNaN($('#certificate_amount').val()) || $('#certificate_amount').val() == 0) {
+			alert('%%LNG_EnterValidGiftCertificateAmount%%');
+			$('#certificate_amount').focus();
+			$('#certificate_amount').select();
+			return false;
+		}
+		else if('%%GLOBAL_GiftCertificateMinimum%%' != 0 && %%GLOBAL_GiftCertificateMinimum%% > $('#certificate_amount').val()) {
+			alert('%%LNG_EnterGiftCertificateValueBetween%%');
+			$('#certificate_amount').focus();
+			$('#certificate_amount').select();
+			return false;
+		}
+		else if('%%GLOBAL_GiftCertificateMaximum%%' != 0 && parseFloat($('#certificate_amount').val()) > %%GLOBAL_GiftCertificateMaximum%%) {
+			alert('%%LNG_EnterGiftCertificateValueBetween%%');
+			$('#certificate_amount').focus();
+			$('#certificate_amount').select();
+			return false;
+		}
+	}
+	else {
+		alert('%%LNG_SelectValidGiftCertificateAmount%%');
+		$('#selected_amount').focus();
+		return false;
+	}
+
+	if($("#expiryInfo").css('display') != "none" && $('#agree').prop('checked') != true) {
+		alert('%%LNG_PleaseAgreeGiftCertificateTerms%%');
+		$('#agree').focus();
+		$('#agree').select();
+		return false;
+	}
+
+	if($('#agree2').prop('checked') != true) {
+		alert('%%LNG_PleaseAgreeGiftCertificateTerms%%');
+		$('#agree2').focus();
+		$('#agree2').select();
+		return false;
+	}
+
+
+	if($('#themeSelect').css('display') != "none" && !$('.themeCheck:checked').length) {
+		alert('%%LNG_SelectValidGiftCertificateTheme%%');
+		return false;
+	}
+
+	return true;
+}
+
+function UpdateMessageRemaining(event) {
+	var remaining = 200 - $('#message').val().length;
+	if(remaining >= 0) {
+		$('#remaining').html(remaining);
+	}
+	else {
+		$('#remaining').html('0');
+		if(typeof(event) != "undefined") {
+			if(event.keyCode != 8) {
+				event.preventDefault();
+				return false;
+			}
+		}
+	}
+}
+
+function PreviewGiftCertificate() {
+	if(CheckGiftCertificateForm() == false) {
+		return false;
+	}
+
+	$.iModal({
+		type: 'iframe',
+		url: '%%GLOBAL_ShopPath%%/giftcertificates.php?action=preview&'+$('#frmGiftCertificate').serialize(),
+		width: 900,
+		height: 400,
+		closeTxt: true,
+		title: '%%GLOBAL_GiftCertificatePreviewModalTitle%%',
+		onClose : function() {
+			$.iModal.close();
+		}
+	});
+}
+
+$(document).ready(function() {
+	ToggleCertificateAmount();
+	$('#message').keyup(function(e) {
+		return UpdateMessageRemaining(e);
+	});
+	UpdateMessageRemaining();
+});
+
+</script>

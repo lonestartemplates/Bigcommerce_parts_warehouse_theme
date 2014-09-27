@@ -1,0 +1,19 @@
+<div class="facet-container">
+    <div class="facet-header">
+        <h4 class="facet-header-title">Refine by</h4>
+    </div>
+    <div class="facet-body">
+        <ul class="facet-labels-list">
+            {{#each facets}}
+                <li class="facet-label">
+                    <a data-id="{{ id }}" href="#" class="js-facet-label">{{ attributes.title }}</a>
+                </li>
+            {{else}}
+                <li>No filters applied</li>
+            {{/each}}
+        </ul>
+        {{#if facets}}
+            <a class="js-facet-clear-all" href="#">Clear all</a>
+        {{/if}}
+    </div>
+</div>

@@ -1,0 +1,71 @@
+.flexslider {
+    position: relative;
+    border-radius: 0;
+    box-shadow: none;
+    border: 0;
+}
+
+.slide-show {
+    margin-bottom: 20px !important;
+}
+
+.slide-show h2 {
+    font-family:'Roboto Condensed',sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    line-height:39px;
+    margin-left:45px;
+    color:#000;
+    text-align:left;
+    width:100%;
+    
+    padding-bottom:3px;
+}
+
+.slide-show .btn {
+    font-size: 16px; background:#d42020; border-bottom:3px solid #860109;
+}
+.slide-show .btn:hover
+{    background:#d42020;  
+}
+
+.slide-show li.slide {
+    position: relative;
+}
+
+.slide-show .slide-text {
+    font-family: 'Roboto Condensed',sans-serif;
+    font-size: 18px;
+    font-weight:bold;
+    color:#F00;
+    margin-top:5px;
+    margin-bottom:3px;
+    margin-left:45px;
+    text-align:left;
+}
+
+.flex-control-nav {
+    bottom: 0px !important;
+}
+
+.slide-show .slide-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 20%;
+    text-align: center;
+    width:50%
+}
+
+.flex-direction-nav .flex-next {
+    background-position: 100% 0;
+    right: 25px;
+}
+
+.flex-direction-nav .flex-prev {
+    left: 25px;
+}
+.slide-content .slide-button
+{    text-align:left; padding-left:45px; padding-top:5px;
+}

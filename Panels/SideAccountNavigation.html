@@ -1,0 +1,68 @@
+<div class="AccountNavigationList Moveable Panel slist" id="SideAccountNavigation">
+    <h3>Site Information</h3> 
+    <div class="BlockContent js-side-account-menu mobilemenuc">
+        <!-- Fill with content from TopMenu -->
+    </div>
+</div>
+<script>
+
+(function ($, window) {
+    'use strict';
+
+    var bcTheme = window.bcTheme || {};
+    bcTheme.mobile = bcTheme.mobile || {};
+
+    var MobileAccountMenu = function MobileAccountMenu(){};
+
+    MobileAccountMenu.prototype.init = function init ( selector ) {
+        this.$element = $(selector);
+
+       this.cloneTopMenu();   
+	   $(".mobilemenuc ul").last().hide(); 
+        this.setCurrencyConvertor();
+        this.bindEvents();
+
+    };
+
+    MobileAccountMenu.prototype.cloneTopMenu = function cloneTopMenu () {
+        // Cloning from top menu as Globals don't work down here.
+		
+        var $topMenuClone = $('.TopMenu ul').clone(),
+            $phoneNumber = $('<a />', {
+                'text': $('.js-drawermenu-store-phone-container').find('.phoneIcon').text(),
+                'href': 'tel:' + $('.js-drawermenu-store-phone-container').find('.js-drawermenu-store-phone').text()
+            });
+        //Modify the cloned menu to make phone clickable and hide stuff we don't need
+        $topMenuClone.find('.phoneIcon').replaceWith( $phoneNumber );
+        $topMenuClone.find('.js-drawermenu-cart').remove();
+        //append new menu to drawer
+        this.$element.append( $topMenuClone ); 
+    };
+
+    MobileAccountMenu.prototype.setCurrencyConvertor = function setCurrencyConvertor () {
+        this.$mobileCurrencyConverter = this.$element.find('.js-drawermenu-currency-converter');
+        this.$mobileSelectedCurrency = this.$mobileCurrencyConverter.find('.selected-currency');
+        this.$mobileCurrencyList = this.$mobileCurrencyConverter.find('.CurrencyList');
+    };
+
+    MobileAccountMenu.prototype.bindEvents = function bindEvents () {
+        var that = this;
+
+        this.$mobileSelectedCurrency.on('click', function(e) {
+            e.preventDefault();
+            that.$mobileSelectedCurrency.toggleClass('open');
+            that.$mobileCurrencyList.toggleClass('open');
+        });
+    };
+
+    bcTheme.mobile.accountMenu = new MobileAccountMenu();
+
+    window.bcTheme = window.bcTheme || bcTheme;
+
+}(jQuery, window));
+
+$(function () {
+    bcTheme.mobile.accountMenu.init('.js-side-account-menu');
+});
+
+</script>

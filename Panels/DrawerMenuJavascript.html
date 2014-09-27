@@ -1,0 +1,15 @@
+<script>
+//<![CDATA[
+    $(function(){
+
+        //Drawer Subnavigation Accordion
+        $('#DrawerMenu li ul').addClass('drawer-subcat');
+        $('#DrawerMenu .drawer-subcat').prev('a').after('<span class="subcat-expand"></span>');
+        $('#DrawerMenu .subcat-expand').click(function(){
+            $(this).next('.drawer-subcat').toggleClass('expanded');
+            $(this).toggleClass('subcat-expanded');
+        });
+
+    });
+//]]>
+</script>

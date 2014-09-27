@@ -1,0 +1,12 @@
+<script type="text/javascript">
+//<![CDATA[
+	/* Make sure they wanted to delete the selected address */
+	function confirm_delete_shipping_address(address_id, from_url) {
+		if(confirm("%%LNG_ConfirmDeleteShippingAddress%%")) {
+			document.location.href = "%%GLOBAL_ShopPath%%/account.php?action=delete_shipping_address&address_id="+address_id+"&from="+from_url;
+		}
+
+		return false;
+	}
+//]]>
+</script>

@@ -1,0 +1,79 @@
+<div class="Invoice">
+	<div id="Logo">
+		%%GLOBAL_HeaderLogo%%
+	</div>
+	<div class="InvoiceTitle">
+		%%GLOBAL_StoreName%% %%GLOBAL_InvoiceTitle%%
+	</div>
+
+	<div class="StoreAddress">
+		%%GLOBAL_StoreAddressFormatted%%
+	</div>
+
+	<div class="AddressRow">
+		<div class="BillingAddress">
+			<div class="InvoiceHeading">%%LNG_BillTo%%</div>
+			%%GLOBAL_BillingAddress%%
+			<div>%%LNG_Phone%%: %%GLOBAL_BillingPhone%%</div>
+			<div style="%%GLOBAL_HideBillingEmail%%">%%LNG_Email%%: %%GLOBAL_BillingEmail%%</div>
+		</div>
+		<div class="ShippingAddress" style="%%GLOBAL_hideInvoiceShippingDetails%%">
+			<div class="InvoiceHeading">%%LNG_ShipTo%%</div>
+			%%GLOBAL_ShippingAddress%%
+			<div>%%GLOBAL_ShippingPhone%%</div>
+			<div style="%%GLOBAL_HideShippingEmail%%">%%LNG_Email%%: %%GLOBAL_ShippingEmail%%</div>
+		</div>
+	</div>
+
+	<div class="InvoiceDetails">
+		<div class="InvoiceDetailsLeft">
+			<div class="DetailRow">
+				<div class="Label">%%LNG_Order%%:</div>
+				<div class="Value">#%%GLOBAL_OrderId%%</div>
+			</div>
+			<div class="DetailRow">
+				<div class="Label">%%LNG_PaymentMethod%%:</div>
+				<div class="Value">%%GLOBAL_PaymentMethod%%</div>
+			</div>
+		</div>
+		<div class="InvoiceDetailsRight">
+			<div class="DetailRow">
+				<div class="Label">%%LNG_DateOfOrder%%:</div>
+				<div class="Value">%%GLOBAL_OrderDate%%</div>
+			</div>
+			<div class="DetailRow" style="%%GLOBAL_hideInvoiceShippingDetails%%">
+				<div class="Label">%%LNG_ShippingMethod%%:</div>
+				<div class="Value">%%GLOBAL_ShippingMethod%%</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="InvoiceItems">
+		<div class="InvoiceHeading">%%LNG_OrderItems%%</div>
+		<table class="InvoiceTable">
+			<thead>
+				<tr>
+					<th class="ProductShippingAddress" style="%%GLOBAL_hideAddressColumn%%">%%LNG_ShippingAddress%%</th>
+					<th class="ProductQuantity">%%LNG_Quantity%%</th>
+					<th class="ProductSku">%%LNG_Code%%</th>
+					<th class="ProductDetails">%%LNG_ProdName%%</th>
+					<th class="ProductCost" align="right">%%LNG_Price%%</th>
+					<th class="ProductTotal" align="right">%%LNG_Total%%</th>
+				</tr>
+			</thead>
+			<tbody class="InvoiceItemList">
+				%%GLOBAL_ProductsTable%%
+			</tbody>
+			<tbody class="InvoiceTotals">
+				%%GLOBAL_totals%%
+			</tbody>
+		</table>
+	</div>
+
+	<div class="InvoiceComments" style="%%GLOBAL_HideComments%%">
+		<div class="InvoiceHeading">%%LNG_Comments%%</div>
+		<blockquote>
+			%%GLOBAL_Comments%%
+		</blockquote>
+	</div>
+</div>

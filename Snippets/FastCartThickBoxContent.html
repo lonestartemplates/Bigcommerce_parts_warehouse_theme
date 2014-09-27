@@ -1,0 +1,41 @@
+	<div id="fastCartContainer"><div id="fastCartWrapper">
+		<div class="fastCartContent">
+			<div class="fastCartTop">
+				<div class="fastCartThumb" style="%%GLOBAL_HideThumbColumn%%">%%GLOBAL_fastCartProdImg%%&nbsp;</div>
+				<div class="fastCartItemBox">
+					<p><strong>%%GLOBAL_fastCartQuantityTxt%%</strong></p>
+					<div>%%GLOBAL_fastCartProdLink%%</div>
+					<p class="Quantity">%%LNG_HC_quantity%%: %%GLOBAL_fastCartQuantity%%</p>
+					<div><span class="ProductPrice">%%GLOBAL_fastCartProdTotal%%</span></div>
+				</div>
+				<div class="fastCartSummaryBox">
+					<div class="ProceedToCheckout">
+						<div class="CheckoutButton" style="%%GLOBAL_HideCheckoutButton%%">
+							<a href="%%GLOBAL_CheckoutLink%%" title="%%LNG_CheckoutButtonTitle%%" class="btn">%%LNG_HC_proceedcheckout%%</a>
+						</div>
+						%%GLOBAL_AdditionalCheckoutButtons%%
+					</div>
+					<div class="subtotal">
+						<span>%%LNG_OrderSubtotal%%</span>
+						<br>
+						<span class="ProductPrice">%%GLOBAL_fastCartSubtotal%%</span>
+					</div>
+					<div class="actionLink">
+					<p>%%LNG_YourCartContains%% <span id="fastCartNumItemsTxt">%%GLOBAL_fastCartNumItemsTxt%%</span></p>
+						<a class="btn" href="#" onclick="$('.modalClose').trigger('click');">%%LNG_ContinueShopping%%</a>
+						%%LNG_Or%%
+						<a class="btn alt" href="%%GLOBAL_ShopPath%%/cart.php">%%LNG_ViewEditCart%%</a>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="fastCartBottom" style="%%GLOBAL_HideSuggestiveCartContent%%">
+				<h4>%%LNG_YouMayAlsoLike%%</h4>
+				<ul class="ProductList" id="fastCartSuggestive">
+					%%GLOBAL_SuggestedProductListing%%
+				</ul>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>

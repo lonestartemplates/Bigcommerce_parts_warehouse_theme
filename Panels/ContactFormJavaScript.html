@@ -1,0 +1,28 @@
+<script type="text/javascript">
+//<![CDATA[
+	$('#ContactForm').submit(function() {
+		var email_address = $('#contact_email').val();
+
+		if(email_address.indexOf('@') == -1 || email_address.indexOf('.') == -1) {
+			alert('%%LNG_ContactFormEnterEmail%%');
+			$('#contact_email').focus();
+			$('#contact_email').select();
+			return false;
+		}
+
+		if($('#contact_question').val() == '') {
+			alert('%%LNG_ContactFormEnterQuestion%%');
+			$('#contact_question').focus();
+			return false;
+		}
+
+		if('%%GLOBAL_HideCaptcha%%' == '' && $('#captcha').val() == '') {
+			alert('%%LNG_EnterCaptchaCode%%');
+			$('#captcha').focus();
+			return false;
+		}
+
+		return true;
+	});
+//]]>
+</script>

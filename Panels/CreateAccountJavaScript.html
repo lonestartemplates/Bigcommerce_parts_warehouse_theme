@@ -1,0 +1,59 @@
+<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/formfield.js?%%GLOBAL_JSCacheToken%%"></script>
+<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/validate.js?%%GLOBAL_JSCacheToken%%"></script>
+<script type="text/javascript"><!--
+
+	/* Make sure all new account details are filled in */
+	function check_create_account_form() {
+
+		var formIdx = [%%GLOBAL_CreateAccountAccountFormFieldID%%, %%GLOBAL_CreateAccountShippingFormFieldID%%];
+		var emailField, passwordField, confirmField, formfields;
+
+		for (var i=0; i<formIdx.length; i++) {
+			formfields = FormField.GetValues(formIdx[i]);
+
+			for (var j=0; j<formfields.length; j++) {
+				var rtn = FormField.Validate(formfields[j].field);
+
+				if (!rtn.status) {
+					alert(rtn.msg);
+					FormField.Focus(formfields[j].field);
+					return false;
+				}
+
+				if (formIdx[i] == %%GLOBAL_CreateAccountAccountFormFieldID%%) {
+					if (formfields[j].privateId == 'EmailAddress') {
+						emailField = formfields[j];
+					} else if (formfields[j].privateId == 'Password') {
+						passwordField = formfields[j];
+					} else if (formfields[j].privateId == 'ConfirmPassword') {
+						confirmField = formfields[j];
+					}
+				}
+			}
+		}
+
+		if (!isValidEmailAddress(emailField.value)) {
+			alert("%%LNG_AccountEnterValidEmail%%");
+			FormField.Focus(emailField.field);
+			return false;
+		}
+
+		if(passwordField.value == "") {
+			alert("%%LNG_AccountEnterPassword%%");
+			FormField.Focus(passwordField.field);
+			FormField.Focus(passwordField.field);
+			return false;
+		}
+
+		if((passwordField.value != "" || confirmField.value != "") && (passwordField.value != confirmField.value)) {
+			alert("%%LNG_AccountPasswordsDontMatch%%");
+			FormField.Focus(confirmField.field);
+			return false;
+		}
+
+		return true;
+	}
+
+	%%GLOBAL_FormFieldRequiredJS%%
+//-->
+</script>

@@ -1,0 +1,22 @@
+<li class="%%GLOBAL_AlternateClass%% ListView">
+	<div class="ProductImage QuickView" data-product="%%GLOBAL_ProductId%%">
+		%%GLOBAL_ProductThumb%%
+	</div>
+	<div class="ProductDetails">
+		<div class="ProductRightCol">
+			<div class="ProductPriceRating">
+				<span class="Rating Rating%%GLOBAL_ProductRating%%">
+					<img src="%%GLOBAL_IMG_PATH%%/IcoRating%%GLOBAL_ProductRating%%.png" alt="" style="%%GLOBAL_HideProductRating%%" />
+				</span>
+			</div>
+		</div>
+		<p class="p-name"><a href="%%GLOBAL_ProductLink%%" class="TrackLink">%%GLOBAL_ProductName%%<br />%%GLOBAL_ProductPrice%%</a></p>
+		<p class="ProductDescription">%%GLOBAL_ProductDescription%%</p>
+		<!--div class="ProductActionAdd">
+		<a href="product.html" class="icon-addtocart">&nbsp;</a>
+		</div-->
+		<div class="ProductCompareButton" style="display:%%GLOBAL_HideCompareItems%%">
+			<input type="checkbox" class="CheckBox" name="compare_product_ids" id="compare_%%GLOBAL_ProductId%%" value="%%GLOBAL_ProductId%%" onclick="product_comparison_box_changed(this.checked)" /> <label for="compare_%%GLOBAL_ProductId%%">%%LNG_Compare%%</label> <br />
+		</div>
+	</div>
+</li>

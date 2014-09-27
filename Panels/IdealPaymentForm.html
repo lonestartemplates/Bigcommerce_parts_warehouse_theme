@@ -1,0 +1,16 @@
+<form action="%%GLOBAL_ShopPathSSL%%/checkout.php?action=process_payment" method="post" onsubmit="return check_ideal_payment_form()">
+	<div class="FormContainer HorizontalFormContainer">
+		<dl>
+			<dt><span class="Required">*</span> %%LNG_IdealBank%%:</dt>
+			<dd>
+				<select name="Ideal_issuer" id="Ideal_issuer">
+					%%GLOBAL_IdealIssuerOptions%%
+				</select>
+			</dd>
+		</dl>
+		<p class="Submit">
+			<input type="submit" value="%%LNG_Continue%%" />
+		</p>
+	</div>
+</form>
+%%Panel.IdealPaymentJavaScript%%

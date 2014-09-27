@@ -1,0 +1,61 @@
+<script type="text/javascript">
+//<![CDATA[
+	/* Make sure all credit card details have been provided and are valid */
+	function check_payflowpro_payment_form() {
+		var payflowpro_name = g("PayflowPro_name");
+		var payflowpro_ccno = g("PayflowPro_ccno");
+		var payflowpro_ccexpm = g("PayflowPro_ccexpm");
+		var payflowpro_ccexpy = g("PayflowPro_ccexpy");
+
+		if(payflowpro_name.value == "") {
+			alert("%%LNG_PayflowProEnterName%%");
+			payflowpro_name.focus();
+			return false;
+		}
+
+		if(isNaN(payflowpro_ccno.value) || payflowpro_ccno.value == "") {
+			alert("%%LNG_PayflowProEnterCardNumber%%");
+			payflowpro_ccno.focus();
+			payflowpro_ccno.select();
+			return false;
+		}
+
+		if(requiresCVV2() && ($('#PayflowPro_cccode').val() == '' || isNaN($('#PayflowPro_cccode').val()) || $('#PayflowPro_cccode').val().length > 4)) {
+			alert('%%LNG_PayflowProEnterCVV2Number%%');
+			$('#PayflowPro_cccode').focus();
+			$('#PayflowPro_cccode').select();
+			return false;
+		}
+
+		if(payflowpro_ccexpm.selectedIndex == 0) {
+			alert("%%LNG_PayflowProEnterCreditCardMonth%%");
+			payflowpro_ccexpm.focus();
+			return false;
+		}
+
+		if(payflowpro_ccexpy.selectedIndex == 0) {
+			alert("%%LNG_PayflowProEnterCreditCardYear%%");
+			payflowpro_ccexpy.focus();
+			return false;
+		}
+
+		return true;
+	}
+
+	function requiresCVV2() {
+		if($('#CVV2Input').css('display') != 'none') {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	$(document).ready(function() {
+		$('#CVV2Help').click(function() {
+			alert('%%LNG_CreditCardCVV2Help%%');
+			return false;
+		});
+	});
+//]]>
+</script>

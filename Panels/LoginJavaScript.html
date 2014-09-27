@@ -1,0 +1,24 @@
+<script type="text/javascript">
+//<![CDATA[
+	/* Make sure the login fields are filled in */
+	function check_login_form() {
+		var login_email = g("login_email");
+		var login_pass = g("login_pass");
+
+		if(login_email.value.indexOf("@") == -1 || login_email.value.indexOf(".") == -1) {
+			alert("%%LNG_LoginEnterValidEmail%%");
+			login_email.focus();
+			login_email.select();
+			return false;
+		}
+
+		if(login_pass.value == "") {
+			alert("%%LNG_LoginEnterPassword%%");
+			login_pass.focus();
+			return false;
+		}
+
+		return true;
+	}
+//]]>
+</script>

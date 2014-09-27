@@ -1,0 +1,17 @@
+<div class="Block Moveable Panel SideRecentlyViewed" style="display: %%GLOBAL_HideRecentlyViewedProductsPanel%%" id="SideProductRecentlyViewed">
+	<h2>You may also like...</h2>
+	<div class="BlockContent">
+		<script type="text/javascript">
+		lang.CompareSelectMessage = '%%LNG_CompareSelectMessage%%';
+		</script>
+		<form name="frmCompare" id="frmCompare" action="%%GLOBAL_CompareLink%%" method="get" onsubmit="return compareProducts('%%GLOBAL_CompareLink%%')">
+			<ul class="ProductList">
+				%%SNIPPET_SideProductRecentlyViewed%%
+			</ul>
+
+			<div class="CompareButton" style="display:%%GLOBAL_HideSideProductRecentlyViewedCompare%%">
+				<input type="image" value="%%LNG_CompareSelected%%" src="%%GLOBAL_IMG_PATH%%/%%GLOBAL_SiteColor%%/CompareButton.gif" />
+			</div>
+		</form>
+	</div>
+</div>

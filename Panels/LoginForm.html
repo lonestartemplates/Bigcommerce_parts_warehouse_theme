@@ -1,0 +1,51 @@
+<div class="login-form Block" id="LoginForm">
+    <div class="grid">
+        <div class="grid__item one-half">
+            <div class="CreateAccount">
+                <h3>%%GLOBAL_NewAccountHeading%%</h3>
+                <div style="display:%%GLOBAL_HideNewCustomerButton%%">
+                    <p>%%LNG_NewCustomerIntro1%% %%GLOBAL_StoreName%% %%LNG_NewCustomerIntro2%%</p>
+                    <form action="%%GLOBAL_ShopPath%%/login.php" method="get">
+                        <input type="hidden" name="action" value="create_account" />
+                        <input type="hidden" name="checking_out" value="yes" />
+                        <input type="submit" value="%%LNG_ContinueRaquo%%" style="padding:2px 10px 2px 10px" />
+                    </form>
+                </div>
+                <div style="display: %%GLOBAL_HideLoginNewAccountIntro%%">
+                    %%LNG_CreateAccountLoginIntro%% <a href="%%GLOBAL_ShopPath%%/login.php?action=create_account" class="btn alt">%%LNG_ClickToCreateAnAccount%%</a>
+                </div>
+            </div>
+        </div>
+        <div class="grid__item one-half">
+            <div class="AccountLogin">
+                <h3>%%LNG_HC_signin%%</h3>
+                <form action="%%GLOBAL_ShopPath%%/login.php?action=check_login" method="post" onsubmit="return check_login_form()">
+                    <div class="FormContainer VerticalFormContainer">
+                        <p style="display: %%GLOBAL_HideLoginMessage%%" class="%%GLOBAL_MessageClass%%">
+                            %%GLOBAL_LoginMessage%%
+                        </p>
+                        <fieldset>
+                            <dl>
+                                <dt>
+                                    <label>%%LNG_EmailAddress%%:</label>
+                                </dt>
+                                <dd>
+                                    <input type="text" class="Textbox InitialFocus" name="login_email" id="login_email" />
+                                </dd>
+                                <dt>
+                                    <label for="login_pass">%%LNG_Password%%:</label>
+                                </dt>
+                                <dd>
+                                    <input type="password" autocomplete="off" class="Textbox" name="login_pass" id="login_pass" />
+                                </dd>
+                            </dl>
+                            <p><a href="%%GLOBAL_ShopPath%%/login.php?action=reset_password">%%LNG_ForgotYourPassword%%</a></p>
+                            <input id="LoginButton" class="btn alt" type="submit" value="%%LNG_LoginWord%%" />
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+%%Panel.LoginJavaScript%%

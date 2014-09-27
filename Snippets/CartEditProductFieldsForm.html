@@ -1,0 +1,37 @@
+<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/validate/jquery.validate.js?%%GLOBAL_JSCacheToken%%"></script>
+<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/cart.js?%%GLOBAL_JSCacheToken%%"></script>
+<script type="text/javascript" src="%%GLOBAL_jQueryUIPath%%"></script>
+<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/jquery.form.js?%%GLOBAL_JSCacheToken%%"></script>
+<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/product.attributes.js?%%GLOBAL_JSCacheToken%%"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="%%GLOBAL_CdnAppPath%%/javascript/jquery/themes/cupertino/ui.all.css?%%GLOBAL_JSCacheToken%%" />
+<link rel="stylesheet" type="text/css" media="screen" href="%%GLOBAL_MASTER_THEME_PATH%%/Styles/product.attributes.css?%%GLOBAL_JSCacheToken%%" />
+
+<div id="ModalTitle">%%GLOBAL_CustomizeProductTitle%%</div>
+
+<form id="CartEditProductFieldsForm" method="post" action="cart.php" onsubmit="return Cart.saveItemCustomizations();"  enctype="multipart/form-data">
+	<input type="hidden" name="action" value="EditProductFieldsInCart" />
+	<input type="hidden" name="item_id" value="%%GLOBAL_ItemId%%" />
+
+	<div id="ModalContent" style="overflow: auto;">
+		<dl class="HorizontalFormContainer ProductFields">
+
+		</dl>
+
+		<div class="productAttributeList">
+			%%SNIPPET_ProductFieldsList%%
+
+			%%GLOBAL_ProductAttributeList%%
+		</div>
+	</div>
+
+	<div id="ModalButtonRow">
+		<div class="FloatLeft"><a href="#" onclick="$.modal.close();" class="btn alt">%%LNG_Cancel%%</a></div>
+		<input class="btn" type="submit" value="%%LNG_Save%%" />
+	</div>
+</form>
+
+<script type="text/javascript">
+lang.EnterRequiredField = "%%LNG_EnterRequiredField%%";
+lang.InvalidFileTypeJS = "%%LNG_InvalidFileTypeJS%%";
+lang.DeleteProductFieldFileConfirmation = "%%LNG_DeleteProductFieldFileConfirmation%%";
+</script>

@@ -1,0 +1,143 @@
+/* this file provides theme-specific styles that affect the carousel
+ *
+ * these changes have been placed in a separate file because they are included
+ * in the control panel when the carousel is being previewed
+ *
+ * they cannot be included in slide-show.css because that is compiled
+ * automatically from slide-show.scss */
+
+/* fixes incorrect width created by the `slide' transition in the admin preview
+ * modal */
+#slide-show-preview .slide-show-render.slide-show {
+    width: 980px;
+}
+
+.slide-show-render.slide-show {
+    position: relative;
+}
+.slide-show-render.slide-show .flex-prev, .slide-show-render.slide-show .flex-next {
+    width: 23px;
+    height: 35px;
+}
+.slide-show-render.slide-show .flex-prev {
+    background-image: url('../images/Carousel-Navigation-L.png');
+    left: 0px;
+}
+.slide-show-render.slide-show .flex-prev:hover {
+    background-image: url('../images/Carousel-Navigation-L-Hover.png');
+}
+.slide-show-render.slide-show .flex-next {
+    background-image: url('../images/Carousel-Navigation-R.png');
+    right: 0px;
+}
+.slide-show-render.slide-show .flex-next:hover {
+    background-image: url('../images/Carousel-Navigation-R-Hover.png');
+}
+.slide-show-render.slide-show .flex-control-nav.flex-control-paging {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    width: auto;
+}
+.slide-show-render.slide-show .flex-control-nav.flex-control-paging li {
+    margin-left: 0px;
+    margin-right: 7px;
+}
+.slide-show-render.slide-show .flex-control-nav.flex-control-paging li a {
+    width: 11px;
+    height: 11px;
+    border: 1px solid rgb(26, 26, 26);
+    background-color: rgb(26, 26, 26);
+}
+.slide-show-render.slide-show .flex-control-nav.flex-control-paging li a.flex-active {
+    background-color: #c9c9c9;
+}
+
+h2.slide-heading {
+    text-transform: uppercase;
+}
+
+/* Temp styles for Hipster admin carousel */
+#hipster-theme-carousel {
+    width: 800px;
+}
+#hipster-theme-carousel .slide.slide-full {
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#hipster-theme-carousel .slide-full .image-full {
+    max-height: 300px;
+}
+
+#hipster-theme-carousel .slide-full .slide-content,
+#hipster-theme-carousel .slide-full .drop-indicator {
+    height: 295px;
+    width: auto;
+}
+
+#hipster-theme-carousel .slide-full .slide-heading {
+    font-size: 19px;
+    line-height: 24px;
+    font-family: 'Droid Sans',sans-serif;
+    text-shadow: 0;
+    bottom: 125px;
+    font-weight: 300;
+    padding: 0 18px;
+    position: absolute;
+}
+
+#hipster-theme-carousel .slide-full .slide-overlay {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+#hipster-theme-carousel .slide-show-render .slide-overlay {
+    text-shadow: none;
+}
+
+#hipster-theme-carousel .slide-show-render .slide-button {
+    bottom: 106px;
+    left: 18px;
+    position: absolute;
+    cursor: pointer;
+    font-size: 13px;
+    text-transform: none;
+    height:28px;
+    margin:0;
+    color: #9b9b9b;
+    font-weight: bold;
+    background: #fcfcfc;
+    letter-spacing:normal;
+    padding:0 15px;
+    line-height: 28px;
+    height: 28px;
+    display: block;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px ;
+    border-radius: 14px;
+    -webkit-box-shadow: 0px 0px 2px rgba(50, 50, 50, 0.20);
+    -moz-box-shadow:    0px 0px 2px rgba(50, 50, 50, 0.20);
+    box-shadow:         0px 0px 2px rgba(50, 50, 50, 0.20);
+    background-color:#fcfcfc;
+    background-image:-moz-linear-gradient(top, #fcfcfc 0%, #f6f6f6 100%);
+    background-image:-webkit-linear-gradient(top, #fcfcfc 0%, #f6f6f6 100%);
+    background-image:-ms-linear-gradient(top, #fcfcfc 0%, #f6f6f6 100%);
+    background-image:linear-gradient(top, #fcfcfc 0%, #f6f6f6 100%);
+    background-image:-o-linear-gradient(top, #fcfcfc 0%, #f6f6f6 100%);
+    background-image:-webkit-gradient(linear, right top, right bottom, color-stop(0%,#fcfcfc), color-stop(100%,#f6f6f6));
+}
+
+#hipster-theme-carousel .slide-button span {
+    padding: 0;
+    border-radius: 0;
+    background: 0;
+}
+
+#hipster-theme-carousel .slide-text {
+    display: none;
+}

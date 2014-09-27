@@ -1,0 +1,13 @@
+<div class="Block Panel AddToWishlist" id="SideProductAddToWishList" style="display:%%GLOBAL_HideWishlist%%">
+	<h2>%%LNG_AddToWishList%%</h2>
+	<div class="prodAccordionContent">
+		<form name="frmWishList" id="frmWishList" action="%%GLOBAL_ShopPath%%/wishlist.php" method="get">
+			<input type="hidden" name="action" value="add" />
+			<input type="hidden" name="product_id" value="%%GLOBAL_ProductId%%" />
+			<input type="hidden" name="variation_id" value="" class="WishListVariationId"/>
+			<p>%%LNG_AddToCart1%% %%GLOBAL_ProductName%% %%LNG_ToYourWishList%%</p>
+			<p>%%GLOBAL_WishLists%%</p>
+			<input class="btn" value="%%LNG_AddToWishList%%" type="submit" title="%%LNG_AddToWishList%%" />
+		</form>
+	</div>
+</div>

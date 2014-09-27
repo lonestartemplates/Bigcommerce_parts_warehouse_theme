@@ -1,0 +1,28 @@
+<div class="SubCategoryList js-mobile-sub-category-menu">
+    <select>
+        <option value="">Select sub-category</option>
+    </select>
+</div>
+<script language="javascript" type="text/javascript">//<![CDATA[
+$(document).ready(function() {
+    // create the dropdown for mobile
+    $('.SubCategoryList ul li').each(function(){
+        $('.js-mobile-sub-category-menu select').append(new Option($(this).find('a').html(), $(this).find('a').attr('href')));
+    });
+    $('.js-mobile-sub-category-menu select option:first').attr('selected','selected');
+    $('.js-mobile-sub-category-menu select').prev().html($('.js-mobile-sub-category-menu select option:first').html());
+
+    if( !$('.SubCategoryList ul li').length ) {
+        $('.js-mobile-sub-category-menu').hide();
+    }
+
+    // page redirect on change
+    $('.js-mobile-sub-category-menu select').change(function(){
+        var href = $(this).find('option:selected').val();
+        if(href!='') {
+            window.location.replace(href);
+            window.location.href = href;
+        }
+    });
+});
+//]]></script>

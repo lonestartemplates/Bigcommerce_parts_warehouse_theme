@@ -1,0 +1,20 @@
+<li>
+	<div class="ProductImage QuickView" data-product="%%GLOBAL_ProductId%%">
+		%%GLOBAL_ProductThumb%%
+	</div>
+	<div class="ProductDetails">
+		<a href="%%GLOBAL_ProductLink%%" class="%%GLOBAL_SearchTrackClass%% pname">%%GLOBAL_ProductName%%</a>		
+	</div>
+	<div class="ProductPriceRating">
+		<span class="Rating Rating%%GLOBAL_ProductRating%%">
+			<img src="%%GLOBAL_IMG_PATH%%/IcoRating%%GLOBAL_ProductRating%%.png" alt="" style="%%GLOBAL_HideProductRating%%" />
+		</span>
+	</div>
+	<p><em class="p-price">%%GLOBAL_ProductPrice%%</em> </p><div class="clear"></div>
+	<form class="RemoveFromWishlistForm" action="%%GLOBAL_ShopPath%%/wishlist.php" method="get" style="%%GLOBAL_HideRemoveItemButton%%">
+		<input type="hidden" name="wishlistid" value="%%GLOBAL_WishListID%%" />
+		<input type="hidden" name="action" value="remove" />
+		<input type="hidden" name="item_id" value="%%GLOBAL_ItemId%%" />
+		<input type="submit" value="%%LNG_RemoveFromWishList%%" class="btn" />
+	</form>
+</li>

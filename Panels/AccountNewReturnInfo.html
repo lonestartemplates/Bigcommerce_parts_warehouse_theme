@@ -1,0 +1,29 @@
+<div class="Block Moveable Panel" id="AccountNewReturnInfo" style="display: %%GLOBAL_HideReturnForm%%">
+	<h3>%%LNG_WhyReturningItems%%</h3>
+	<div class="BlockContent">
+		<div class="FormContainer HorizontalFormContainer form">
+			<dl>
+				<dt><span class="Required">*</span> %%LNG_ReturnReason%%:</dt>
+				<dd>
+					<select name="return_reason" id="return_reason">
+						<option value="">%%LNG_ChooseReturnReason%%</option>
+						%%GLOBAL_ReturnReasonsList%%
+					</select>
+				</dd>
+				<dt style="display: %%GLOBAL_HideReturnAction%%">&nbsp;&nbsp; %%LNG_ReturnAction%%:</dt>
+				<dd style="display: %%GLOBAL_HideReturnAction%%">
+					<select name="return_action" id="return_action">
+						<option value="">%%LNG_ChooseReturnAction%%</option>
+						%%GLOBAL_ReturnActionsList%%
+					</select>
+				</dd>
+				<dt>&nbsp;&nbsp; %%LNG_ReturnComments%%:</dt>
+				<dd>
+					<textarea name="return_comments" id="return_comments" cols="60" rows="7"></textarea>
+				</dd>
+				<dt>&nbsp;</dt>
+				<dd><input type="submit" value="%%LNG_SubmitReturn%%" class="btn" /></dd>
+			</dl>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,34 @@
+<div id="ModalTitle">%%GLOBAL_GiftWrappingTitle%%</div>
+<form method="post" action="cart.php">
+	<input type="hidden" name="action" value="save_giftwrapping" />
+	<input type="hidden" name="item_id" value="%%GLOBAL_ItemId%%" />
+	<div id="ModalContent" class="%%GLOBAL_GiftWrapModalClass%%">
+		<p class="InfoMessage">%%LNG_ChooseHowToWrapItems%%</p>
+
+		<div style="%%GLOBAL_HideSplitWrappingOptions%%">
+			<label>
+			<input type="radio" name="giftwraptype" value="same" onclick="Cart.ToggleMultiWrapping(this.value)" checked="checked" /> %%LNG_WrapItemsTheSame%%
+		</label>
+		</div>
+		<div class="WrappingOptionsSingle">
+			%%SNIPPET_GiftWrappingOptionsSingle%%
+		</div>
+
+		<div style="%%GLOBAL_HideSplitWrappingOptions%%">
+			<label>
+				<input type="radio" name="giftwraptype" value="different" onclick="Cart.ToggleMultiWrapping(this.value)" /> %%LNG_WrapItemsDifferently%%
+			</label>
+			<div class="WrappingOptionsMultiple" style="display: none;">
+				%%SNIPPET_GiftWrappingOptions%%
+			</div>
+		</div>
+	</div>
+	<div id="ModalButtonRow">
+		<input type="button" class="btn alt" value="%%LNG_Cancel%%" onclick="$.modal.close();" />
+		<input type="submit" class="btn" value="%%LNG_Save%%" />
+	</div>
+</form>
+
+<script>
+	$('select, input[type=checkbox], input[type=radio]').not('.UniApplied').uniform();
+</script>

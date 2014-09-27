@@ -1,0 +1,40 @@
+<html><body style="font-family: Arial; font-size: 12px;">
+    <div style="padding: 0 20px 20px 20px;">
+        <h2 style="font-size:22px; height:30px; color:#cc6600; border-bottom:dashed 1px gray">%%LNG_OrderStatusChanged%%</h2>
+
+        <p>%%GLOBAL_OrderStatusChangedHi%%</p>
+
+        <p>%%LNG_OrderStatusChangedIntro%%</p>
+
+        <p>%%GLOBAL_OrderNumberStatusChangedTo%%</p>
+
+        <h3 style="font-size:13px; color:#cc6600;">%%LNG_OrderDetails%%</h3>
+        <table width="100%">
+            <tr>
+                <td style="font-family: Arial; font-size: 13px; font-weight: bold;" nowrap="nowrap" valign="top" width="25%">%%LNG_OrderStatusChangedOrderTotal%%:</td>
+                <td style="font-family: Arial; font-size: 13px;">%%GLOBAL_OrderTotal%%</td>
+            </tr>
+            <tr>
+                <td style="font-family: Arial; font-size: 13px; font-weight: bold;" nowrap="nowrap" valign="top" width="25%">%%LNG_OrderStatusChangedDatePlaced%%:</td>
+                <td style="font-family: Arial; font-size: 13px;">%%GLOBAL_DatePlaced%%</td>
+            </tr>
+            <tr>
+                <td style="font-family: Arial; font-size: 13px; font-weight: bold;" nowrap="nowrap" valign="top" width="25%">%%LNG_OrderStatusChangedPaymentMethod%%:</td>
+                <td style="font-family: Arial; font-size: 13px;">%%GLOBAL_PaymentMethod%%</td>
+            </tr>
+        </table>
+
+        <h3 style="font-size:18px">%%LNG_YourOrderContainsTheFollowingDownloadableItems%%</h3>
+        <table width="100%" id="CheckoutCartGrid" cellspacing="0" cellpadding="0">
+            <tr>
+                <td style="font-family:Arial; font-size:12px; background-color:#020B6F; color:white; padding:5px; font-weight:bold" nowrap>%%LNG_CartItems%%</td>
+                <td style="font-family:Arial; font-size:12px; background-color:#020B6F; color:white; padding:5px; font-weight:bold" nowrap="nowrap" width="100" align="center">%%LNG_Qty%%</td>
+                <td style="font-family:Arial; font-size:12px; background-color:#020B6F; color:white; padding:5px; font-weight:bold" nowrap="nowrap" width="100" align="right">&nbsp;</td>
+            </tr>
+        </table>
+        %%SNIPPET_CartItems%%
+
+        %%GLOBAL_EmailFooter%%
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+	<tr>
+		<td class="CartThumb" style="%%GLOBAL_HideThumbColumn%%">
+			%%GLOBAL_ProductImage%%&nbsp;
+		</td>
+		<td class="ProductName" colspan="%%GLOBAL_ProductNameSpan%%">
+			<a href="%%GLOBAL_ProductLink%%">%%GLOBAL_ProductName%%</a>%%GLOBAL_ProductOptions%%
+			<br />
+			%%GLOBAL_ProductAvailability%%
+			<div class="CartExpectedReleaseDate" style="%%GLOBAL_HideExpectedReleaseDate%%">(%%GLOBAL_ProductExpectedReleaseDate%%)</div>
+			%%GLOBAL_EventDate%%
+			<div style="%%GLOBAL_HideWrappingOptions%%" class="WrappingOptions">
+				%%LNG_GiftWrapping%%:
+				%%GLOBAL_GiftWrappingName%%
+				<a href="#" onclick="Cart.ManageGiftWrapping('%%GLOBAL_CartItemId%%');" style="%%GLOBAL_HideGiftWrappingAdd%%">%%LNG_Add%%</a>
+				<span style="%%GLOBAL_HideGiftWrappingEdit%%">
+					(<a href="#" onclick="Cart.ManageGiftWrapping('%%GLOBAL_CartItemId%%');">%%LNG_Change%%</a> %%LNG_Or%% <a href="cart.php?action=remove_giftwrapping&amp;item_id=%%GLOBAL_CartItemId%%" onclick="return Cart.RemoveGiftWrapping();">%%LNG_Remove%%</a>)
+				</span>
+				<br />
+				<span style="%%GLOBAL_HideGiftMessagePreview%%">
+					%%LNG_GiftMessage%%:
+					%%GLOBAL_GiftMessagePreview%%
+				</span>
+			</div>
+		</td>
+		<td align="center" class="CartItemQuantity">
+			%%GLOBAL_CartItemQty%%
+			
+		</td>
+		<td align="center" class="CartItemIndividualPrice">
+			%%GLOBAL_ProductPrice%%
+		</td>
+		<td align="right" class="CartItemTotalPrice"><em class="ProductPrice">%%GLOBAL_ProductTotal%%</em>
+                
+        </td>
+				
+		<td>
+			 <div style="%%GLOBAL_HideCartItemRemove%%">
+				
+				
+				<a href="cart.php?action=remove&amp;item=%%GLOBAL_CartItemId%%" onclick="Cart.RemoveItem('%%GLOBAL_CartItemId%%'); return false;" class="CartRemoveLink" title="%%LNG_Remove%%">&nbsp;</a>
+			</div>
+		</td>		
+				
+				
+	</tr>

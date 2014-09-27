@@ -1,0 +1,36 @@
+<div class="facet-container facet-container-multi {{ facetState }}">
+    <div class="facet-header js-facet-accordion-action">
+        <h6 class="facet-header-title">{{ title }}</h6>
+        {{#if showClearButton}}
+            <a herf="#" class="js-facet-clear">Clear</a>
+        {{/if}}
+    </div>
+    <div class="facet-body">
+        <ul class="facet-options-list">
+            {{#options}}
+                <li class="facet-option js-facet-option {{#if attributes.selected }} selected {{/if}}" >
+                    <label for="{{ attributes.id }}">
+                        <input
+                            class="js-facet-option-checkbox"
+                            type="checkbox"
+                            name="{{ attributes.id }}"
+                            id="{{ attributes.id }}"
+                            {{#if attributes.selected }} checked="checked" {{/if}}
+                        />
+                        {{ attributes.title }}
+                        {{#if ../showCount}}
+                            <span class="facet-option-product-count">
+                                ({{ attributes.count }})
+                            </span>
+                        {{/if}}
+                    </label>
+                </li>
+            {{/options}}
+        </ul>
+        {{#if showMoreButton}}
+            <div class="js-facet-more-options">
+                <button type="button" class="btn btn-facet-more-options {{ showMoreState }}"></button>
+            </div>
+        {{/if}}
+    </div>
+</div>

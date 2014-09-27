@@ -1,0 +1,34 @@
+<div class="facet-container facet-container-category {{ facetState }} {{ facetLevels }}">
+    <div class="facet-header js-facet-accordion-action">
+        <h6 class="facet-header-title">{{ title }}</h6>
+        {{#if showClearButton}}
+            <a herf="#" class="js-facet-clear">Clear</a>
+        {{/if}}
+    </div>
+    <div class="facet-body">
+        <ul class="facet-options-list">
+            {{#options}}
+                <li class="facet-option js-facet-option {{ attributes.level }} {{#if attributes.selected }} selected {{/if}}">
+                    <a data-id="{{ attributes.id }}"
+                       href="#"
+                       class="facet-category-option js-facet-category-option {{#if attributes.has_sub_categories }} facet-category-option-has-children {{/if}}" >
+                        {{ attributes.title }}
+
+                        {{#if ../showCount}}
+                            {{#if attributes.count}}
+                                <span class="facet-option-product-count">
+                                    ({{ attributes.count }})
+                                </span>
+                            {{/if}}
+                        {{/if}}
+                    </a>
+                </li>
+            {{/options}}
+        </ul>
+        {{#if showMoreButton}}
+            <div class="js-facet-more-options">
+                <button type="button" class="btn btn-facet-more-options {{ showMoreState }}"></button>
+            </div>
+        {{/if}}
+    </div>
+</div>

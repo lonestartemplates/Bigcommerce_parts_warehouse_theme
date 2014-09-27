@@ -1,0 +1,133 @@
+
+	<script type="text/javascript">
+
+  			$('#productDetailsAddToCartForm input[type="radio"]').not('.productOptionPickListSwatch input[type="radio"], .productOptionViewRectangle input[type="radio"]').uniform();
+  			$('#productDetailsAddToCartForm select').uniform();
+  			$('#productDetailsAddToCartForm .fileInput input').uniform();
+
+	</script>
+
+	<div id="QuickViewContent">
+
+		<div class="qprod">
+			<div id="QuickViewImage" class="ProductThumbImage">
+				<a href="%%GLOBAL_QuickViewProductURL%%">
+					<img src="%%GLOBAL_ThumbImageURL%%" />
+				</a>
+			</div>
+
+				<script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js?domready=1#pubid=ra-4e94ed470ee51e32"></script>
+				<!-- AddThis Button BEGIN -->
+				<div id="QuickViewShareLinksContainer"  class="addthis_toolbox addthis_default_style">
+					%%GLOBAL_QuickViewShareLinks%%
+				</div>
+				<!-- div id="QuickViewFacebookContainer" style="float:left;">%%GLOBAL_QuickViewFacebookLikeButton%%</div -->
+
+		</div>
+
+		<div id="QuickViewProductDetails">
+
+			<script language="javascript" type="text/javascript">
+				QuickView.attachFormValidator();
+			</script>
+
+			<form method="post" action="%%GLOBAL_CartLink%%" onsubmit="return check_add_to_cart(this, %%GLOBAL_ProductOptionRequired%%) %%GLOBAL_FastCartButtonJs%%"  enctype="multipart/form-data" id="productDetailsAddToCartForm">
+
+			<input type="hidden" name="action" value="add" />
+			<input type="hidden" name="product_id" value="%%GLOBAL_ProductId%%" />
+			<input type="hidden" name="variation_id" class="CartVariationId" value="" />
+			<input type="hidden" name="currency_id" value="" />
+
+
+			<div id="ProductDetails" class="ProductDetailsGrid productDetails ProductAddToCart">
+
+				<!-- Begin Product Details Table -->
+
+				<div class="DetailRow" style="display: %%GLOBAL_HideBrandLink%%">
+					<h4 class="BrandName"><a href="%%GLOBAL_BrandLink%%">%%GLOBAL_BrandName%%</a></h4>
+				</div>
+
+				<h1>%%GLOBAL_QuickViewProductName%%</h1>
+
+				<div class="DetailRow" style="display: %%GLOBAL_HideRating%%">
+					<!-- QuickViewTopNavRating : Customizable 'starRating' class for rating stars 'starRatingGrey' for grey ones  -->
+
+					<img  src="%%GLOBAL_IMG_PATH%%/IcoRating%%GLOBAL_Rating%%.png" alt="" />
+
+					<a href="%%GLOBAL_QuickViewProductURL%%#reviews">%%GLOBAL_QuickViewReviews%%</a>
+
+				</div>
+
+				<div class="DetailRow PriceRow p-price" style="%%GLOBAL_HidePrice%%">
+					<div class="Value">
+						<span class="ProductPrice VariationProductPrice">%%GLOBAL_ProductPrice%%</span>
+					</div>
+				</div>
+				<div class="s-price">
+					<div class="DetailRow RetailPrice" style="display: %%GLOBAL_HideRRP%%">
+						<div class="Label">%%LNG_HC_rrp%%</div>
+						<div class="Value">
+							%%GLOBAL_RetailPrice%%
+						</div>
+					</div>
+					%%GLOBAL_IncludingExcludingTax%% %%GLOBAL_YouSave%%
+				</div>
+				<div class="clear"></div>
+
+				%%SNIPPET_ProductFieldsList%%
+
+				<div style="%%GLOBAL_HideProductAttributeList%%">
+					%%GLOBAL_ProductAttributeList%%
+				</div>
+
+				%%SNIPPET_EventDate%%
+
+				<div class="DetailRow" style="display: %%GLOBAL_DisplayAdd%%">
+					<div class="productAttributeLabel QuantityInput" style="display: %%GLOBAL_DisplayAddQty%%">
+						%%LNG_QuantityFull%%:
+					</div>
+					<div class="productAttributeValue">
+						<span style="display: %%GLOBAL_DisplayAddQty%%;">
+							%%GLOBAL_AddToCartQty%%
+						</span>
+					</div>
+				</div>
+
+				<div class="DetailRow" style="display: %%GLOBAL_HideBulkDiscountLink%%;">
+					<div class="productAttributeLabel">
+						%%LNG_QuickViewBulkDiscountsLabel%%:
+					</div>
+					<div class="productAttributeValue">
+						<ul>%%GLOBAL_BulkDiscountThickBoxRates%%</ul>
+					</div>
+				</div>
+
+				<div class="OutOfStockMessage InfoMessage" style="%%GLOBAL_ItemSoldOut%%">
+					%%SNIPPET_SideAddItemSoldOut%%
+				</div>
+
+				<div class="DetailRow addToCart">
+					<div class="productAttributeValue">
+						<input style="display:%%GLOBAL_DisplayAdd%%;" class="btn" value="%%LNG_HCV_addshoppingbag%%" type="submit">
+						<a class="btn alt" href="%%GLOBAL_QuickViewProductURL%%">%%LNG_QuickViewViewDetailsText%%</a>
+					</div>
+				</div>
+
+				<!-- End Product Details Table -->
+
+			</div>
+		</form>
+
+		<script language="javascript" type="text/javascript">
+			//<![CDATA[
+			lang.OptionMessage = "%%GLOBAL_OptionMessage%%";
+			lang.VariationSoldOutMessage = "%%LNG_VariationSoldOutMessage%%";
+			lang.InvalidQuantity = "%%LNG_InvalidQuantity%%";
+			lang.EnterRequiredField = "%%LNG_EnterRequiredField%%";
+			lang.InvalidFileTypeJS = "%%LNG_InvalidFileTypeJS%%";
+			var ShowAddToCartQtyBox = "%%GLOBAL_ShowAddToCartQtyBox%%";
+			%%GLOBAL_ProductMinMaxQtyJavascript%%
+			//]]>
+		</script>
+		%%GLOBAL_EventDateJavascript%%
+	</div>

@@ -1,0 +1,40 @@
+<div class="product-nav" style="border-left: solid 0px;">
+    <div class="CategoryPagination" style="display: %%GLOBAL_HideSectionPaging%%">
+        %%GLOBAL_SectionPagingPrevious%%
+        <ul class="PagingList">
+            %%GLOBAL_SectionPaging%%
+        </ul>
+        %%GLOBAL_SectionPagingNext%%
+    </div>
+
+    <div class="SearchSorting SortBox" style="display: %%GLOBAL_HideSectionSorting%%">
+        <div style="visibility:hidden;" id="SearchSortingSelectContainer">
+            <label>%%LNG_SortBy%%:</label>
+            <select id="SearchSorting%%GLOBAL_SectionType%%" name="SearchSorting%%GLOBAL_SectionType%%" class="SearchSortingList">
+                %%GLOBAL_SectionSortingOptions%%
+            </select>
+        </div>
+        <script language="javascript" type="text/javascript">//<![CDATA[
+        // reveal the sorting options when is js available -- visibility is used instead of display so the page flow doesn't change when loading
+        $('#SearchSortingSelectContainer').css('visibility', 'visible');
+        //]]></script>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<ul class="%%GLOBAL_SectionType%% %%GLOBAL_SectionExtraClass%% clear">
+    %%GLOBAL_SectionResults%%
+</ul>
+
+<div class="clear"></div>
+
+<div class="product-nav btm">
+    <div class="CategoryPagination" style="display: %%GLOBAL_HideSectionPaging%%">
+        %%GLOBAL_SectionPagingPrevious%%
+        <ul class="PagingList">
+            %%GLOBAL_SectionPaging%%
+        </ul>
+        %%GLOBAL_SectionPagingNext%%
+    </div>
+    <div class="clear"></div>
+</div>

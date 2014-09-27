@@ -1,0 +1,9 @@
+<span class="ShowIf_join_mailing_list_Checked ShowIf_join_order_list_Checked"><span style="visibility:hidden;"><!-- spacing only --><input type="checkbox" disabled="disabled" /></span><img src="%%GLOBAL_IMG_PATH%%/NodeJoin.gif" /> %%LNG_IPreferThisEmailFormat%% <select name="mail_format_preference">
+	%%GLOBAL_MailFormatPreferenceOptions%%
+</select><br /></span>
+<script language="javascript" type="text/javascript">//<![CDATA[
+jQuery(function(){
+	// on load, hide/show based on mailing list changes, since the element starts as visible to accomodate non-js users
+	jQuery('#join_mailing_list, #join_order_list').change();
+});
+//]]></script>

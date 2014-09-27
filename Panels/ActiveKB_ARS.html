@@ -1,0 +1,40 @@
+<style type="text/css">
+
+	.FieldInfo
+	{
+		width: 280px;
+		padding: 10px;
+		background-color: #FFFFE7;
+		border: solid 1px #CACACA;
+		overflow: auto;
+		font: normal 10px Verdana;
+	}
+
+	.FieldInfo li
+	{
+		margin-bottom: 15px;
+	}
+
+	.CloseIcon
+	{
+		float: right;
+		cursor: pointer;
+	}
+
+</style>
+
+<script type="text/javascript">
+	var akbPath = '%%GLOBAL_AKBPath%%';
+
+	// Use jQuery to append an onKeyUp to the textarea
+	$('#contact_question').keyup(function() {
+		ARS('contact_question');
+	});
+
+	$(document).ready(function() {
+		$('#SearchResults').css('width', '350px');
+	});
+
+</script>
+
+<script type="text/javascript" src="%%GLOBAL_AKBPath%%/javascript/ars.js?crossDomain=1"></script>

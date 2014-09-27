@@ -1,0 +1,175 @@
+/* Global Resets */
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+/* General */
+
+body{
+    color: #333;
+    font-size: 14px;
+    font-family: Arial, Sans-Serif;
+    font-weight: normal;
+    -webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
+}
+
+input, select, textarea {
+    font-family: Arial, Sans-Serif;
+    font-size: 12px;
+    color: #333;
+}
+
+/* Headings */
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 34px;
+    line-height: 1em;
+    font-family:'Roboto Condensed',sans-serif;
+    font-weight: 400;
+    padding: 0 0 20px 0;
+    color: #393939;
+    text-align: center;
+}
+
+h2 {
+    font-size: 26px;
+    line-height: 29px;
+    font-weight: 700;
+    padding: 0 0 20px 0;
+    text-align: center;
+}
+
+h3 {
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 900;
+    padding: 0 0 20px 0;
+}
+
+h4 {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    padding: 0 0 20px 0;
+}
+
+h5 {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 600;
+    padding: 0 0 20px 0;
+}
+
+a {
+    color: #393939;
+    text-decoration: none;
+    font-weight: inherit;
+}
+
+a:hover{    
+    color: #d42020;
+}
+
+
+a.disabled, a.disabled:hover {
+    background-color: transparent;
+	color: #808080;
+}
+
+img, a img {
+	border:none;
+}
+
+/* Page Breadcrumbs */
+.Nav {
+	font-size: 0.9em;
+	padding-bottom: 4px;
+	clear:both;
+	padding-top:15px;
+    text-align: center;
+}
+
+.ImageCount {
+	color: #808080;
+    font-size:12px;
+    text-align: center;
+}
+
+.ProductTinyImageList ul li {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden;
+	float: left;
+    margin: 0 0 20px 0;
+}
+
+.ProductTinyImageList ul li div {
+	display: table-cell;
+	text-align: center;
+}
+
+.ProductTinyImageList ul li .TinyOuterDiv {
+	border: 0px solid white;
+	display: block;
+
+}
+
+.ProductTinyImageList a:hover {
+    background: none;
+}
+
+.ProductZoomImageBox, .ProductZoomImageBox *{
+	margin:auto;
+	vertical-align: middle;
+
+}
+
+
+.ProductTinyImageList ul {
+	margin: 0pt;
+	padding: 0pt;
+	position: relative;
+	list-style-type: none;
+	white-space:nowrap;
+}
+
+#ImageScrollPrev,
+#ImageScrollNext {
+	float: left;
+	background:none;
+	border:none;
+	margin-top:25px !important;
+	cursor:pointer;
+	display: none;
+}
+
+.ProductTinyImageList {
+	margin:10px auto 0 auto;
+	white-space:nowrap;
+	overflow: hidden;
+}
+
+.center-container {
+    text-align: center;
+}
+
+.center-container:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: -0.25em; /* Adjusts for spacing */
+}
+
+.center-item {
+    display: inline-block;
+    vertical-align: middle;
+    width: 300px;
+}

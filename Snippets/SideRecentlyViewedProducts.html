@@ -1,0 +1,21 @@
+<li>
+	<div class="ComparisonCheckbox">
+		<input style="display:%%GLOBAL_HideSideProductRecentlyViewedCompare%%" type="checkbox" class="CheckBox" name="compare_product_ids" value="%%GLOBAL_ProductId%%" onclick="product_comparison_box_changed(this.checked)" />
+	</div>
+	<div class="ProductImage">
+		%%GLOBAL_ProductThumb%%
+	</div>
+	<div class="ProductDetails">
+		<input type="hidden" name="ProductDetailsID" class="ProductDetailsID" value="%%GLOBAL_ProductId%%" />
+		<strong><a href="%%GLOBAL_ProductLink%%">%%GLOBAL_ProductName%%</a></strong>
+	</div>
+	<div class="ProductPriceRating">
+		<em>%%GLOBAL_ProductPrice%%</em>
+		<span class="Rating Rating%%GLOBAL_ProductRating%%">
+			<img src="%%GLOBAL_IMG_PATH%%/IcoRating%%GLOBAL_ProductRating%%.png" alt="" style="%%GLOBAL_HideProductRating%%" />
+		</span>
+	</div>
+	<div class="ProductActionAdd" style="display:%%GLOBAL_HideActionAdd%%;">
+		<strong><a href="%%GLOBAL_ProductURL%%">%%GLOBAL_ProductAddText%%</a></strong>
+	</div>
+</li>

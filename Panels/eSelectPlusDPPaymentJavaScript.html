@@ -1,0 +1,75 @@
+<script type="text/javascript">
+//<![CDATA[
+	/* Make sure all credit card details have been provided and are valid */
+	function check_eselectplusdp_payment_form() {
+		var eselectplusdp_ccno = g("cc_num");
+		var eselectplusdp_ccexpm = g("expMonth");
+		var eselectplusdp_ccexpy = g("expYear");
+		var eselectplusdp_cccvv2 = g("cvd_value");
+		var eselectplusdp_cardholder = g("cardholder");
+		var eselectplusdp_stnum = g("avs_street_number");
+		var eselectplusdp_stname = g("avs_street_name");
+		var eselectplusdp_zip = g("avs_zipcode");
+
+		if(isNaN(eselectplusdp_ccno.value) || eselectplusdp_ccno.value == "") {
+			alert("%%LNG_eSelectPlusDPEnterCardNumber%%");
+			eselectplusdp_ccno.focus();
+			eselectplusdp_ccno.select();
+			return false;
+		}
+
+		if(eselectplusdp_cccvv2.value == '' || isNaN(eselectplusdp_cccvv2.value) || eselectplusdp_cccvv2.value.length > 4) {
+			alert('%%LNG_eSelectPlusDPEnterCVV2Number%%');
+			eselectplusdp_cccvv2.focus();
+			eselectplusdp_cccvv2.select();
+			return false;
+		}
+
+		if(eselectplusdp_ccexpm.selectedIndex == 0) {
+			alert("%%LNG_eSelectPlusDPEnterCreditCardMonth%%");
+			eselectplusdp_ccexpm.focus();
+			return false;
+		}
+
+		if(eselectplusdp_ccexpy.selectedIndex == 0) {
+			alert("%%LNG_eSelectPlusDPEnterCreditCardYear%%");
+			eselectplusdp_ccexpy.focus();
+			return false;
+		}
+
+		if(eselectplusdp_cardholder.value == "") {
+			alert("%%LNG_eSelectPlusDPEnterName%%");
+			eselectplusdp_cardholder.focus();
+			eselectplusdp_cardholder.select();
+			return false;
+		}
+
+		if(eselectplusdp_stnum.value == "") {
+			alert("%%LNG_eSelectPlusDPEnterStreetNumber%%");
+			eselectplusdp_stnum.focus();
+			return false;
+		}
+
+		if(eselectplusdp_stname.value == "") {
+			alert("%%LNG_eSelectPlusDPEnterStreetName%%");
+			eselectplusdp_stname.focus();
+			return false;
+		}
+
+		if(eselectplusdp_zip.value == "") {
+			alert("%%LNG_eSelectPlusDPEnterPostcode%%");
+			eselectplusdp_zip.focus();
+			return false;
+		}
+
+		return true;
+	}
+
+	$(document).ready(function() {
+		$('#CVV2Help').click(function() {
+			alert('%%LNG_CreditCardCVV2Help%%');
+			return false;
+		});
+	});
+//]]>
+</script>

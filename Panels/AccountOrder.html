@@ -1,0 +1,68 @@
+<div class="Block Moveable Panel AccountOrder" id="AccountOrder">
+	<h3>%%GLOBAL_StoreName%% - %%LNG_OrderIdHash%%%%GLOBAL_OrderId%%</h3>
+	<div class="BlockContent">
+		<p class="InfoMessage">
+			%%LNG_YourOrderDetailsBelow%%
+		</p>
+
+		<p class="Meta">
+			<span style="display: %%GLOBAL_HideOrderStatus%%">
+				<strong>%%LNG_OrderStatus%%:</strong> %%GLOBAL_OrderStatus%%<br />
+			</span>
+			<strong>%%LNG_OrderDate%%:</strong> %%GLOBAL_OrderDate%%<br />
+			<strong>%%LNG_OrderTotal%%: %%GLOBAL_OrderTotal%%</strong>
+		</p>
+
+		<hr />
+
+		<div class="BillingDetails">
+			<h3>%%LNG_BillingDetails%%</h3>
+			%%GLOBAL_BillingAddress%%
+		</div>
+
+		<div class="ShippingDetails" style="%%GLOBAL_HideSingleShippingAddress%%">
+			<h3>%%LNG_ShippingDetails%%</h3>
+			%%GLOBAL_ShippingAddress%%
+		</div>
+
+		<hr class="clear" />
+		%%GLOBAL_FlassMessage%%
+		<form action="cart.php?action=addreorderitems" method="post" onsubmit="return ValidateReorderForm(this);" id="ReorderForm">
+
+			<h3>%%LNG_HC_order%% #%%GLOBAL_OrderId%% %%LNG_ContainsTheFollowingItems%%:</h3>
+
+			<table cellspacing="0" cellpadding="0" class="CartContents">
+				<thead style="%%GLOBAL_HideItemDetailsHeader%%">
+					<tr>
+						<th>%%LNG_ItemDetails%%</th>
+						<th style="width: 15%; text-align: right;">%%LNG_Price%%</th>
+					</tr>
+				</thead>
+				<tfoot>
+					%%GLOBAL_OrderTotalRows%%
+				</tfoot>
+				<tbody>
+					%%SNIPPET_AccountOrderItemRow%%
+				</tbody>
+			</table>
+
+
+
+			<input type="hidden" name = "orderid" value="%%GLOBAL_OrderId%%" />
+			
+			<input type="submit" class="btn" title="%%LNG_Reorder%%" value="%%LNG_Reorder%%" />
+			<div class="clear"></div>
+		</form>
+		<div style="%%GLOBAL_HideOrderComments%%">
+			<hr class="clear" />
+			<h3>%%LNG_OrderComments%%</h3>
+			<div class="PL20">
+				<p>
+					%%GLOBAL_OrderComments%%
+				</p>
+			</div>
+		</div>
+		%%Panel.AccountOrderShipments%%
+	</div>
+</div>
+%%Panel.AccountOrderJavaScript%%

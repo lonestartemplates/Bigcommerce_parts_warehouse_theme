@@ -1,0 +1,32 @@
+<div class="Block" id="WishLists" style="%%GLOBAL_HideWishLists%%">
+	<div class="BlockContent">
+	<a class="icon-add" title="%%LNG_HC_addwishlist%%" href="/wishlist.php?action=addwishlist">&nbsp;</a>
+	<h2>%%LNG_WishLists%%</h2>
+		<div>
+			<p class="InfoMessage"  style="display: %%GLOBAL_HideNormalMessage%%">
+				%%GLOBAL_WishListMessage%%
+			</p>
+			<p class="ErrorMessage" style="display: %%GLOBAL_HideErrorMessage%%">
+				%%GLOBAL_WishListMessage%%
+			</p>
+			<p class="SuccessMessage" style="display: %%GLOBAL_HideSuccessMessage%%">
+				%%GLOBAL_WishListMessage%%
+			</p>
+			<form name="wishlistsform" id="wishlistsform" style="%%GLOBAL_HideWishListsTable%%" action="%%GLOBAL_ShopPath%%/wishlist.php?action=deletewishlist" onsubmit="return ValidateDeleteWishlist(true);" method="post">
+				<table cellspacing="0" cellpadding="0" class="CartContents">
+					<thead>
+						<tr>
+							<th><input type="checkbox" id="selectAllWishLists" onclick="ToggleWishListDeleteBoxes(this.checked)" /></th>
+							<th>%%LNG_WishListName%%</th>
+							<th>%%LNG_Items%%</th>
+							<th>%%LNG_Shared%%</th>
+							<th>%%LNG_Action%%</th>
+						</tr>
+					</thead>
+					%%SNIPPET_WishList%%
+				</table>
+				<input type="button" onclick="document.location.href='wishlist.php?action=addwishlist'" value="%%LNG_CreateANewWishList%%" class="btn" /> &nbsp;<input type="submit" value="%%LNG_WishListDelete%%" class="btn alt" />
+			</form>
+		</div>
+	</div>
+</div>

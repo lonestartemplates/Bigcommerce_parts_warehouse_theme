@@ -1,0 +1,19 @@
+				<div class="Block CategoryContent Moveable Panel" id="CategoryContent">
+					<script type="text/javascript">
+						lang.CompareSelectMessage = '%%LNG_CompareSelectMessage%%';
+						lang.PleaseSelectAProduct = '%%LNG_PleaseSelectAProduct%%';
+						config.CompareLink = '%%GLOBAL_CompareLink%%';
+					</script>
+					%%GLOBAL_ListJS%%
+					<form name="frmCompare" id="frmCompare" action="%%GLOBAL_CompareLink%%" method="get" %%GLOBAL_CompareOnSubmit%%>
+						
+						<ul class="ProductList %%GLOBAL_DisplayMode%%">
+							%%GLOBAL_CategoryProductListing%%
+						</ul>
+						<div class="product-nav btm">
+							%%Panel.CategoryPagingBottom%%
+							<div class="clear"></div>
+						</div>
+						%%GLOBAL_CompareButton%%
+					</form>
+				</div>

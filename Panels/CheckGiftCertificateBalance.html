@@ -1,0 +1,37 @@
+<div class="Block Moveable Panel" id="CheckGiftCertificateBalance">
+	<h2 style="display: %%GLOBAL_HideTitle%%">%%GLOBAL_BalanceTitle%%</h2>
+	<div class="BlockContent">
+		<p class="ErrorMessage" style="display:%%GLOBAL_HideGiftCertificateError%%">
+			%%GLOBAL_ErrorMessage%%
+		</p>
+
+		<p style="display: %%GLOBAL_HideIntro%%">
+			<strong>%%LNG_GiftCertificateBalanceIntro%%</strong>
+		</p>
+
+		<img class="mbm" src="%%GLOBAL_IMG_PATH%%/ExampleGiftCertificate.gif" alt="" style="display: %%GLOBAL_HideExampleImage%%"/>
+
+		<form method="post" action="%%GLOBAL_ShopPath%%/giftcertificates.php?action=balance" onsubmit="return CheckGiftCertificateBalanceForm()" id="frmGiftCertificate">
+			<div class="FormContainer HorizontalFormContainer">
+				<dl>
+					<dt><span class="Required">*</span> %%LNG_GiftCertificateBalanceCode%%:</dt>
+					<dd><input type="text" class="Textbox" name="giftcertificatecode" id="giftcertificatecode" value="" /></dd>
+					<dt>&nbsp;</dt>
+					<dd> <input type="submit" value="%%LNG_CheckBalance%%" class="btn" /></dd>
+				</dl>
+			</div>
+		</form>
+		<script type="text/javascript">
+		function CheckGiftCertificateBalanceForm() {
+			if($('#giftcertificatecode').val() == "") {
+				alert('%%LNG_EnterValidCertificateCode%%');
+				$('#giftcertificatecode').focus();
+				$('#giftcertificatecode').select();
+				return false;
+			}
+
+			return true;
+		}
+		</script>
+	</div>
+</div>

@@ -1,0 +1,9 @@
+/* Responsive overrides */
+
+.header {
+    padding-top: 0;
+}
+
+.TopMenu {
+    display: block !important;
+}

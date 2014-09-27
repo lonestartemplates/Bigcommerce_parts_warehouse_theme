@@ -1,0 +1,173 @@
+<link rel="stylesheet" type="text/css" href="%%GLOBAL_CdnAppPath%%/javascript/jquery/themes/cupertino/ui.all.css?%%GLOBAL_JSCacheToken%%" />
+<link rel="stylesheet" type="text/css" media="screen" href="%%GLOBAL_productAttributesCssPath%%?%%GLOBAL_JSCacheToken%%" />
+<script type="text/javascript" src="%%GLOBAL_jQueryUIPath%%"></script>
+<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/jquery.form.js?%%GLOBAL_JSCacheToken%%"></script>
+<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/product.attributes.js?%%GLOBAL_JSCacheToken%%"></script>
+<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/jCarousel/jCarousel.js?%%GLOBAL_JSCacheToken%%"></script>
+%%SNIPPET_ProductImageZoomer%%
+
+<script type="text/javascript">//<![CDATA[
+var ThumbURLs = new Array();
+var ProductImageDescriptions = new Array();
+var CurrentProdThumbImage = %%GLOBAL_CurrentProdThumbImage%%;
+var ShowVariationThumb =false;
+var ProductThumbWidth = %%GLOBAL_ProductThumbWidth%%;
+var ProductThumbHeight =  %%GLOBAL_ProductThumbHeight%%;
+var ProductMaxZoomWidth = %%GLOBAL_ProductMaxZoomWidth%%;
+var ProductMaxZoomHeight =  %%GLOBAL_ProductMaxZoomHeight%%;
+var ProductTinyWidth = %%GLOBAL_ProductMaxTinyWidth%%;
+var ProductTinyHeight =  %%GLOBAL_ProductMaxTinyHeight%%;
+
+%%GLOBAL_ProdImageJavascript%%
+
+//Don't enable Cloud Zoom (product image zoom) on touch device
+//Mouseenter/Mouseover events are not ideal for touch devices
+//for more info search for this code in /script/main.js
+if (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0)){
+    var ShowImageZoomer = false;
+} else {
+    var ShowImageZoomer = %%GLOBAL_ShowImageZoomer%%;
+}
+
+var productId = %%GLOBAL_ProductId%%;
+//]]></script>
+%%Discount.FreeShippingEligibility%%
+<div class="Block Moveable Panel PrimaryProductDetails no-ptop" id="ProductDetails">
+    <div class="BlockContent">
+        %%GLOBAL_ProductDetailFlashMessages%%
+        <!-- left-content -->
+      <div class="product_details_page"> 
+        <div class="left-content">
+            <div class="ProductThumb" style="%%GLOBAL_HideProductThumb%%">
+                %%GLOBAL_LightBoxImageJavascript%%
+                %%SNIPPET_ProductThumbImage%%
+                <div class="ImageCarouselBox" style="%%GLOBAL_HideImageCarousel%%">
+                    <a id="ImageScrollPrev" class="prev" href="#"><img src="%%GLOBAL_IMG_PATH%%/LeftArrow.png" alt="" width="20" height="20" /></a>
+                    <div class="ProductTinyImageList">
+                        <ul>
+                            %%SNIPPET_ProductTinyImages%%
+                        </ul>
+                    </div>
+                    <a id="ImageScrollNext" class="next" href="#"><img src="%%GLOBAL_IMG_PATH%%/RightArrow.png" alt="" width="20" height="20" /></a>
+                </div>
+                <div style="%%GLOBAL_HideMorePicturesLink%%" class="SeeMorePicturesLink">
+                    <a href="#" onclick="%%GLOBAL_TinyImageClickJavascript%% return false;" class="ViewLarger">%%GLOBAL_SeeMorePictures%%</a>
+                </div>
+            </div>
+           <!-- %%GLOBAL_PinterestButton%% -->
+        </div>
+        <!-- Product Details Content -->
+        <div class="ProductMain">
+            <div class="ProductDetailsGrid">
+                <div class="DetailRow">
+                    <div class="Value" style="display: %%GLOBAL_HideBrandLink%%">
+                        <h4 class="BrandName"><a  href="%%GLOBAL_BrandLink%%">%%GLOBAL_BrandName%%</a></h4>
+                    </div>
+                    %%GLOBAL_ProductNameOptimizerScriptTag%%
+                    <h1>%%GLOBAL_ProductName%%</h1>
+                    %%GLOBAL_ProductNameOptimizerNoScriptTag%%
+                </div>
+                <div class="DetailRow RatingRowMn">
+                    <div class="Value">
+                        <span>
+                            <img  src="%%GLOBAL_IMG_PATH%%/IcoRating%%GLOBAL_Rating%%.png" alt="" />
+                            <span style="display:%%GLOBAL_HideReviewLink%%">
+                                <a href="#ProductReviews" onclick="%%GLOBAL_ReviewLinkOnClick%%">
+                                    %%GLOBAL_ReviewLinkText%%
+                                </a>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="DetailRow PriceRow p-price" style="%%GLOBAL_HidePrice%%">
+                    <div class="Value">
+                        <span class="ProductPrice retail-product-price">%%GLOBAL_RetailPrice%%</span>
+                        <span class="ProductPrice VariationProductPrice">%%GLOBAL_ProductPrice%%</span>
+                    </div>
+                </div>
+                <div class="s-price">
+                    %%GLOBAL_IncludingExcludingTax%% %%GLOBAL_YouSave%%
+                </div>
+            </div>
+            <div class="clear">
+
+            %%GLOBAL_FacebookLikeButtonAbove%%
+</div>
+            <div class="clear"></div>
+
+            %%Panel.ProductTabs%%
+
+            %%SNIPPET_ProductAddToCartRight%%
+            %%SNIPPET_ProductExpectedReleaseDate%%
+
+            <div class="clear">
+            
+            %%GLOBAL_AddThisLink%%
+             %%GLOBAL_PinterestButton%%
+            
+            %%GLOBAL_FacebookLikeButtonBelow%%
+            
+           
+            
+            </div>
+        </div>
+
+        %%SNIPPET_ProductAddToCartBelow%%
+        
+<div class="clear"></div>
+    </div>
+    <div class="product_detail">
+    	<ul>
+        	<li><a href="https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Fsharer%2Fsharer.php%3Fu%3Dhttp%253A%252F%252Flonestartemplates.com%252Fshop%252Fbigcommerce-templates%252Fplay-safe-sports-theme%252F%26t%3DPlay%2Bit%2BSafe%2BSports%2BTheme&display=popup" target="_blank"><img src="%%GLOBAL_IMG_PATH%%/facebook_like_box.png" alt="" /></a></li>
+            <li>
+            <a href="https://www.pinterest.com/join/?next=/pin/create/button/%3Furl%3Dhttp%253A%252F%252Flonestartemplates.com%252Fshop%252Fbigcommerce-templates%252Fplay-safe-sports-theme%252F%26media%3Dhttp%3A//lonestartemplates.com/wp-content/uploads/2013/10/Play-it-Safe-Thumb1.jpg%26description%3D%253Ch4%253ETemplate%2BFeatures%253C%252Fh4%253E%250D%250A%253Cul%253E%250D%250A%2509%253Cli%253EModern%2Bstyling%253C%252Fli%253E%250D%250A%2509%253Cli%253ESearch%2Bbox%253C%252Fli%253E%250D%250A%2509%253Cli%253EDrop%2Bdown%2Bmenu%253C%252Fli%253E%250D%250A%2509%253Cli%253ENewsletter%2Bsign%2Bup%253C%252Fli%253E%250D%250A%2509%253Cli%253EMatching%2Bbutton%2Bset%253C%252Fli%253E%250D%250A%2509%253Cli%253ESocial%2Bmedia%2Bicons%253C%252Fli%253E%250D%250A%253C%252Ful%253E" 
+            target="_blank"><img src="%%GLOBAL_IMG_PATH%%/pintrest_box.png" alt=""  /></a></li>
+            <li><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Flonestartemplates.com%2Fshop%2Fbigcommerce-templates%2Fplay-safe-sports-theme%2F&text=Play+it+Safe+Sports+Theme&url=http%3A%2F%2Flonestartemplates.com%2Fshop%2Fbigcommerce-templates%2Fplay-safe-sports-theme%2F" target="_blank"><img src="%%GLOBAL_IMG_PATH%%/twitter_box.png" alt="" /></a></li>
+            <li>
+            <a class="addthis_button_email at300b" target="_blank" title="Email" href="#"><img src="%%GLOBAL_IMG_PATH%%/email_box.png" alt="" /></a></li>  
+        </ul>
+    </div> 
+    <div class="tab-box"> 
+        <a href="javascript:;" class="tabLink activeLink" id="cont-1"><span>Overview</span></a>                         
+        <a href="javascript:;" class="tabLink" id="cont-2"><span>Reviews</span></a> 
+        <a href="javascript:;" class="tabLink" id="cont-3"><span>FAQ</span></a>         
+    </div>
+    <div class="tabcontent paddingAll" id="cont-1-1"> 
+    	%%Panel.ProductDescription%%
+    </div>
+    <div class="tabcontent paddingAll hide" id="cont-2-1"> 
+    	%%Panel.ProductReviews%%
+    </div>
+    <div class="tabcontent paddingAll hide" id="cont-3-1"> 
+    	%%Panel.ProductVideos%%
+            %%Panel.ProductWarranty%%
+            %%Panel.ProductOtherDetails%%
+            %%Panel.SimilarProductsByTag%%            
+            %%Panel.ProductByCategory%%
+            <!-- Panel.ProductVendorsOtherProducts -->
+    </div>
+    
+    
+                
+	
+    %%Panel.SimilarProductsByCustomerViews%%
+    
+    </div>
+</div>
+<div class="recommended_right">
+	%%Panel.SideProductRelated%%
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+    $(".tabLink").each(function(){
+    $(this).click(function(){
+    tabeId = $(this).attr('id');
+    $(".tabLink").removeClass("activeLink");
+    $(this).addClass("activeLink");
+    $(".tabcontent").addClass("hide");
+    $("#"+tabeId+"-1").removeClass("hide")   
+    return false;      
+    });
+    });  
+    });
+</script> 

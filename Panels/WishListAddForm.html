@@ -1,0 +1,30 @@
+<div class="Block Moveable Panel" style="%%GLOBAL_HideWishListAddFrom%%" id="WishListEditFrom">
+	<h3>%%GLOBAL_PageTitle%%</h3>
+	<div class="BlockContent">
+		<p class="InfoMessage" style="display: %%GLOBAL_HideNormalMessage%%">
+			%%GLOBAL_WishListMessage%%
+		</p>
+
+		<p class="ErrorMessage" style="display: %%GLOBAL_HideErrorMessage%%">
+			%%GLOBAL_WishListMessage%%
+		</p>
+
+		<p class="SuccessMessage" style="display: %%GLOBAL_HideSuccessMessage%%">
+			%%GLOBAL_WishListMessage%%
+		</p>
+		<form action="%%GLOBAL_ShopPath%%/wishlist.php%%GLOBAL_WishListAction%%" method="post" onsubmit="return ValidateWishListForm('add');">
+			<dl class="FormContainer HorizontalFormContainer">
+				<dt>%%LNG_WishListName%%:</dt>
+				<dd><input type="text" name="wishlistname" id="wishlistname" value="%%GLOBAL_WishListName%%" class="Textbox" /></dd>
+				<dd>
+					<input type="checkbox" name="publicwishlist" id="publicwishlist" value="1" %%GLOBAL_SelectPublic%% /> <label for="publicwishlist">%%LNG_YesShareWishList%%</label>
+				</dd>
+				<dt>&nbsp;</dt>
+				<dd>
+					<input type="submit" name="submit" value="%%LNG_SaveWishList%%" class="btn" />
+					<input type="button" name="cancel" class="btn alt" onclick="if(confirm('%%LNG_WishListCancel%%')) { document.location.href='wishlist.php'; }" value="%%LNG_Cancel%%" />
+				</dd>
+			</dl>
+		</form>
+	</div>
+</div>

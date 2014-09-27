@@ -1,0 +1,348 @@
+/* 1024px */
+@media screen and (max-width: 1024px) {
+	/* Hide */
+	.productOptionPreviewDisplay, .ExpressCheckoutBlockCompleted .ExpressCheckoutCompletedContent { display: none !important; }
+	/* Show */
+	/* Layout */
+	.TopMenu > .inner, #Header > .inner, .PageMenu > .inner, .main > .inner, .footer-main > .inner, .footer-links > .inner, .newsletter-subscription > .inner {width:93.8%; margin:0 25px;}
+	#home .ProductList li, .productPage .ProductList li { width: 32.4%; }
+	.AddBillingAddress dd, .AddShippingAddress dd { float: none; }
+	.header-logo {width:100%; text-align:center; margin-top:0px;}
+	.header_mid {float:none; clear:both; width:auto; display:block; text-align:center; padding:10px 0px;}
+	.header-secondary {float:left; width:100%; text-align:center;}
+	#SearchForm {float:none; display:inline-block; margin-top:0px;}
+	.PageMenu li {margin:0 13px;}
+	
+	.slide-show .slide-overlay {width:70%;}
+	.slide-show h2 {font-size:20px;}
+	.slide-show .slide-text {font-size:15px;}
+	.flex-direction-nav .flex-prev {left:5px;}
+	.flex-direction-nav .flex-next {right:5px;}
+	
+	/* Cart Styling */
+	.ExpressCheckoutContent { padding: 0; margin-bottom: 20px; }
+	.ExpressCheckoutContent > div { margin-bottom: 20px; }
+	.newsletter-subscription .Textbox { width:100%; }
+	.ind_save_row {font-size:16px;}
+	.header-logo h1 a {font-size:40px;}
+	.ProductList li {width:32.3%;}
+	#ProductDetails {width:70%;}
+	.recommended_right {width:28%;}
+	.product_details_page .left-content {width:100%;}
+	.ProductList .ProductImage, .brand-img, #ProductDetails .ProductThumbImage {width:100%;}
+	.product_details_page .ProductMain {width:100%;}
+	.product_detail ul li {width:24.8%;}
+	.BlockContent img {height:62px;}
+	.PinterestButtonContainer img { height:auto !important;} 
+	.TopMenu li {padding: 0 5px;}
+	.ProductList .ProductImage img, #ProductDetails .ProductThumbImage img {height:auto;}
+	.ProductMain .DetailRow .Value span img {height:auto;}
+	.recommended_right .BlockContent .ProductList li {width:90%; margin:0 0 10px 0;}
+	.recommended_right .BlockContent .ProductList li .ProductPriceRating .Rating img {height:auto;}
+	.ProductList .ProductPriceRating .Rating img {height:auto;}
+	div.selector {width:64%;}
+	.Block.SocialConnect.Moveable.Panel {width: 200px;}
+	.BlockContent img.__mce_add_custom__ {height:auto;}
+}
+
+/* 768px */
+@media screen and (max-width: 768px) {
+	.SlideShow-mobile {display:block;}  
+	.toggle-menu {float:right; padding:0; margin-right:10px !important; width:20px; display:block;}
+	.toggle-menu span {background-color:rgba(255, 255, 255, 0.5); width:100%; height:2px; float:left; margin:2px 0px; border-radius:20px;}
+	.TopMenu .inner ul {display:none; position:absolute; z-index:2; top:27px; left:0px; max-width:94%; min-width:94%; width:94%; background-color:#393939; padding:0 3% !important;}
+	.TopMenu li {padding:0 1%; width:98%; line-height:28px;}
+	
+	/* Hide */
+	#LayoutColumn1 #HomeSlideShow {display:none;}
+	#ProductBreadcrumb,  .productlist-page .Left { display: none; }
+	.Left { float: none; width: auto; margin-right:0px; clear:both; }
+	.CartContents > thead,  .CartContents .CartThumb,  .CartContents .CartItemIndividualPrice { display: none !important; }
+	#ModalContainer .fastCartThumb,  #ModalContainer .fastCartItemBox div,  #ModalContainer .Quantity,  #ModalContainer .fastCartBottom { display: none !important; }
+	.SubCategoryList { display: none; }
+	#home .search_filter {width:auto;}
+	#home .search_filter h3 {width:auto;}
+	#home .search_filter .search_txt {width:94%; margin-bottom:5px; margin-left:13px;}
+	
+	
+	/* Show */
+	.js-mobile-sub-category-menu { display: block; }
+	
+	/* Layout */
+	#Header {margin-bottom:10px;}
+	#home .ProductList li,  .productPage .ProductList li {width:48%; margin-right:2%;}
+	.ProductList li.Even {margin-right:0 !important;}
+	.header-logo {width:100%; margin-top:0px;}
+	.header-logo h1 {padding:0; text-align:center;}
+	.header_mid {text-align:center; padding:10px 0px; display:block; clear:both; float:none;}	
+	.ProductList li {width:32.5%;}
+	#ProductDetails .left-content { float: none; width: auto; }
+	.PrimaryProductDetails .ProductMain { float: none; padding: 0 0 20px 0; width: auto; }
+	.footer-columns .grid__item { text-align: left; width: 33.333333%; }
+	.footer-columns .grid__item:last-child { text-align: left; width: 100%; }
+	.footer-main .SocialConnect ul { margin: 0; padding: 20px 0; text-align: left; }
+	.footer-main .inner { padding: 20px 0 0 0; }
+	#AjaxLoading { background-color: rgba(0, 0, 0, .7); top: 0; right: 0; bottom: 0; left: 0; }
+	#AjaxLoading .ajax-loader { position: absolute; margin-top: -16px; top: 50%; right: 0; left: 0; }
+	#ModalOverlay { background-color: #000; opacity: 0.7 !important; }
+	.productlist-page .CategoryContent { padding: 0; }
+	.fastCartThumb,  .fastCartItemBox,  .fastCartSummaryBox { float: none; width: 100%; }
+	#ModalContainer { background-color: #fff; top: 10px !important; right: 10px !important; bottom: 10px !important; left: 10px !important; width: auto !important; margin-left: 0 !important; }
+	#ModalContainer .fastCartTop { padding: 0; }
+	#ModalContainer .fastCartItemBox { padding: 0; text-align: center; }
+	#ModalContainer .fastCartSummaryBox { margin: 0 auto; float: none; overflow: hidden; }
+	.login-form .CreateAccount { margin-bottom: 20px; }
+	.header-secondary { clear: both; float: none; text-align:center; }
+	.header-secondary #SearchForm { width: 208px; float:none; display:inline-block; margin:0px; }
+	.header-secondary .QuickSearch { border-top-width: 0 !important; }
+	
+	/* Multipage Cart Styling */
+	.TabNav { border-bottom: 0; margin: 0; padding: 0; font-size: 0; }
+	.TabNav li { width: 100%; text-align: center; }
+	.TabNav li a { box-sizing: border-box; margin: 0; }
+	.productlist-page .FloatRight.SortBox {float:right; padding:5px 0 0 0;}
+	.ProductList .ProductActionAdd {clear:both;}
+	.CartCode .CouponCode, .CartCode .GiftCertificate {width:100%; margin-bottom:10px;}
+	.CouponCode h3, .GiftCertificate h3 {width:auto;}
+	#ProductDetails {width:65%;}
+	.recommended_right {width:32%;}
+	.product_detail ul li {width:24.7%;}
+	.BlockContent img {height:50px;}
+	.PinterestButtonContainer img { height:auto !important;}
+	.tab-box a {width:32%;}
+	.FormContainer .box {width:100%;}
+	div.selector {width:43%;}
+	.header {margin-bottom:20px;}
+	.Block.SocialConnect.Moveable.Panel {width: auto;}
+}
+
+/* 600px */
+@media screen and (max-width: 600px) {
+	/* Hide */
+	#shareDescription { display: none; }
+	.Block.SocialConnect.Moveable.Panel {width: auto;}
+	/* Show */
+	
+	/* Layout */
+	.TopMenu > .inner, #Header > .inner, .PageMenu > .inner, .main > .inner, .footer-main > .inner, .footer-links > .inner, .newsletter-subscription > .inner {width:91.6%;}
+	.ProductList li,  #home .ProductList li,  .productPage .ProductList li { width: 48%; }
+	.addto .BulkDiscount,  .addto #SideProductAddToWishList { display: block; clear:none; float:left; }
+	.CartCode .CouponCode,  .CartCode .GiftCertificate { float: none; width: auto; clear:both; }
+	.ProceedToCheckout,  .KeepShopping { text-align: center; width:100%;}
+	.KeepShopping {margin-top:20px;}
+	.PageMenu ul {margin:0px;}
+	.PageMenu li {margin:0 15px;}
+	#SideNewsletterBox .grid .grid {margin:0 0 20px 0px !important;}
+	#SideNewsletterBox .grid__item {padding:0px !important;}
+	.ProductList .ProductImage, .brand-img, #ProductDetails .ProductThumbImage {width:98%;}
+	
+	/* Adjusting the size of the swatches for smaller screens */
+	.productOptionViewRectangle .option label { padding: 0 !important; line-height: 30px; height: 30px; width: 30px; }
+	.productOptionPickListSwatch .textureContainer,  .productOptionPickListSwatch .swatchColours { display: block !important; }
+	.productOptionPickListSwatch .thumbnail,  .productOptionPickListSwatch .swatchColour { display: block !important; height: 30px !important; width: 30px !important; }
+	/* Selector was .productOptionPickListSwatch li but had to make more spesific to overwrite __Master*/
+	html.javascript div.productOptionPickListSwatch li { display: inline-block; }
+	#tabcontent .photo { float: none; margin: 0; width: auto; }
+	.BillingDetails,  .ShippingDetails { width: 100%; float: none; margin-right: 0; padding-top: 15px; }
+	.ShippingAddressList li { width: 50%; }
+	.CartContents tfoot .CheckoutRedeemCoupon { text-align: left; }
+	.CartContents tfoot .CheckoutRedeemCoupon td { padding: 0; }
+	.newsletter-subscription .grid > .grid__item { text-align:left; width: 100% !important; }
+	.newsletter-subscription input { margin-bottom: 10px; }
+	.newsletter-subscription input.btn {width:auto !important;}
+	.newsletter-subscription h4 { padding: .5em 0; font-size: 1.5em; text-align: left; }
+	.newsletter-subscription h4 span {float:left; width:100%;}
+	.newsletter-subscription .inner { padding: 0; }
+	#ProductDetails {width:100%;}
+	.addto #SideProductAddToWishList input {margin:4px 0 3px;}
+	.CompareRowMn {margin:5px 0 0 0; float:left;}
+	.BlockContent img {height: 66px;}
+	.recommended_right {width:auto;}
+	.ProductList .ProductImage img, #ProductDetails .ProductThumbImage img {height:300px;}
+	.footer-links p {text-align:left;}
+	.PageMenu {margin:0px;}
+	.login-form .one-half { width: 100%;}
+	.Field200, #login_email, #login_pass {width:100%;}
+	div.selector {width:100% !important;}
+	.Field45 {width:100% !important;}
+	.FormContainer dl dd input {width:100% !important;}
+	.FormContainer dl dd textarea {width:100%;}
+	#multiAddressForm div.selector {width:40% !important;}
+	#multiAddressForm table tbody tr td, #multiAddressForm table.General tbody tr td, #multiAddressForm table.CartContents tbody tr td {float:left; width:100%; padding:10px 0px !important; margin:0px !important;}	
+	.slide-show .slide-overlay {top:13%; left:20px; width:60%;}
+	.flex-direction-nav .flex-prev {left:0px;}
+	.flex-direction-nav .flex-next {right:0px;}
+}
+
+/* 600px */
+@media screen and (max-width: 568px) {
+	.ProductList li, #home .ProductList li, .productPage .ProductList li {width:47.833%;}
+	.footer-columns .grid__item {width:100%; margin-bottom:20px;}
+	 
+}
+
+/* 480px */
+@media screen and (max-width: 480px) {
+	/* Hide */
+	
+	.header {position:fixed; width:100%; z-index:999999;}
+	.SlideShow-mobile {margin:100px 0 0 0;}
+	.TopMenu .CartLink a span {display:none;}
+	.header_mid {display:none;}
+	.on-screen .inner .CategoryList .search_filter {display:none !important;}
+	.Left #SideCategoryList h3 {display:none;}
+	.Left #SideCategoryList .BlockContent {display:none;}
+	#SideShopByBrand {display:none;}
+	.PageMenu {display:none;}
+	.TopMenu .inner .js-drawermenu-store-phone-container {display:none;}
+	.toggle-menu {display:none;}
+	.Block.SocialConnect.Moveable.Panel {width: auto;}
+	.footer {float:left; width:100%;}
+	
+	/* Show */
+	.on-screen .inner #SideShopByBrand {display:block;}
+	#home .search_filter h3 {display:block;}
+	.TopMenu .inner ul {padding:0 4% !important; width:92%; max-width:92%; min-width:92%;}
+	.header-secondary { display: block !important; }
+	#ToggleMenu,  #cart-amount { display: table-cell; }
+	.TopMenu {margin:0; position:relative; z-index:9999;}
+	
+	
+	/* Layout */
+	.main { float:left; width:100%;}
+	#ToggleMenu {top:-32px; position:absolute; width:50px; height:30px; z-index:9999999;}
+	#ToggleMenu:after {box-shadow:0 8px 0 2px #fff, 0 16px 0 2px #fff, 0 24px 0 2px #fff; top:0px;}
+	.TopMenu .inner {padding:0px;}
+	.TopMenu .CartLink {margin:0px;}
+	#home .search_filter .search_txt {height:40px; padding:0 10px; margin:0 3% 5px !important; width:94% !important;}
+	.ProductList li,  #home .ProductList li,  .productPage .ProductList li { width: 100%; }
+	.TopMenu > .inner,  #Header > .inner,  .PageMenu > .inner,  .main > .inner,  .footer-main > .inner,  .footer-links > .inner,  .newsletter-subscription > .inner { width: 84%; }
+	#Header { position: relative; top: 0; z-index: 99999999; background-color: #fff; width: 100%; border-bottom: 1px solid #efefef; }
+	#Header > .inner { width: 90%; display: table; padding: 10px 0; }
+	.header-secondary { float: none; position: absolute; top: -42px; left: 0; width: 100%;}
+	.header-secondary .currency-converter { display: none; }
+	.header-secondary #SearchForm { float: none; width:175px;  }
+	.header-secondary #SearchForm input.Textbox { border: 0; background: none; color: #d6d6d6; height: 50px; }
+	.header-secondary #SearchForm input.Button { background-color: transparent; position: absolute; border: 0; height: 100%; }
+	.header-logo { display: table-cell; width:auto; float: none; vertical-align: middle; text-align: center; overflow: hidden; }
+	.header-logo img { max-height: 60px; }
+	.header-logo h1 { padding: 0; }
+	#cart-amount { vertical-align: middle; width: 60px; }
+	#cart-amount .Cart { font-weight: bold; padding: 1em 0px; display: block; text-align: center; width: 60px; position: relative; }
+	#cart-amount .Cart .total { display: inline-block; -moz-box-sizing: border-box; box-sizing: border-box; padding: 4px 5px; margin: 0 auto; min-width: 25px; height: 25px; }
+	#cart-amount .Cart .bag-handle { border-bottom: 0; position: absolute; top: 8px; left: 24px; height: 4px; width: 8px; border-radius: 7px 7px 0px 0px; }
+	.PageMenu .inner { background: #fff; padding: 0; }
+	.PageMenu ul { display: block; }
+	.PageMenu .CategoryList { padding: 0; }
+	.PageMenu .pages-menu { display: none; }
+	.PageMenu li { display: block; margin: 0; padding: 0; border-bottom: 1px solid #efefef; }
+	.PageMenu a { padding: 1em; font-size: 1.2em; }
+	.SubCategoryList { margin-bottom: 0; }
+	.SubCategoryList li { padding: 0.9em; background: none; border-bottom: 1px solid #efefef; }
+	#fastCartContainer { max-height: none; }
+	.footer-columns .grid__item,  .CartCode .grid__item { width: 100%; }
+	#fancy_outer { z-index: 110 !important; }
+	#fancy_overlay { z-index: 105 !important; }
+	.footer-links { text-align: center; }
+	.footer .powered-by { float: none; display: block; margin-top: 10px; }
+	.LittleNotePassword { padding: 0; margin-bottom: 20px; }
+	/* Cart Styling */
+	table.CartContents tbody tr td { padding: 10px 8px; }
+	.CartCode .grid__item { width: 100%; }
+	.CartCode .GiftCertificate input,  .CartCode .CouponCode input { margin-bottom: 20px; }
+	#CartContent .FloatRight,  #CartContent .FloatLeft,  .ExpressCheckoutContent .FloatLeft,  .ExpressCheckoutContent .FloatRight  #ConfirmOrder .FloatLeft,  #ConfirmOrder .FloatRight { float: none; }
+	.PayPalExpressCheckout { text-align: center; padding: 1em 0; }
+	.AddBillingAddress dd, .AddShippingAddress dd { padding: 0 !important; float: none; width: auto; }
+	.ShippingAddressList li { width: 100%; }
+	.ind_save_row {line-height:30px; padding:20px 10px;}
+	#SideNewsletterBox .grid .grid {margin-left:0;}
+	#SideNewsletterBox .grid__item {padding-left:0px;}
+	.newsletter-subscription .Textbox {height:35px; margin:0 0 10px 0px;}
+	.newsletter-subscription .Textbox {width:auto;}
+	.ProductList .ProductActionAdd {margin:0px; float:left; width:100%;}
+	.BlockContent img {height:50px;}
+	.BlockContent img.__mce_add_custom__ {height:auto;}
+	.PinterestButtonContainer img { height:auto !important;}
+	.ProductList .ProductImage {width:100%;}
+	.brand-img, #ProductDetails .ProductThumbImage {width:98%;}
+	.CartCode .CouponCode form .CouponCode input {width:83% !important; float:left; margin-right:20px;}
+	.CartCode .CouponCode form .CouponCode input.btn {width:40px !important; margin:0px;}
+	.CartCode .GiftCertificate form .GiftCertificateCode input {width:83% !important; float:left; margin-right:20px;}
+	.CartCode .GiftCertificate form .GiftCertificateCode input.btn {width:40px !important; margin:0px;}
+	.ProceedToCheckout .CheckoutButton {width:100%; margin-left:0px;}
+	.ProceedToCheckout .AlternativeCheckout {width:100%;}
+	.ExpressCheckoutContent .CreateAccount {width:100%;}
+	.ExpressCheckoutContent .AccountLogin {width:100%;}
+	.ProceedToCheckout,  .KeepShopping { text-align: center; float:left; width:100%;}
+	.slide-show .slide-overlay {width:70%; top:8%;}
+	.slide-show h2 {font-size:22px;}
+	.slide-show .slide-text {font-size:14px;}
+	.slide-show .btn {width:auto !important; float:left;}
+	.productlist-page .FloatRight.SortBox {width:100%; float:left;}
+	.SortBox div.selector, .SearchSorting div.selector {float:left; width:99% !important;}
+	.productlist-page .CompareButton .btn.alt {float:right; width:auto !important;}
+}
+
+
+/*----------------------------------------------------------------------------------------------------------
+#############################################  BASE FORM STYLES - RESPONSIVE - (Move to base-forms.css)
+----------------------------------------------------------------------------------------------------------*/
+
+/* 480px */
+@media screen and (max-width: 480px) {
+	/* increasing input font sizes to avoid some zoom by webkit browsers */
+	input[type="date"],  input[type="email"],  input[type="number"],  input[type="password"],  input[type="search"],  input[type="tel"],  input[type="text"],  input[type="url"],  textarea,  select { font-size: 16px !important; }
+	.btn,  textarea,  input[type="email"],  input[type="text"],  input[type="password"],  input.Textbox { display: block; height: 40px; line-height: 40px; width: 100% !important; /* inline widths :( */ margin-bottom: 20px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+	select,  div.selector /* For uniform */ { margin-bottom: 20px; }
+	/* Form Styling */
+	.form dt,  .FormContainer dt { text-align: left; width: auto; clear: both; float: none; }
+	.form dd,  .FormContainer dd { padding: 0; margin: 0; }
+	#Header.off-screen {transform: translateY(0px);}
+	
+}
+
+/* 320px */
+@media screen and (max-width: 384px) {
+	.addto .BulkDiscount, .addto #SideProductAddToWishList {clear:both;}
+	.product_detail ul li {width:49.6%;}
+	.BlockContent img {height:77px;}
+	.PinterestButtonContainer img { height:auto !important;}
+	.tab-box a {width:31.4%;}
+	#ProductDetails #ImageScrollPrev, #ProductDetails #ImageScrollNext {top:35%;}
+	table tbody tr td, table.General tbody tr td, table, table.General, table.CartContents {font-size:13px;}
+	.CartItemQuantity .selector, .DetailRow.qty .selector {width:55px !important;}
+	.CartContents tfoot .SubTotal td {text-align:left;}
+	.CartCode .CouponCode form .CouponCode input {width:77% !important;}
+	.CartCode .GiftCertificate form .GiftCertificateCode input {width:77% !important;}
+	#recaptcha_area td {float:left; width:97% !important;}
+	.recaptchatable a, .recaptchatable a:hover {display:inline-block !important; width:auto;}
+	.recaptchatable a img {height:auto;}
+	.recaptchatable td img {height:auto;}
+	.slide-show h2 {font-size:16px; line-height:20px;}
+	.slide-show .slide-text {font-size:13px; line-height:20px;}
+	.slide-show .btn {height:35px; line-height:35px; font-size:13px;}
+	.Block.SocialConnect.Moveable.Panel {width: auto;}
+}
+
+/* 320px */
+@media screen and (max-width: 360px) {
+	.header-logo img { width:90%;}
+	#DrawerMenu.on-screen {	margin:53px 0 0 0;}
+	.header-logo h1 a {font-size:30px;}
+	.BlockContent img {height:64px;}
+	.slide-show .slide-overlay {display:none;}
+	.PinterestButtonContainer img { height:auto !important;}
+	.Block.SocialConnect.Moveable.Panel {width: auto;} 
+	.TopMenu .CartLink {margin:0 0px 0 0;}
+	#ToggleMenu {left:0px; top:-33px;}
+	#Header > .inner {width:84%;}
+	.brand-img, #ProductDetails .ProductThumbImage {width:96%;}
+	.SortBox div.selector, .SearchSorting div.selector {width:98.6% !important;}
+	.main {margin-top:92px;}
+	.SlideShow-mobile {display:none;}
+}
+
+@media screen and (max-width: 320px) {
+#DrawerMenu.on-screen { top:24px;}              
+       
+}

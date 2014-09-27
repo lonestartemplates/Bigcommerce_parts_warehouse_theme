@@ -1,0 +1,26 @@
+<script type="text/javascript">
+	var shareProductId = %%GLOBAL_FirstProductId%%;
+	var sharingData = %%GLOBAL_SharingData%%;
+	lang.ChooseAnotherProduct = "%%LNG_ChooseAnotherProduct%%";
+	$(document).ready(function() {
+        if (shareProductId != null) {
+			initSocialSharingPanel(shareProductId);
+        } else {
+			$('#share-product').hide();
+        }
+	});
+</script>
+<div id="share-product">
+	%%Panel.SocialSharingTabs%%
+	<div id="tabcontent" class="cf">
+		<div class="photo"></div>
+		<div>
+			<strong id='shareText'></strong>
+			<div id="url">%%GLOBAL_ShopPath%%</div>
+			<p id="shareDescription"></p>
+			<span class="sharebutton"><a href="#" target="_blank">%%LNG_HC_sharethis%%</a></span>
+			<span class="chooseAnotherToShare" style="display:%%GLOBAL_HideChooseAnotherToShare%%">%%LNG_HC_or%% <a title="Choose Another Product" href="javascript:showProductChoices()">%%LNG_HC_chooseproduct%%</a></span>
+		</div>
+	</div>
+	%%Panel.ShareProductChoices%%
+</div>

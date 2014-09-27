@@ -1,0 +1,69 @@
+<script type="text/javascript">
+var RecaptchaOptions = {
+	theme : 'clean'
+};
+</script>
+<div class="Block Moveable Panel no-ptop" id="CreateAccountForm">
+	<h1 class="TitleHeading">%%GLOBAL_CreateAccountHeading%%</h1>
+	<div class="BlockContent BlockContent full-width page-content">
+		<p style="display: %%GLOBAL_HideCreateAccountIntroMessage%%" class="txt24 blockquote mtm">
+			%%LNG_CreateAccountIntro4%% <em>%%GLOBAL_StoreName%%</em> %%LNG_CreateAccountIntro5%%
+		</p>
+		<p class="ErrorMessage" style="display:%%GLOBAL_HideCreateAccountErrorMessage%%">
+			%%GLOBAL_ErrorMessage%%
+		</p>
+		<form action="%%GLOBAL_ShopPath%%/login.php?action=save_new_account" method="post" onsubmit="return check_create_account_form()">
+			<div class="FormContainer HorizontalFormContainer form">
+				<div class="box borderB">
+					<h3>%%LNG_PersonalDetails%%</h3>
+
+					<p>%%LNG_CreateAccountPersonalIntro%%</p>
+					<dl>
+						%%GLOBAL_CreateAccountEmailPassword%%
+					</dl>
+				</div>
+				<div class="box borderB">
+					<h3>%%LNG_ShippingDetails%%</h3>
+
+					<p>%%LNG_CreateAccountShippingIntro%%</p>
+					<dl>
+						%%GLOBAL_CreateAccountDetails%%
+					</dl>
+				</div>
+				<div class="box">
+					<h3 style="display: %%GLOBAL_HideReviewCaptcha%%">%%LNG_HC_securityquestion%%</h3>
+					<dl style="display: %%GLOBAL_HideReviewCaptcha%%">
+						<script type="text/javascript"
+						src="https://www.google.com/recaptcha/api/challenge?k=%%GLOBAL_ReCaptchaAPIKeyPublic%%">
+						</script>
+						<noscript>
+							<iframe src="https://www.google.com/recaptcha/api/noscript?k=%%GLOBAL_ReCaptchaAPIKeyPublic%%" height="300" width="500" frameborder="0"></iframe>
+							<br>
+							<textarea name="recaptcha_challenge_field" rows="3" cols="40">
+							</textarea>
+							<input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+						</noscript>
+					</dl>
+					<p class="Submit">
+						<input type="submit" class="btn alt" value="%%GLOBAL_CreateAccountButtonText%%" />&nbsp;&nbsp;&nbsp;<a href="%%GLOBAL_ShopPath%%/">%%LNG_HC_returnstore%%</a>
+					</p>
+				</div>
+			</div>
+		</form>
+		<script type="text/javascript">
+		$('.FormField').addClass("Textbox");
+		$(document).ready(function() {
+			$('#FormField_11').change(function() {
+				$.uniform.restore('select.JSHidden');
+				$(document).ajaxComplete(function(event,request, settings) {
+					$('select').not('.UniApplied').uniform();
+				});
+			});
+		});
+		$(window).load(function() {
+			$('select').not('.UniApplied').uniform();
+		});
+		</script>
+		%%Panel.CreateAccountJavaScript%%
+	</div>
+</div>

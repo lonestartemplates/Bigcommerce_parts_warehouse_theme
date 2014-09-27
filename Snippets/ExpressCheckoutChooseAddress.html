@@ -1,0 +1,66 @@
+<form method="post" action="#" id="New%%GLOBAL_UpperAddressType%%Address" onsubmit="return ExpressCheckout.Choose%%GLOBAL_UpperAddressType%%Address();">
+	<div id="Choose%%GLOBAL_UpperAddressType%%Address" style="%%GLOBAL_HideChooseAddress%%">
+		<label><input type="radio" onclick="ExpressCheckout.ToggleAddressType('%%GLOBAL_UpperAddressType%%', 'Select');" name="%%GLOBAL_UpperAddressType%%AddressType" id="%%GLOBAL_UpperAddressType%%AddressTypeExisting" value="existing" checked="checked" /> %%GLOBAL_UseExistingAddress%%</label><br />
+		<div class="Select%%GLOBAL_UpperAddressType%%Address">
+			<img src="%%GLOBAL_IMG_PATH%%/NodeJoin.gif" alt="" class="FloatLeft" />
+			<div style="margin-left: 30px;">
+				<select name="sel_%%GLOBAL_AddressType%%_address" style="width: 750px" class="no-sel" size="1" id="sel_%%GLOBAL_AddressType%%_address">
+					%%GLOBAL_AddressList%%
+				</select>
+				<div style="%%GLOBAL_HideShippingOptions%%">
+					<label><input type="checkbox" name="%%GLOBAL_ShipToBillingName%%_existing" id="%%GLOBAL_ShipToBillingName%%_existing" value="1" checked="checked" /> %%LNG_AlsoWantToShipToThisAddress%%</label>
+				</div>
+				<div>
+				<br />
+				<input type="submit" value="%%GLOBAL_UseAddressTitle%%" class="%%GLOBAL_AddressType%%Button btn" /> <span class="LoadingIndicator" style="display: none"><img src="%%GLOBAL_IMG_PATH%%/loader.png" alt="" /></span>
+				</div>
+			</div>
+		</div>
+		<label class="clear" style="margin-top: 10px; display: block;"><input type="radio" onclick="ExpressCheckout.ToggleAddressType('%%GLOBAL_UpperAddressType%%', 'Add');" value="new" name="%%GLOBAL_UpperAddressType%%AddressType" id="%%GLOBAL_UpperAddressType%%AddressTypeNew" /> %%GLOBAL_AddNewAddress%%</label><br />
+	</div>
+	<div class="clear Add%%GLOBAL_UpperAddressType%%Address" style="%%GLOBAL_HideCreateAddress%%">
+		<img src="%%GLOBAL_IMG_PATH%%/NodeJoin.gif" class="FloatLeft" style="%%GLOBAL_HideChooseAddress%%" alt="" />
+		<div class="FloatLeft">
+			<div class="FormContainer HorizontalFormContainer clear">
+				<dl>
+					%%GLOBAL_CompiledFormFields%%
+
+
+					<dd style="float: none; clear:both; width:auto; %%GLOBAL_HideSaveAddress%%">
+						<label>
+							<input type="checkbox" name="save_%%GLOBAL_AddressType%%_address" id="save_%%GLOBAL_AddressType%%_address" value="1" %%GLOBAL_SaveAddressChecked%% />
+							%%LNG_SaveAddressInAddressBook%%
+						</label>
+					</dd>
+
+
+					<dd style="float: none; clear:both; width:auto; %%GLOBAL_HideShippingOptions%%">
+						<label>
+							<input type="checkbox" name="%%GLOBAL_ShipToBillingName%%_new" id="%%GLOBAL_ShipToBillingName%%_new" value="1" %%GLOBAL_ShipToAddressChecked%% />
+							%%LNG_AlsoWantToShipToThisAddress%%
+						</label>
+					</dd>
+				</dl>
+				%%GLOBAL_CompiledFormFieldJavascript%%
+				<p class="Submit">
+					<input type="submit" class="%%GLOBAL_AddressType%%Button btn" value="%%GLOBAL_UseAddressTitle%%" /> <span class="LoadingIndicator" style="display: none"><img src="%%GLOBAL_IMG_PATH%%/loader.png" alt="" /></span>
+				</p>
+				<script type="text/javascript">$('.FormField').addClass('Textbox');</script>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</form>
+<script type="text/javascript">
+if('%%GLOBAL_UpperAddressType%%' == 'Billing') {
+	$('#ship_to_billing_existing, #ship_to_billing_new').click(function() {
+		$('.shippingButton').val('%%LNG_ShipToThisAddress%%');
+		if(this.checked) {
+			$('.billingButton').val('%%LNG_BillAndShipToAddress%%');
+		}
+		else {
+			$('.billingButton').val('%%LNG_BillToThisAddress%%');
+		}
+	});
+}
+</script>

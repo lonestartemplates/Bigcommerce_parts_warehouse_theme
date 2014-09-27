@@ -1,0 +1,41 @@
+<div class="Block Moveable Panel ExpressCheckoutBlock" id="ChooseShippingAddress">
+	<h5 class="ExpressCheckoutTitle">%%GLOBAL_CheckoutShippingTitle%%</h5>
+	%%Discount.FreeShippingEligibility%%
+	<div class="BlockContent">
+		<p class="ErrorMessage" style="%%GLOBAL_HideErrors%%">
+			%%GLOBAL_ErrorMessage%%
+		</p>
+
+		<form  id="AddressEditForm" method="post" action="checkout.php?action=%%GLOBAL_ShippingFormAction%%" onsubmit="return check_shipping_address_form()">
+			<div class="FormContainer HorizontalFormContainer">
+					<dl>
+						%%GLOBAL_ShipCustomFields%%
+						<dt style="%%GLOBAL_HideShippingOptions%%">&nbsp;</dt>
+						<dd style="%%GLOBAL_HideShippingOptions%%">
+							<label>
+								<input type="checkbox" name="%%GLOBAL_ShipToBillingName%%" id="%%GLOBAL_ShipToBillingName%%" value="1" %%GLOBAL_ShipToAddressChecked%% />
+								%%LNG_AlsoWantToShipToThisAddress%%
+							</label>
+						</dd>
+					</dl>
+					<p class="Submit">
+						<input type="submit" class="btn billButton" value="%%GLOBAL_ShipAddressButtonText%%" />
+					</p>
+				</div>
+		</form>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#ship_to_billing').click(function() {
+					if(this.checked) {
+						$('.billButton').val(%%GLOBAL_ShipAddressButtonText_JS%%);
+					}
+					else {
+						$('.billButton').val("%%LNG_JS_BillToThisAddress%%");
+					}
+				});
+			});
+		</script>
+	</div>
+</div>
+
+%%Panel.AddShippingAddressJavaScript%%

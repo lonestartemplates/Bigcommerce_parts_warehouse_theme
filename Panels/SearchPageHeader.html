@@ -1,0 +1,101 @@
+<div class="Block Moveable Panel pvm" id="SearchPageHeader">
+	<div class="txt-right btn alt ToggleSearchFormLink FloatRight" style="display:%%GLOBAL_HideAdvancedLink%%;visibility:hidden;">
+		<a id="toggle_form_link" href="javascript:void(0)" onclick="ToggleSearchForm()" name="toggle_form_link">%%LNG_HideSearchForm%%</a> <a href="javascript:void(0)" onclick="ToggleSearchForm()"><img id="toggle_form_image" src="%%GLOBAL_IMG_PATH%%/ArrowUp.gif" class="PB2" alt="" name="toggle_form_image" /></a>
+	</div>
+	<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/jstree/jquery.jstree.js"></script>
+	<p class="txt24">%%GLOBAL_SearchTitle%%</p>
+
+	<div class="BlockContent">
+		<div style="display:%%GLOBAL_HideAdvancedOptions%%">
+			<div class="AdvancedSearch">
+				<form id="AdvancedSearchForm" action="%%GLOBAL_ShopPath%%/search.php" method="get" onsubmit="return CheckAdvancedSearchForm()">
+					<input type="hidden" name="mode" value="1" />
+
+					<h3>%%LNG_AdvancedSearch%%</h3>
+
+					<div class="FormContainer HorizontalFormContainer">
+						<dl>
+							<dt>%%LNG_SearchKeyword%%:</dt>
+							<dd><input type="text" name="search_query_adv" id="search_query_adv" value="%%GLOBAL_FormattedSearchQuery%%" /></dd>
+
+							<dt>%%LNG_BrandName%%:</dt>
+							<dd>
+								<select name="brand" id="brand">
+									<option value="">%%LNG_NoPreference%%</option>
+									%%GLOBAL_BrandNameOptions%%
+								</select>
+							</dd>
+
+							<dt>%%LNG_Categories%%:</dt>
+							<dd>
+								<div id="category" class="categoryPicker"></div>
+							</dd>
+
+							<dd class="clear"><input type="checkbox" class="CheckBox" name="searchsubs" id="searchsubs" value="ON" checked="checked" /> <label for="searchsubs">%%LNG_AutoSearchSubCats%%</label></dd>
+						</dl>
+					</div>
+
+					<h3>%%LNG_SearchByPrice%%</h3>
+
+					<div class="FormContainer HorizontalFormContainer" style="display: %%GLOBAL_HideProductSearchOptions%%">
+						<dl>
+							<dt>%%LNG_PriceRange%%:</dt>
+							<dd>
+								%%LNG_From%%
+								<input type="text" class="Textbox" name="price_from" id="price_from" size="4" style="width: 40px;" value="%%GLOBAL_PriceFrom%%" />&nbsp;
+								%%LNG_To%%
+								<input type="text" class="Textbox" size="4" name="price_to" id="price_to" style="width: 40px;" value="%%GLOBAL_PriceTo%%" />
+							</dd>
+						</dl>
+					</div>
+
+					<h3>%%LNG_SearchBySetting%%</h3>
+
+					<div class="FormContainer HorizontalFormContainer" style="display: %%GLOBAL_HideProductSearchOptions%%">
+						<dl>
+							<dt>%%LNG_FeaturedProduct%%:</dt>
+							<dd>
+								<select name="featured" id="featured">
+									<option value="">%%LNG_NoPreference%%</option>
+									<option value="1">%%LNG_OnlyFeaturedProducts%%</option>
+									<option value="2">%%LNG_OnlyNonFeaturedProducts%%</option>
+								</select>
+							</dd>
+
+							<dt>%%LNG_FreeShipping%%:</dt>
+							<dd>
+								<select name="shipping" id="shipping">
+									<option value="">%%LNG_NoPreference%%</option>
+									<option value="1">%%LNG_OnlyFreeShipping%%</option>
+									<option value="2">%%LNG_OnlyPaidShipping%%</option>
+								</select>
+							</dd>
+						</dl>
+					</div>
+
+					<div class="FormContainer HorizontalFormContainer">
+						<div class="clear"></div>
+						<dl>
+							<dt>&nbsp;</dt>
+							<dd>
+								<input type="submit" class="btn alt"  value="%%LNG_Search%%" />
+							</dd>
+						</dl>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<a name="results"></a>
+
+	<p class="InfoMessage" style="display:%%GLOBAL_HideRelatedSearches%%">
+		<strong>%%LNG_RelatedSearches%%:</strong> %%SNIPPET_RelatedSearches%%
+	</p>
+
+	<p class="SearchSuggest" style="display: %%GLOBAL_ShowSearchSuggestion%%">
+		<strong>%%LNG_DidYouMean%%:</strong> <a class="nofollow" rel="nofollow" data-params="&amp;correction=%%GLOBAL_SearchId%%" href="%%GLOBAL_ShopPath%%/search.php?search_query=%%GLOBAL_SuggestQueryEscaped%%">%%GLOBAL_SuggestQuery%%</a>
+	</p>
+
+	%%Panel.SearchJavaScript%%
+</div>

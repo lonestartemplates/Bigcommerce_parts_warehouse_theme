@@ -1,0 +1,156 @@
+/*----------------------------------------------------------------------------------------------------------
+#############################################  BASE FORM STYLES
+----------------------------------------------------------------------------------------------------------*/
+/*Standardised Forms*/
+
+input, select, textarea {
+    font-family: Arial, Sans-Serif;
+    font-size: 12px;
+    max-width: 100%;
+}
+
+fieldset {
+    border: 0;
+    margin: 0 0 20px;
+}
+
+textarea {
+    height: 100px;
+    line-height: 18px;
+    max-width: 100%;
+}
+
+input {
+    padding: 0px;
+}
+
+input.Textbox, textarea,
+input[type="text"],
+input[type="password"] {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #ffffff;
+    font-size: 13px;
+    height: 35px;
+    margin: 0;
+    padding: 0 1em;
+}
+
+textarea {
+    min-height: 100px;
+    padding: 1em;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Select styling */
+select {
+    border-radius: none;
+    margin: 0;
+    padding: 9px;
+}
+
+/* Forms */
+
+/*# Horizontal forms #*/
+.HorizontalFormContainer {
+    max-width: 1000px;
+}
+
+.HorizontalFormContainer dl,
+.VerticalFormContainer dl {
+    margin: 0;
+}
+
+.HorizontalFormContainer dt,
+.HorizontalFormContainer dd,
+.form dt,
+.form dd {
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.HorizontalFormContainer dt p,
+.HorizontalFormContainer dd p,
+.form dt p,
+.form dd p {
+    font-weight: normal;
+}
+
+.HorizontalFormContainer dt,
+.form dt {
+    clear: left;
+    float: left;
+    padding: 8px 0;
+    text-align: right;
+    width: 170px;
+}
+
+.HorizontalFormContainer dt img,
+.form dt img {
+    float: left;
+    vertical-align: middle;
+}
+
+.HorizontalFormContainer dt .fieldLabel,
+.form dt .fieldLabel {
+    float:left;
+    padding-left: 4px;
+    padding-top: 4px;
+}
+
+.HorizontalFormContainer dd,
+.form dd {
+    margin-bottom: 20px;
+    margin-left: 205px;
+}
+
+.HorizontalFormContainer dd.ProductField,
+.form dd.ProductField {
+    height: 20px;
+}
+
+.HorizontalFormContainer dd div,
+.form dd div {
+    display: inline-block;
+}
+
+.HorizontalFormContainer dd .selector span,
+.form dd .selector span {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.HorizontalFormContainer p.Submit,
+.form p.Submit {
+    padding-top:20px;
+}
+
+/*# Narrow forms #*/
+.NarrowFormContainer dt {
+    width: 110px;
+}
+
+.NarrowFormContainer dd {
+    margin-left: 120px;
+}
+
+.NarrowFormContainer p.Submit {
+    margin-left: 120px;
+}
+
+/*# Vertical forms #*/
+.VerticalFormContainer dt {
+    float: none;
+    margin-bottom: 6px;
+    width: auto !important;
+}
+
+.VerticalFormContainer dd {
+    margin-bottom: 20px;
+    margin-left: 0 !important;
+}

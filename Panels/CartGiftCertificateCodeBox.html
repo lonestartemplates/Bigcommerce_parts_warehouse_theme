@@ -1,0 +1,14 @@
+<div class="GiftCertificate">
+	<h3>%%LNG_GiftCertificateCode%%</h3>
+	<script type="text/javascript">
+		lang.EnterGiftCertificateCode = "%%LNG_EnterGiftCertificateCode%%";
+	</script>
+	<form onsubmit="return Cart.CheckGiftCertificateCode()" action="%%GLOBAL_ShopPath%%/cart.php" method="post">
+		<input type="hidden" name="action" value="applygiftcertificate" />
+		<div class="GiftCertificateCode">
+			<p>%%LNG_GiftCertificateCodeIntro%%</p>
+			<input type="text" name="giftcertificatecode" id="giftcertificatecode" class="Textbox" />
+			<input type="submit" value="%%LNG_HCV_go%%" class="btn alt" />
+		</div>
+	</form>
+</div>

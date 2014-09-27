@@ -1,0 +1,38 @@
+<ul class="ProductList List">
+    {{#skus}}
+        <li class="ListView QuickView" data-product="{{ product.id }}">
+            <div class="ProductImage">
+                <a href="{{ product.url }}">
+                    <img src="{{ product.default_image.thumbnail_url }}" alt="{{ product.title }}" />
+                </a>
+            </div>
+            <div class="ProductDetails">
+                <div class="ProductRightCol">
+                    {{#if product.rating}}
+                        <div class="ProductPriceRating">
+                            <span class="Rating Rating{{ product.rating }}">
+                                <img src="%%GLOBAL_TPL_PATH%%/images/IcoRating{{ product.rating }}.png" alt="" style="" />
+                            </span>
+                        </div>
+                    {{/if}}
+                </div>
+                <p class="p-name"><a href="{{ product.url }}">{{ product.title }}</a></p>
+                <em class="p-price">
+                    {{{ formatProductCatalogPrice . }}}
+                </em>
+                <p class="ProductDescription">{{{  product.description }}}</p>
+                {{#if product.add_text }}
+                    <div class="ProductActionAdd">
+                        <a href="{{ product.add_url }}" class="btn icon-{{ product.add_text }}" title="{{ product.add_text }}">{{ product.add_text }}</a>
+                    </div>
+                {{/if}}
+                {{#ifStoreConfig 'EnableProductComparisons'}}
+                    <div class="ProductCompareButton">
+                        <input type="checkbox" class="CheckBox" name="compare_product_ids" id="compare_{{ product.id }}" value="{{ product.id }}" onclick="product_comparison_box_changed(this.checked)" />
+                        <label for="compare_{{ product.id }}">{{ getLang 'compare' }}</label>
+                    </div>
+                {{/ifStoreConfig}}
+            </div>
+        </li>
+    {{/skus}}
+</ul>

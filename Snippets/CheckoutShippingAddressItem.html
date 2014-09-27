@@ -1,0 +1,20 @@
+<li>
+	<p class="UtilityLinks">
+		<a title="%%LNG_HCT_edit%%" href="%%GLOBAL_ShopPath%%/account.php?action=edit_shipping_address&amp;address_id=%%GLOBAL_ShippingAddressId%%&amp;from=%%GLOBAL_FromURL%%" class="icon-edit"></a>
+		<a title="%%LNG_HCT_delete%%" href="%%GLOBAL_ShopPath%%/account.php?action=delete_shipping_address&amp;address_id=%%GLOBAL_ShippingAddressId%%&amp;from=%%GLOBAL_FromURL%%" onclick="confirm_delete_shipping_address(%%GLOBAL_ShippingAddressId%%, '%%GLOBAL_FromURL%%'); return false;" class="icon-delete"></a>
+	</p>
+	<h4>%%GLOBAL_ShipFullName%%</h4>
+		<p class="NoMarginBottom">
+		%%GLOBAL_ShipCompany%%
+		%%GLOBAL_ShipAddressLine1%%<br />
+		%%GLOBAL_ShipAddressLine2%%<br />
+		%%GLOBAL_ShipSuburb%%, %%GLOBAL_ShipState%% %%GLOBAL_ShipZip%%<br/>
+		%%GLOBAL_ShipCountry%%<br />
+		%%GLOBAL_ShipPhone%%
+	</p>
+	<form style="display: %%GLOBAL_HideAddressButton%%" action="%%GLOBAL_ShopPath%%/checkout.php" method="get">
+		<input type="hidden" name="action" value="%%GLOBAL_ShippingFormAction%%" />
+		<input type="hidden" name="address_id" value="%%GLOBAL_ShippingAddressId%%" />
+		<input type="submit" value="%%GLOBAL_ShipAddressButtonText%%" class="MT10 btn" />
+	</form>
+</li>

@@ -1,0 +1,19 @@
+<script type="text/javascript">
+//<![CDATA[
+	/* Make sure all credit card details have been provided and are valid */
+	function check_creditcard_payment_form() {
+		var creditcard_ccno = g("creditcard_ccno");
+
+		if(isNaN(creditcard_ccno.value) || creditcard_ccno.value == "") {
+			alert("%%LNG_CreditCardEnterCardNumber%%");
+			creditcard_ccno.focus();
+			creditcard_ccno.select();
+			return false;
+		}
+
+		return true;
+	}
+
+
+//]]>
+</script>

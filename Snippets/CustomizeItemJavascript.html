@@ -1,0 +1,23 @@
+<script language="javascript" type="text/javascript">//<![CDATA[
+	window.setTimeout(function(){
+	$("#CartEditProductFieldsForm").validate({
+		ignoreTitle: true,
+		showErrors: function (errorMap, errorList) {
+			// nothing
+		},
+		invalidHandler: function (form, validator) {
+			if (!validator.size()) {
+				return;
+			}
+
+			var error = validator.errorList[0];
+
+			alert(error.message);
+			$(error.element).focus();
+		},
+		onsubmit: false
+	});
+
+	%%GLOBAL_ProductAttributesJavascript%%
+	}, 100);
+//]]></script>

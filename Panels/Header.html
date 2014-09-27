@@ -1,0 +1,74 @@
+<div class="header">
+    <div class="inner">
+
+        <div id="AjaxLoading">
+            <div class="ajax-loader">
+                <img src="%%GLOBAL_IMG_PATH%%/loader.png" alt="" />&nbsp;%%LNG_LoadingPleaseWait%%
+            </div>
+        </div>
+
+        %%GLOBAL_MaintenanceNotice%%
+        %%Panel.TopMenu%%
+
+        <div id="Header">
+            <div class="inner">
+                <div id="ToggleMenu">
+                    Menu
+                </div>
+                <div class="header-logo">
+                    %%GLOBAL_HeaderLogo%%
+                </div>
+                <div class="header_mid">
+                	Your Online Source for Discount Auto Parts. 
+                </div>
+                <!--<div class="TopMenu"> 
+                      %%GLOBAL_HeaderTopMenu%%
+                </div> -->
+                <div class="header-secondary">
+                    %%Panel.HeaderSearch%%
+                </div>
+                <div class="HeaderCart" id="CartContent">
+    <a href="/cart.php"><img src="%%GLOBAL_IMG_PATH%%/cart_ic.png" class="HeaderCartIc" alt="" /> <img src="%%GLOBAL_IMG_PATH%%/cart_ic1.png" class="HeaderCartIc1" alt="" /></a>                        
+    <span class="HeaderCartRow"> 
+        <a href="/cart.php"><span class="HeaderCartQty"> item </span></a>
+        <span class="HeaderCartQtyCopy">
+      	  %%Panel.SideCartContents%%  
+        </span>
+   </span>
+</div> 
+            </div>
+        </div>
+        
+<script>
+jQuery(document).ready(function(){
+
+var itms = '%%GLOBAL_CartItems%%';
+var cartHTML = jQuery("#CartContent").html();
+var cartAmount = jQuery(cartHTML).find("#tot strong").html();
+jQuery("#cartText").html( itms + ' – ' + cartAmount ); 
+
+});
+
+
+
+var qtydiv=jQuery(".HeaderCartQtyCopy #SideCartContents .HeaderCartCol strong").html();
+if(qtydiv==null || qtydiv=='null'){
+	qtydiv=0;
+}
+jQuery(".HeaderCartQty").html(qtydiv+jQuery(".HeaderCartQty").html());
+var divprice=jQuery(".HeaderCartQtyCopy #SideCartContents .HeaderCartCol1 strong").html();
+if(divprice==null || divprice=='null'){
+	divprice='£0.00';
+}
+jQuery(".HeaderCartQty").html(jQuery(".HeaderCartQty").html()+''+divprice+'');   
+ 
+
+</script>   
+        <div class="PageMenu">
+            <div class="inner">
+                %%Panel.PagesMenu%%
+            </div>
+        </div>
+
+    </div>
+</div>

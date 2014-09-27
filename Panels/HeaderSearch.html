@@ -1,0 +1,17 @@
+<div id="SearchForm" class="cf">
+	<form action="%%GLOBAL_ShopPath%%/search.php" method="get" onsubmit="return check_small_search_form()">
+		<label for="search_query">%%LNG_Search%%</label>
+		<input type="text" name="search_query" id="search_query" class="Textbox autobox" value="%%LNG_Search%%" />		
+		<input type="submit" class="Button" value="" name="Search" title="%%LNG_Search%%" />
+	</form>
+</div>
+
+<script type="text/javascript">
+	var QuickSearchAlignment = 'right';
+	var QuickSearchWidth = '390px';
+	lang.EmptySmallSearch = "%%LNG_EmptySmallSearch%%";
+	// uniform() is deprecated in Blueprint theme; remove binding below when removing uniform
+	$(document).ajaxComplete(function() {
+		$('input[type=checkbox], select').not('.UniApplied').uniform();
+	});
+</script>

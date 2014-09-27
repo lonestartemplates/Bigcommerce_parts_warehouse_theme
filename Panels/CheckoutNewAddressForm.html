@@ -1,0 +1,58 @@
+<div class="Block Moveable Panel" id="ChooseShippingAddress">
+	<h3>%%GLOBAL_CheckoutShippingTitle%%</h3>
+	%%Discount.FreeShippingEligibility%%
+	<div class="BlockContent">
+		<p class="ErrorMessage" style="%%GLOBAL_HideErrors%%">
+			%%GLOBAL_ErrorMessage%%
+		</p>
+
+		<form  id="AddressEditForm" method="post" action="checkout.php?action=%%GLOBAL_ShippingFormAction%%" onsubmit="return check_shipping_address_form()">
+			<div class="FormContainer HorizontalFormContainer form">
+					<dl>
+						%%GLOBAL_ShipCustomFields%%
+						<dt style="%%GLOBAL_HideShippingOptions%%">&nbsp;</dt>
+						<dd style="%%GLOBAL_HideShippingOptions%%">
+							<label>
+								<input type="checkbox" name="%%GLOBAL_ShipToBillingName%%" id="%%GLOBAL_ShipToBillingName%%" value="1" %%GLOBAL_ShipToAddressChecked%% />
+								%%LNG_AlsoWantToShipToThisAddress%%
+							</label>
+						</dd>
+						<dt>&nbsp;</dt>
+						<dd><input type="submit" class="billButton btn" value="%%GLOBAL_ShipAddressButtonText%%" /></dd>
+					</dl>
+				</div>
+		</form>
+		<script type="text/javascript">
+			
+			$(document).ready(function() {
+				$('#NewShippingAddress input').uniform();
+				
+				$('#ship_to_billing').click(function() {
+					if(this.checked) {
+						$('.billButton').val(%%GLOBAL_ShipAddressButtonText_JS%%);
+					}
+					else {
+						$('.billButton').val("%%LNG_JS_BillToThisAddress%%");
+					}
+				});
+				
+			});
+
+			$(document).ajaxComplete(function(event,request, settings) {
+				$('select').not('.UniApplied').uniform();
+				$('input[type=checkbox], input[type=radio]').not('.UniApplied').uniform();
+			});
+
+			$(window).load(function() {
+				$('select').not('.UniApplied').uniform();
+				
+				$('#FormField_11').change(function() {
+					$.uniform.restore('select.JSHidden');
+				});
+			});
+
+		</script>
+	</div>
+</div>
+
+%%Panel.AddShippingAddressJavaScript%%

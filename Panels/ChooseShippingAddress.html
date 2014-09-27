@@ -1,0 +1,59 @@
+	<div class="Block Moveable Panel" id="ChooseShippingAddress">
+		<a title="%%LNG_HCT_addaddress%%" class="icon-add" href="/account.php?action=add_shipping_address&address_type=&from=account.php%3Faction%3Daddress_book"></a>
+
+		<h2>%%GLOBAL_CheckoutShippingTitle%%</h2>
+		
+		<ul class="multiStep">
+			<li class="Completed"><h4><a href="%%GLOBAL_ShopPath%%/checkout.php">%%LNG_HC_billingaddress%%</a></h4></li>
+			<li class="ActivePage"><h4>%%LNG_HC_shippingaddress%%</h4></li>
+			<li class=""><h4>%%LNG_HC_shippingmethod%%</h4></li>
+			<li class=""><h4>%%LNG_HC_orderconfirmation%%</h4></li>
+		</ul>
+
+		<p>%%GLOBAL_CheckoutShippingIntro%%</p>
+		
+		%%Discount.FreeShippingEligibility%%
+		<div class="BlockContent">
+			<div class="TabContainer">
+				<ul class="TabNav" style="%%GLOBAL_HideShippingTabs%%">
+					<li id="AddressSingle" class="%%GLOBAL_ActiveTabSingle%%"><a href="%%GLOBAL_ShopPathSSL%%/checkout.php?action=choose_shipping_address&amp;type=single">%%LNG_ShipAllItemsToOneAddress%%</a></li>
+					<li id="AddressMultiple" class="%%GLOBAL_ActiveTabMultiple%%"><a href="%%GLOBAL_ShopPathSSL%%/checkout.php?action=choose_shipping_address&amp;type=multiple">%%LNG_ShipAllItemsToDifferentAddresses%%</a></li>
+				</ul>
+
+				<div class="TabContent" id="TabContentAddressSingle" style="%%GLOBAL_HideTabSingle%%">
+
+					<div class="">
+						<ul class="ShippingAddressList">
+							%%SNIPPET_ShippingAddressList%%
+						</ul>
+					</div>
+ 				</div>
+
+				<div class="TabContent" id="TabContentAddressMultiple" style="%%GLOBAL_HideTabMultiple%%">
+					<p class="InfoMessage">
+	    			    %%GLOBAL_CheckoutMultiShippingIntro%%
+		    		</p>
+					<form method="post" action="%%GLOBAL_ShopPathSSL%%/checkout.php?action=save_multiple_shipping_addresses" id="multiAddressForm">
+						<table class="General Stylize" cellspacing="0" cellpadding="0" border="0">
+							<thead>
+								<tr>
+									<th>%%LNG_Item%%</th>
+									<th>%%LNG_ShippingAddress%%</th>
+								</tr>
+							</thead>
+							<tbody>
+								%%SNIPPET_MultiShippingItem%%
+							</tbody>
+						</table>
+
+
+						<p class="Submit" style="text-align: right;">
+							<input type="submit" value="%%LNG_ShipToTheseAddresses%%" class="btn" />
+						</p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	%%Panel.ChooseShippingAddressJavaScript%%

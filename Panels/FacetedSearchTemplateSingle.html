@@ -1,0 +1,27 @@
+<div class="facet-container facet-container-single {{ facetState }}">
+    <div class="facet-header js-facet-accordion-action">
+        <h6 class="facet-header-title">{{ title }}</h6>
+        {{#if showClearButton}}
+            <a herf="#" class="js-facet-clear">Clear</a>
+        {{/if}}
+    </div>
+    <div class="facet-body">
+        <ul class="facet-options-list">
+            {{#options}}
+                <li class="facet-option js-facet-option {{#if attributes.selected }} selected {{/if}}" >
+                    <a data-id="{{ id }}" href="#" class="js-facet-single-option">
+                        {{ attributes.title }}
+                        {{#if ../showCount}}
+                            <span class="facet-option-product-count">({{ attributes.count }})</span>
+                        {{/if}}
+                    </a>
+                </li>
+            {{/options}}
+        </ul>
+    </div>
+    {{#if showMoreButton}}
+        <div class="js-facet-more-options">
+            <button type="button" class="btn btn-facet-more-options {{ showMoreState }}"></button>
+        </div>
+    {{/if}}
+</div>

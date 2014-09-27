@@ -1,0 +1,36 @@
+<div class="Title">
+	<h1><div class="ProductImageName" style="position:relative;">%%GLOBAL_ProductName%%</div></h1>
+	<p class="ProductImageDescription" style="position:relative;"></p>
+</div>
+<div class="ProductZoomImageBox center-container" style="display:none;">
+	<div class="ProductZoomImage center-item">
+	</div>
+</div>
+
+
+<div class="ImageCarousel" style="display:none;margin:0 auto;">
+	<button id="ImageScrollPrev" class="prev">
+		<img width="20" src="%%GLOBAL_IMG_PATH%%/LeftArrow.png" alt="" />
+	</button>
+
+	<div class="ProductTinyImageList">
+		<ul>
+			%%SNIPPET_ProductTinyImages%%
+		</ul>
+	</div>
+
+	<button id="ImageScrollNext" class="next">
+		<img width="20" src="%%GLOBAL_IMG_PATH%%/RightArrow.png" alt="" />
+	</button>
+</div>
+
+<div class = 'Nav'>
+	<div style="%%GLOBAL_NavLinkDisplay%%">
+	<a class="PrevLink %%GLOBAL_DisablePrevLink%%" href="#" onclick="showProductZoomImage(parseInt(currentImageIndex)-1); return false">&laquo; %%LNG_PreviousImage%%</a>
+	|
+	<a class="NextLink %%GLOBAL_DisableNextLink%%" href="#" onclick="showProductZoomImage(parseInt(currentImageIndex)+1); return false">%%LNG_NextImage%% &raquo;</a>
+	</div>
+</div>
+<div class="ImageCount">
+	(%%LNG_Image%%&nbsp;<span class="CurrentImageIndex"></span>&nbsp;%%LNG_Of%% %%GLOBAL_TotalImages%%)
+</div>

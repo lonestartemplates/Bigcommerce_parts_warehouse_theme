@@ -1,0 +1,17 @@
+<div class="clear"></div>
+<div class="Block Moveable Panel" id="SideCouponCodeBox">
+	<div class="BlockContent">
+		<script type="text/javascript">
+			lang.EnterCouponCode = "%%LNG_EnterCouponCode%%";
+		</script>
+		<form onsubmit="return Cart.CheckCouponCode()" action="%%GLOBAL_ShopPath%%/cart.php" method="post">
+			<input type="hidden" name="action" value="applycoupon" />
+			<div class="CouponCode">
+				<label>%%LNG_HC_giftcertificatecode%%</label>
+				<input type="text" name="couponcode" id="couponcode" class="Textbox" />
+				<input type="submit" value="%%LNG_HCV_apply%%" class="btn alt" />
+			</div>
+		</form>
+		<hr />
+	</div>
+</div>

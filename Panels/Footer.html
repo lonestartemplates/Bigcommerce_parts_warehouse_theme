@@ -1,0 +1,129 @@
+<div class="footer">
+    <div class="inner">
+        
+        %%Panel.SideNewsletterBox%%
+        
+        <div class="footer-main">
+            <div class="inner">
+                <div class="footer-columns grid">
+                    <div class="grid__item one-fifth">
+                        <div class="Block CategoryList Panel">
+                            <h4>partswarehouse.com</h4>
+                            <div class="BlockContent">
+                                <div class="footer-address">
+                                    %%GLOBAL_StoreAddress%%
+                                </div>
+                                <div class="footer-phone">
+                                    %%GLOBAL_StorePhoneNumber%%
+                                </div>
+                                <div class="footer-email">
+                                    %%GLOBAL_AdminEmail%%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__item one-fifth">
+                        <div class="Block CategoryList Panel">
+                            <h4>accounts &amp; orders</h4>
+                               <div id="Footer-account-menu">
+                                  %%Panel.TopMenu%% 
+                            </div>
+                            </div>
+                            </div>
+                                <div class="grid__item one-fifth">
+                                    <div class="Block CategoryList Panel">
+                                        <h4>Customer service</h4>
+                                        <div id="Footer-page-menu">
+                                            %%Panel.PagesMenu%%
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid__item two-fifths">
+                                    <div class="Block Panel">
+                                        <h4>connect with us:</h4>
+                                        %%Panel.SocialLinks%%
+                                    </div>        
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                                
+                                <div class="footer-links">
+                                    <div class="inner">
+                                        <p>
+                                            <span id="currencyPrices" style="display:none;">
+                                                %%GLOBAL_AllPricesAreInCurrency%% &copy; %%GLOBAL_Year%% %%GLOBAL_StoreName%%. %%SNIPPET_SitemapLink%%</span>
+                                            <label>Copyright Parts Warehouse Theme 
+             <a href="http://lonestartemplates.com/">  
+             <img src="https://cdn6.bigcommerce.com/s-c3mqqo/product_images/uploaded_images/LST-footer-logo.png?t=1409003411" style="
+                                                vertical-align: middle;
+                                                display: inline-block;
+                                                margin-top: -5px; 
+                                                "></a>. All rights reserved.</label>                        
+                                            <span class="powered-by">%%GLOBAL_PoweredBy%%</span>
+                                        </p>
+                                        %%GLOBAL_DebugDetails%%
+                                    </div>  
+                                </div>
+                                
+                            </div>
+      <div id="topcontrol" style="position: fixed; bottom: 5px; right: 5px; opacity: 0; cursor: pointer;" title="Scroll Back to Top">test 
+		  
+	  </div>
+                            </div> 
+                                
+                                %%GLOBAL_DesignModeHTML%%
+                                %%GLOBAL_QueryList%%
+                                %%GLOBAL_DesignModeScriptTag%%
+                                %%GLOBAL_LiveChatFooterCode%%
+                                %%GLOBAL_OptimizerTrackingScript%%
+                                %%GLOBAL_OptimizerConversionScript%%
+                                %%GLOBAL_OptimizerSetCookieScript%%
+                                %%GLOBAL_FooterScripts%%
+                                %%SNIPPET_FastCartThickBoxJs%%
+                                
+                                <script type="text/javascript">
+                                    function updateOnSaleBadge() {
+                                    
+                                    $('.ProductList .RetailPriceValue').each(function(){
+                                    var li = $(this).closest('li');
+                                    var imagelink = li.find('.ProductImage a')
+                                    
+                                    var badge_diameter = imagelink.width() * .45;
+                                    var badge_radius = badge_diameter/2;
+                                    var font_size = badge_radius/2.5;
+                                    
+                                    // get badge
+                                    var onsalebadge = li.find('.on-sale-badge');
+                                    var created_badge = false;
+                                    if(onsalebadge.length == 0) {
+                                    created_badge = true;
+                                    onsalebadge = $('<span class="on-sale-badge">Sale</span>');
+                                    }
+                                    
+                                    // adjust onsale badge dimensions
+                                    onsalebadge.width(badge_diameter).height(badge_diameter).css({
+                                    'margin' : '-'+badge_radius+'px 0 0 -'+badge_radius+'px',
+                                    'line-height' : badge_diameter+'px',
+                                    'font-size' : font_size + 'px'
+                                    });
+                                    
+                                    // add badge to page
+                                    if(created_badge)
+                                    {
+                                    imagelink.append(onsalebadge);
+                                    onsalebadge.fadeIn();
+                                    }
+                                    
+                                    }); 
+                                    
+                                    }
+                                    updateOnSaleBadge();
+                                </script>
+                                <script type="text/javascript">
+                                    jQuery(function () {
+                                    jQuery(".toggle-menu").click(function(){
+                                    jQuery(this).next().toggle("slow");
+                                    });
+                                    });
+                                </script>

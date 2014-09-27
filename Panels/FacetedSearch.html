@@ -1,0 +1,77 @@
+<link href="%%GLOBAL_TPL_PATH%%/Styles/faceted-search.css" rel="stylesheet" type="text/css" media="all" />
+
+<div class="js-faceted-showing-container"></div>
+
+<div class="js-faceted-search-container"></div>
+
+<script id="js-template-facet-showing" type="text/x-handlebars-template">
+    %%Panel.FacetedSearchTemplateShowing%%
+</script>
+
+<script id="js-template-facet-category" type="text/x-handlebars-template">
+    %%Panel.FacetedSearchTemplateCategory%%
+</script>
+
+<script id="js-template-facet-multi" type="text/x-handlebars-template">
+    %%Panel.FacetedSearchTemplateMultichoice%%
+</script>
+
+<script id="js-template-facet-range" type="text/x-handlebars-template">
+    %%Panel.FacetedSearchTemplateRange%%
+</script>
+
+<script id="js-template-facet-rating" type="text/x-handlebars-template">
+    %%Panel.FacetedSearchTemplateRating%%
+</script>
+
+<script id="js-template-facet-single" type="text/x-handlebars-template">
+    %%Panel.FacetedSearchTemplateSingle%%
+</script>
+
+<script id="js-template-product-list" type="text/x-handlebars-template">
+    %%Panel.FacetedSearchProductList%%
+</script>
+
+<script id="js-template-product-grid" type="text/x-handlebars-template">
+    %%Panel.FacetedSearchProductGrid%%
+</script>
+
+<script id="js-template-pagination" type="text/x-handlebars-template">
+    %%Panel.Pagination%%
+</script>
+
+<script>
+    var lang = lang || {};
+    lang.compare = '%%LNG_Compare%%';
+    lang.ProductChooseOptionLink = '%%LNG_ProductChooseOptionLink%%';
+    lang.ProductPreOrderCartLink = '%%LNG_ProductPreOrderCartLink%%';
+    lang.ProductAddToCartLink = '%%LNG_ProductAddToCartLink%%';
+    lang.CatalogPriceIncTaxLabel = '%%LNG_CatalogPriceIncTaxLabel%%';
+    lang.CatalogPriceExTaxLabel = '%%LNG_CatalogPriceExTaxLabel%%';
+
+    // assignment of a value via `return` prevents JS to break in case of empty %%GLOBAL%% variable
+    var facetedSearchOptions = function(){return %%GLOBAL_FacetedSearchOptionsJSON%%}() || {};
+    facetedSearchOptions.reloadCallback = function () {
+        if (typeof($('.QuickView').quickview) === "function") {
+            $('.QuickView').quickview({
+                buttonText: "%%GLOBAL_QuickViewButtonText%%",
+                buttonColor: "%%GLOBAL_QuickViewButtonColor%%",
+                gradientColor: "%%GLOBAL_QuickViewGradientColor%%",
+                textColor: "%%GLOBAL_QuickViewTextColor%%"
+            });
+        }
+
+        if (typeof(setProductListHeights) === 'function') {
+            setProductListHeights();
+        }
+    };
+
+    (function() {
+        //try and make sure require and faceted-search loads after everything on a theme page.
+        var fs = document.createElement('script');
+        fs.async = true;
+        fs.setAttribute('data-main', '%%GLOBAL_FacetedSearchScriptPath%%');
+        fs.src = '%%GLOBAL_FacetedSearchScriptPath%%';
+        var s = document.getElementsByTagName('body')[0]; s.appendChild(fs);
+    })();
+</script>

@@ -1,0 +1,77 @@
+<script type="text/javascript"
+ src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/fancybox/fancybox.js?%%GLOBAL_JSCacheToken%%"></script>
+
+<link rel="stylesheet" type="text/css"
+ href="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/fancybox/fancybox.css"
+ media="screen" />
+
+<div id="LightBoxImages" style="display: none;"><!-- %%GLOBAL_LightBoxImageList%% -->
+<a class="iframe"
+ href="%%GLOBAL_ShopPath%%/productimage.php?product_id=%%GLOBAL_ProductId%%"></a>
+</div>
+
+<script type="text/javascript">
+	//<![CDATA[
+	var originalImages = '';
+	function showProductImageLightBox(TargetedImage) {
+		var currentImage=0;
+		if(TargetedImage) {
+			currentImage = TargetedImage;
+		} else if(CurrentProdThumbImage!='undefined'){
+			currentImage = CurrentProdThumbImage;
+		}
+		if(ShowVariationThumb) {
+			var url = "%%GLOBAL_ShopPath%%/productimage.php?product_id=%%GLOBAL_ProductId%%&image_rule_id=" + encodeURIComponent(ShowVariationThumb);
+		} else {
+			var url = "%%GLOBAL_ShopPath%%/productimage.php?product_id=%%GLOBAL_ProductId%%&current_image="+currentImage;
+		}
+		$('#LightBoxImages a').attr("href", url);
+
+		initProductLightBox();
+
+		$('#LightBoxImages a').trigger('click');
+	}
+
+	function initProductLightBox() {
+
+		var w = $(window).width();
+		var h = $(window).height();
+
+		// tiny image box width plus 3 px margin, times the number of tiny images, plus the arrows width
+		var carouselWidth = (%%GLOBAL_ProductTinyBoxWidth%% + 3) * Math.min(10, %%GLOBAL_VisibleImageTotal%%) + 70;
+
+		//the width of the prev and next link
+		var navLinkWidth = 250;
+
+		var requiredNavWidth = Math.max(carouselWidth, navLinkWidth);
+
+		// calculate the width of the widest image after resized to fit the screen.
+		// 200 is the space betewn the window frame and the light box frame.
+		var wr = Math.min(w-200, %%GLOBAL_ZoomImageMaxWidth%%) / %%GLOBAL_ZoomImageMaxWidth%%;
+		var hr = Math.min(h-200, %%GLOBAL_ZoomImageMaxHeight%%) / %%GLOBAL_ZoomImageMaxHeight%%;
+
+		var r = Math.min(wr, hr);
+
+		var imgResizedWidth = Math.round(r * %%GLOBAL_ZoomImageMaxWidth%%);
+		var imgResizedHeight = Math.round(r * %%GLOBAL_ZoomImageMaxHeight%%);
+
+		//calculate the width required for lightbox window
+		var horizontalPadding = 100;
+		var width = Math.min(w-100, Math.max(requiredNavWidth, imgResizedWidth+ horizontalPadding));
+		var height = h-100;
+
+		$('#LightBoxImages a').fancybox({
+			'frameWidth'	: width,
+			'frameHeight'	: height,
+			callbackOnStart : function(){
+   $('.zoomPad').css('z-index',0);
+           },
+           callbackOnClose : function(){
+               $('.zoomPad').css('z-index',90);
+           }
+		});
+	}
+
+	$(document).ready(function() { originalImages = $('#LightBoxImages').html(); });
+	//]]>
+</script>

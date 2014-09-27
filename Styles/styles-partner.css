@@ -1,0 +1,79 @@
+/* Wix styles */
+
+.main {
+    padding: 0 20px 20px 20px;
+}
+
+.TopMenu {
+    color: #fff;
+    margin: 0 0 20px 0;
+}
+
+.TopMenu ul {
+    overflow: visible;
+}
+
+.TopMenu .inner {
+    padding: 10px 20px;
+}
+
+.PageMenu {
+    margin: -20px 0 20px 0;
+}
+
+.currency-converter p {
+    padding: 0;
+}
+
+#ModalContainer {
+    position: fixed;
+    /* The below need importants because we can't stop edit imodal. May be able to replace with another modal popup and implement it better. */
+    top: 20px !important;
+    left: 20px !important;
+    right: 20px !important;
+    bottom: auto !important;
+    width: auto !important;
+    margin-left: 0 !important;
+    overflow: auto;
+}
+
+#currencyPrices {
+    display: none;
+}
+
+.CartCode .CouponCode {
+    float: none;
+    width: auto;
+}
+
+.CartCode .GiftCertificate {
+    display: none;
+}
+
+#SearchForm {
+    width: 100%;
+}
+
+#SearchForm input {
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    width: 100%;
+}
+
+#SearchForm .Button {
+    height: 50px;
+}
+
+/* Removed width from the content so that it will fill the iFrame */
+
+.TopMenu > .inner,
+#Header > .inner,
+.PageMenu > .inner,
+.main > .inner,
+.footer-main > .inner,
+.footer-links > .inner,
+.newsletter-subscription > .inner {
+    max-width: none;
+    width: auto;
+}

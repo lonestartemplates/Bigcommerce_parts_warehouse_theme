@@ -1,0 +1,41 @@
+<div class="Block Moveable Panel ExpressCheckoutBlock" id="ChooseShippingProvider">
+	<div style="display:%%GLOBAL_HideShippingProviderList%%">
+
+		<h2>%%LNG_ChooseShippingProvider%%</h2> 
+
+		<ul class="multiStep">
+			<li class="Completed"><h4><a href="%%GLOBAL_ShopPath%%/checkout.php">%%LNG_HC_billingaddress%%</a></h4></li>
+			<li class="Completed"><h4><a href="%%GLOBAL_ShopPath%%/checkout.php?action=choose_shipping_address">%%LNG_HC_shippingaddress%%</a></h4></li>
+			<li class="ActivePage"><h4>%%LNG_HC_shippingmethod%%</h4></li>
+			<li class=""><h4>%%LNG_HC_orderconfirmation%%</h4></li>	
+		</ul>
+		
+		%%Discount.FreeShippingEligibility%%
+		<div class="BlockContent">
+			<form action="%%GLOBAL_ShopPath%%/checkout.php?action=save_shipper" method="post" onsubmit="return Checkout.ChooseShippingProvider()">
+				%%GLOBAL_ShippingQuotes%%
+
+				<div class="ML20">
+					<input type="submit" value="Next" class="btn alt" />
+				</div>
+				%%GLOBAL_DeliveryDisclaimer%%
+			</form>
+		</div>
+	</div>
+
+	<div style="display:%%GLOBAL_HideNoShippingProviders%%">
+		<h5 class="ExpressCheckoutTitle">%%LNG_Oops%%</h5>
+		<div class="BlockContent">
+			<p class="ErrorMessage">
+				%%GLOBAL_ShippingError%% <a href="javascript:history.go(-1)">%%LNG_TryAgain%%</a>
+			</p>
+			<p>%%LNG_CouldNotShipFollowingItems%%</p>
+			<ul>
+				%%GLOBAL_ItemList%%
+			</ul>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	lang.PleaseChooseShippingProvider = "%%LNG_PleaseChooseShippingProvider%%";
+</script>

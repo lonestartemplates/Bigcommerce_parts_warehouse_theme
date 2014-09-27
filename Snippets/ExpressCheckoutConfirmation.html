@@ -1,0 +1,139 @@
+<form method="post" action="%%GLOBAL_ShopPath%%/checkout.php" id="OrderConfirmationForm" onsubmit="return ExpressCheckout.ConfirmPaymentProvider()">
+	<p class="ErrorMessage" style="display: %%GLOBAL_HideCheckoutError%%">
+		%%GLOBAL_CheckoutErrorMsg%%
+	</p>
+
+	<p class="SuccessMessage" style="display: %%GLOBAL_HideCheckoutSuccess%%">
+		%%GLOBAL_CheckoutSuccessMsg%%
+	</p>
+
+	<input type="hidden" name="action" value="pay_for_order" />
+	<p class="txt-bold">%%LNG_ReviewTheContentsOfYourOrder%%</p>
+	<table class="CartContents" cellspacing="0" cellpadding="0">
+
+
+
+		<thead>
+			<tr>
+				<th style="white-space: nowrap; width: 435px">%%LNG_CartItems%%</th>
+				<th style="white-space: nowrap; text-align: center;">%%LNG_Qty%%</th>
+				<th style="white-space: nowrap; text-align: right;">%%LNG_ItemPrice%%</th>
+				<th style="white-space: nowrap; text-align: right; width: 130px;">%%LNG_ItemTotal%%</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			%%SNIPPET_CartItems%%
+		</tbody>
+		<tfoot>
+                    %%GLOBAL_totals%%
+            <!-- This is being injected into the GLOBAL_totals markup. -->
+           	<tr class=" CheckoutRedeemCoupon codeUno" style="display: %%GLOBAL_HideUseCoupon%%">
+				<td colspan="4">
+					<label>%%LNG_HC_giftcertificatecoupon%%:</label>
+					<input type="text" name="couponcode" id="couponcode" class="Textbox" />
+					<input type="button" name="apply_code" id="apply_code" class="btn alt" value="%%LNG_Apply%%" onclick="return ExpressCheckout.ApplyCouponCode();" />
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+
+	<div style="line-height: 200%; display: %%GLOBAL_HidePaymentOptions%%" class="PaymentOptions" id="payment_options">
+		<div class="PTB20"><strong>%%LNG_HowWouldYouLikeToPay%%</strong></div>
+		<div style="display: %%GLOBAL_HideUseStoreCredit%%; width: 420px;">
+			<p class="MB10">
+				<label><input type="radio" name="store_credit" id="store_credit" value="1" checked = 'checked'  onclick="update_order_credit_payment(true)" /> %%LNG_CheckoutUseStoreCredit%%</label>
+			</p>
+			<div id="use_store_credit" class="PL20" style="display: %%GLOBAL_HideUseStoreCredit%%">
+				<p style="display: %%GLOBAL_HideLimitedCreditWarning%%" class="ErrorMessage">%%GLOBAL_CheckoutStoreCreditWarning%%</p>
+				<div class="MB10">
+					<table cellpadding="3">
+						<tr>
+							<td align="right"><strong>%%LNG_StoreCreditBalance%%</strong></td>
+							<td align="right" >%%GLOBAL_StoreCredit%%</td>
+						</tr>
+						<tr>
+							<td align="right"><strong>%%LNG_YourOrderTotal%%</strong></td>
+							<td align="right" >%%GLOBAL_AdjustedTotalCost%%</td>
+						</tr>
+						<tr style="display: %%GLOBAL_HideLimitedCreditWarning%%">
+							<td align="right"><strong>%%LNG_OutstandingOrderTotal%%</strong></td>
+							<td align="right" class="ProductPrice">%%GLOBAL_Remaining%%</td>
+						</tr>
+						<tr style="display: %%GLOBAL_HideRemainingStoreCredit%%">
+							<td align="right"><strong>%%LNG_RemainingStoreCredit%%</strong></td>
+							<td align="right" style="color: green;">%%GLOBAL_RemainingCredit%%</td>
+						</tr>
+					</table>
+				</div>
+
+				<div class="MB10" style="display: %%GLOBAL_HideLimitedCreditPaymentOption%%">
+					<p>%%LNG_CreditPaymentMethod%%</p>
+					<div class="PL20" id="credit_provider_list" style="display: %%GLOBAL_HideLimitedCreditWarning%%">
+						%%GLOBAL_StoreCreditPaymentProviders%%
+						%%GLOBAL_CheckoutWith%%
+					</div>
+				</div>
+			</div>
+			<div class="MB10" style="display: %%GLOBAL_HideCreditAltOptionList%%">
+				<label><input type="radio" name="store_credit" value="0"  onclick="update_order_credit_payment(false); checkout_provider_changed(this);" /> %%GLOBAL_CreditAlt%%</label>
+			</div>
+		</div>
+	</div>
+
+	<div class="PL20" id="provider_list" style="display:%%GLOBAL_HidePaymentProviderList%%">
+		%%GLOBAL_PaymentProviders%%
+	</div>
+
+	<div style="display: %%GLOBAL_HideOrderComments%%" class="CheckoutOrderComments">
+		<div class="PTB20"><strong>%%LNG_EnterOrderComments%%</strong></div>
+		<textarea name="ordercomments" cols="40" rows="6">%%GLOBAL_OrderComments%%</textarea>
+	</div>
+
+	<div style="%%GLOBAL_HideOrderTermsAndConditions%%" class="CheckoutHideOrderTermsAndConditions">
+		<div class="PTB20"><strong>%%LNG_TermsAndConditions%%</strong></div>
+		<div style="%%GLOBAL_HideTermsAndConditionsTextarea%%">
+			<textarea readonly="readonly" cols="60" rows="6">%%GLOBAL_OrderTermsAndConditions%%</textarea>
+		</div>
+
+		<div class="MT10">
+			<input type="checkbox" name="AgreeTermsAndConditions" id="AgreeTermsAndConditions" /> <label for= "AgreeTermsAndConditions">* %%GLOBAL_AgreeTermsAndConditions%%</label> %%GLOBAL_TermsAndConditionsLink%%
+		</div>
+	</div>
+
+	<div style="display: %%GLOBAL_HideMailingListInvite%%">
+		<div class="PTB20"><strong>%%LNG_HearFromUsViaEmail%%</strong></div>
+		<p style="display: %%GLOBAL_HideMailingListInvite%%">
+			<input type="checkbox" class="CheckboxTogglesOtherElements" name="join_mailing_list" id="join_mailing_list" %%GLOBAL_NewsletterBoxIsTicked%% /> <label for="join_mailing_list">%%LNG_WouldLikeToReceiveNewsletter%%</label><br />
+
+			<span style="display:%%GLOBAL_HideOrderCheckBox%%"><input type="checkbox" class="CheckboxTogglesOtherElements" name="join_order_list" id="join_order_list" %%GLOBAL_OrderBoxIsTicked%% /> <label for="join_order_list">%%LNG_NewsletterSpecialOffersText%%</label><br /></span>
+		</p>
+	</div>
+
+	<div class="txt-right">
+		<input id="bottom_payment_button" style="display:%%GLOBAL_HideButtomPaymentButton%%" type="submit" value="%%LNG_ProceedToPayment%%" class="btn" />
+	</div>
+	%%Panel.ChooseCheckoutProviderJavaScript%%
+	<script type="text/javascript">
+		%%GLOBAL_PaymentButtonSwitch%%
+		%%GLOBAL_ExpressCheckoutLoadPaymentForm%%
+		lang.TickArgeeTermsAndConditions = '%%LNG_TickArgeeTermsAndConditions%%';
+
+		$('#provider_list input[type=radio], #credit_provider_list input[type=radio]').click(function() {
+			if(!$(this).hasClass('ProviderHasPaymentForm')) {
+				ExpressCheckout.HidePaymentForm();
+			}
+			else {
+				$('#CheckoutStepPaymentDetails').show();
+			}
+		});
+
+		  $('#OrderConfirmationForm .SubTotal').eq(0).addClass('uno');
+		  $('#OrderConfirmationForm .SubTotal').eq(1).addClass('dos');
+		  $('.SubTotal.uno').before($('.codeUno'));
+		  $('.SubTotal.dos td[colspan=3] div').prepend($('.codeDos'));
+
+		  $(".SubTotal td strong:contains('Grand Total:')").closest('tr').addClass('gtotal');
+
+	</script>
+</form>

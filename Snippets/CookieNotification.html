@@ -1,0 +1,21 @@
+<div id="cookieNotification">
+	<div class="cookie-inner">
+		<i class="icon-info"></i>
+		<p>%%GLOBAL_PrivacyCookieNotification%%</p>
+		<button id="acceptCookie">%%LNG_HC_ok%%</button>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+var notificationDiv = $('#cookieNotification');
+notificationDiv.slideDown('slow');
+
+$('#acceptCookie').delegate('', 'click', function(){
+	createCookie('ACCEPT_COOKIE_USAGE', 1, 365);
+	notificationDiv.slideUp('slow',function(){
+		notificationDiv.remove();
+	});
+});
+
+</script>
