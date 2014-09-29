@@ -23,7 +23,7 @@ $GLOBALS['TPL_CFG']['Version'] = '1.0';
 
 $GLOBALS['TPL_CFG']['Premium'] = array(
     // price in cents
-    'price' => 15000,
+    'price' => 12900,
     'currency' => 'usd',
     'partner' => '',
 );
@@ -49,7 +49,26 @@ $GLOBALS['TPL_CFG']['FeaturesTextArray'] = array(
 $GLOBALS['TPL_CFG']['DevicesText'] = "";
 
 // Theme details/description; supports HTML.
-$GLOBALS['TPL_CFG']['DescriptionHtml'] = "<p></p>";
+$GLOBALS['TPL_CFG']['DescriptionHtml'] = "<p>PartsWAREHOUSE is the ultimate automotive theme with top notch, no nonsense features that are proven to help your products sell. PartsWAREHOUSE can be as simple and clean or as complex and colorful as you want it to be. It’s extremely customizable, easy to use and fully responsive. Responsive web design is a web design approach aimed at providing an optimal viewing experience, easy reading and navigating with a minimum of resizing, panning, and scrolling across a wide range of devices from mobile phones to desktop computer monitors. PartsWAREHOUSE is suitable for every type of store and is great as a starting point for your Bigcommerce website. Take your ecommerce shop to the next level with PartsWAREHOUSE.
+
+</p>
+<ul>
+<h3>Features</h3>
+
+<li>Fully Responsive and extremely mobile friendly</li>
+<li>Performance optimized for fast loading</li>
+<li>Modern, no nonsense design and layout that will withstand the test of time.</li>
+<li>Sticky header on mobile view keeps your branding front and center.</li>
+<li>Back to Top link allows users to jump to the top of any given page.</li>
+<li>Customized responsive fly-out menu with a sticky header and dynamic social media icons</li>
+<li>Persistent newsletter signup form on each page to maximize email address capture</li>
+<li>Persistent search options </li>
+<li>Styled share icons on product page</li>
+<li>Styled quick view page allows your to view a product without going to another page</li>
+<li>Styled sale tab easily let's customer know when a product is on sale</li>
+<li>PSD file provided for carousel banner</li>
+<li>PSD file provided for category images</li>
+</ul>";
 
 
 // Recommended dimensions of a logo when it's displayed in the header of this template
