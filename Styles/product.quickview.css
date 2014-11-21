@@ -305,6 +305,7 @@ margin: 0 2px;
 }
 
 #uniform-qty_ {
-width: 75px !important;
+width: 75px !important; border:1px solid #c1c1c1; 
 }
+
 /* === QuickView Styles End === */

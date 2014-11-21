@@ -23,7 +23,7 @@ $GLOBALS['TPL_CFG']['Version'] = '1.0';
 
 $GLOBALS['TPL_CFG']['Premium'] = array(
     // price in cents
-    'price' => 15000,
+    'price' => 149000,
     'currency' => 'usd',
     'partner' => '',
 );

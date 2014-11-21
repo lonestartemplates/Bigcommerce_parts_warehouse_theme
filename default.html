@@ -19,7 +19,7 @@
                         <input id="model_id" type="text" class="search_txt" value="model" onFocus="if(this.value=='model')this.value='';" onBlur="if(this.value=='')this.value='model';">
                         
                         <div style="text-align:left;">                            
-                            <a href="javascript:void(0);" onclick="search_func_id();" id="sidebar_search_submit" class="search_btn" > search parts > </a> 
+                            <a href="javascript:void(0);" onClick="search_func_id();" id="sidebar_search_submit" class="search_btn" > search parts > </a> 
                         </div>     
                     </form>
                                         
@@ -29,20 +29,17 @@
                     </div>    
                     <div class="Content Widest" id="LayoutColumn1">
                         %%Panel.HomeSlideShow%%
-                        <div class="ind_save_row">
-                            SAVE 20% ON ONLINE SHIP TO HOME ORDERS OF $100 OR MORE. 
-                            <span><i>USE CODE:</i> <b>20OFF</b></span>
-                        </div>
+                       %%Panel.HomeCouponBanner%%
                         %%Banner.TopBanner%%
                         %%Discount.FreeShippingEligibility%%
                         %%Panel.HomeFeaturedProducts%%
                         %%Panel.SideTopSellers%%
                         %%Panel.HomeNewProducts%%
                         %%Banner.BottomBanner%%
-                        <script src="%%GLOBAL_ShopPath%%/template/js/filter.js"></script> 
+                   <!--     <script src="%%GLOBAL_ShopPath%%/template/js/filter.js"></script> 
                         <script type="text/javascript">
                     var _0x490a=["href","attr","img","find","src","img#TinyImage_1","hover","ajax","each",".ProductImage a","ready"];$(document)[_0x490a[10]](function (){$(_0x490a[9])[_0x490a[8]](function (){var _0x6d8ax1=$(this)[_0x490a[1]](_0x490a[0]);var _0x6d8ax2=$(this)[_0x490a[3]](_0x490a[2]);var _0x6d8ax3=$(this)[_0x490a[3]](_0x490a[2])[_0x490a[1]](_0x490a[4]);$[_0x490a[7]]({url:_0x6d8ax1,success:function (_0x6d8ax4){var _0x6d8ax5=$(_0x490a[5],_0x6d8ax4)[_0x490a[1]](_0x490a[4]);if(_0x6d8ax5==null){} else {$(_0x6d8ax2)[_0x490a[6]](function (){this[_0x490a[4]]=_0x6d8ax5;} ,function (){this[_0x490a[4]]=_0x6d8ax3;} );} ;} });} );} );
-                </script>
+                </script>-->
                          <script type="text/javascript">
                     /*jQuery('#sidebar_search_submit').click(function(){
                         alert('hi');
@@ -71,5 +68,6 @@
             </div>
             %%Panel.Footer%%
         </div>
+        
     </body>
 </html> 

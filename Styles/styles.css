@@ -67,6 +67,7 @@ dl dt {margin-bottom:10px; display:block;}
     position:relative;
 }
 
+
 .TopMenu li {
     display: inline-block; float:left;
     *display: inline;
@@ -130,7 +131,9 @@ border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #FFF rgba(0, 0, 0, 0) !important
     position: relative;
     margin-bottom: 20px;
 }
-
+div#SideTopSellers li:nth-child(5) {
+display: none;
+}
 /* Main Categories Menu */
 
 #HeaderLower #SideCategoryList .SideCategoryListClassic li a {
@@ -156,10 +159,10 @@ border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #FFF rgba(0, 0, 0, 0) !important
     font-size: 0.9em;
 }
 .footer-phone {
-    color: white;
-    padding-top: 6px;
-    padding-bottom: 5px;
-    font-size: 0.9em;
+color: #FFF;
+padding-top: 1px;
+padding-bottom: 0px;
+font-size: 0.9em;
 }
 div#Footer-account-menu .inner {
     padding-top: 0px;
@@ -189,17 +192,29 @@ line-height: 1px;
 }
 
 /* Logo */
-.header-logo {
-    float: left; margin-top:18px;
+.header-logo 
+{    float: left; margin-top:0px; width:auto;   
 }
 
 .header-logo img {
-    display: block;
-    margin: 0 auto;
-}
+    display: block; float:left; 
+    margin: 0 auto; max-width:320px; max-height:100px;    
+}   
 
 .header_mid
-{    padding:38px 0px 0px 34px; display:inline-block; font-size:16px; float:left; color:#545454; font-weight:lighter;
+{    color: #545454;
+    display: block;
+    float: none;
+    font-size: 16px;
+    font-weight: lighter;
+    overflow: hidden;
+    padding: 38px 0 0;
+    text-align: center;
+    width: auto; 
+    
+}
+.header-secondary
+{    width:auto; float:right;
 }
 
 /* Top Search Form */
@@ -262,7 +277,9 @@ line-height: 1px;
     font-size: 0.85em;
     margin: 5px 0 0 0;
 }
-
+div#uniform-giftwrapping_all {
+width: 245px !important;
+}
 .no-sel {
     height: auto;
     line-height: inherit;
@@ -461,10 +478,16 @@ hr {
 .Left h3 {
     padding-top: 0;
 }
-#HomeFeaturedProducts h2 , 
-#HomeNewProducts h2 {
-    background:#393939; padding:7px 0px 4px 25px; border-bottom:3px solid #8b8b8b; color:#fff; 
-    text-transform:uppercase; font-size:18px; margin-bottom:13px; font-family: 'Roboto Condensed', sans-serif; font-weight:400;
+#HomeFeaturedProducts h2, #HomeNewProducts h2, #SideTopSellers h2, #SimilarMultiProductsByCustomerViews h4, .fastCartBottom h4 {
+background: #393939;
+padding: 7px 0px 4px 25px;
+border-bottom: 3px solid #8B8B8B;
+color: #FFF;
+text-transform: uppercase;
+font-size: 18px;
+margin-bottom: 13px;
+font-family: 'Roboto Condensed', sans-serif;
+font-weight: 400;
 }
 .Left  h3 {
     background:#393939; padding:4px 0px 2px 10px; border-bottom:3px solid #8b8b8b; color:#fff; text-transform:uppercase; font-family: 'Roboto Condensed', sans-serif; font-weight:400;
@@ -835,8 +858,8 @@ hr {
     height:auto !important;
     position: relative; border:0px solid #cac9c9; margin-right:0px; 
 }
-.brand-img, #ProductDetails .ProductThumbImage
-{    border:5px solid #cac9c9;     background: url(../../__custom/images/zoom_icon.jpg) no-repeat right bottom #FFF;
+.brand-img, #ProductDetails .ProductThumbImage 
+{    border:5px solid #cac9c9; /*background: url(../../__custom/images/zoom_icon.png) no-repeat right bottom #FFF;*/ background:#FFF; padding:0px; width:99%;    
 }
 .ProductList .ProductImage a, .ProductThumbImage a {
     display: table-cell;
@@ -1602,7 +1625,7 @@ table.General tbody tr.First td {
 .PayPalExpressCheckout p,
 .AlternativeCheckout p {
     margin: 0;
-    float: none !important;
+    float: none !important; padding-top:5px;
 }
 
 /** Top Right Locale Chooser (list of flags) **/
@@ -1678,6 +1701,7 @@ table.General tbody tr.First td {
 }
 
 .CurrencyChooser h2 {
+
     font-size: 13px;
     padding: 0 0 10px 0;
 }
@@ -1792,7 +1816,7 @@ table.General tbody tr.First td {
     padding: 22px;
     white-space: nowrap;
     text-transform: none;
-    color: #bebebe;
+    color: #000;
 }
 
 .ExpressCheckoutBlockCollapsed .ExpressCheckoutContent {
@@ -2072,8 +2096,11 @@ p.AddCartButton {
     height: auto !important;
     background-image: none;
     position: relative;
+	min-height:inherit !important;
 }
-
+.ProductList.List .ProductActionAdd
+{	margin-left:0px;
+}
 .ProductList.List .ProductImage {
     float: left;
     padding-top: 20px;
@@ -2092,7 +2119,7 @@ p.AddCartButton {
 
 .ProductList.List .QuickViewBtn {
     text-align: center;
-    width: 100px;
+    width: 120px; top:46% !important;
 }
 
 .ProductList .p-name {
@@ -2967,6 +2994,7 @@ div#fancy_outer {
     max-width: 920px !important;
     width: 95% !important;
     padding: 0 !important;
+    height:auto !important;
 }
 
 #fancy_content {
@@ -3340,8 +3368,8 @@ a.ChangeLink {
 .CartItemQuantity div.selector span,
 .DetailRow.qty .selector span {
     margin: 0px 0 0 0;
-    line-height: 20px;
-    height: 20px;
+    line-height: 33px;
+    height: auto;
 }
 
 .CartRemoveLink {
@@ -3639,6 +3667,7 @@ a.ChangeLink {
     right: 0 !important;
     top: 20px !important;
     width: 100% !important;
+background:#fff;
 }
 
 /* Footer */
@@ -4457,6 +4486,7 @@ div.selector {
     min-height: 18px !important;
     padding: 3px 0 !important;
     max-width: 100%;
+    border:1px solid #CCC;
 }
 
 div.selector select {
@@ -5055,10 +5085,7 @@ label.outStock span.name {
 }*/
 
 #Header.off-screen {
-    -webkit-transform: translateY(-50px);
-    -ms-transform:     translateY(-50px);
-    transform:         translateY(-50px);
-}
+    }
 
 /*----------------------------------------------------------------------------------------------------------
 #############################################  DRAWER MENU
@@ -5542,9 +5569,17 @@ border-bottom:2px solid #8b8b8b; margin-bottom:15px;
 .AccountLogin form .FormContainer fieldset {float:left; width:100%; border:0px;}   
 .AccountLogin form .FormContainer fieldset dl dt label {margin-bottom:10px; display:block;}
 
-.FormContainer dl dd input {width:260px !important;}
-.FormContainer dl dd textarea {width:260px; height:150px;}
-
+.FormContainer dl dd input {width:240px !important;  border: 1px solid #ccc;}
+.FormContainer dl dd textarea {width:240px; height:150px;  border: 1px solid #ccc;}
+.AddShippingAddress .Submit .shippingButton
+{    float:left; clear:both;
+}
+.FormContainer dl dd input#LoginButton
+{	border:0px;	border-bottom:3px solid #545454;
+}
+#share-product #tabcontent
+{    background:#FFF;  
+}
 #ProductDetails .productAddToCartRight .CompareRowMn { display:none;} 
 #DrawerMenu #SideAccountNavigation h3 { display:none;}
 
@@ -5563,4 +5598,79 @@ border-bottom:2px solid #8b8b8b; margin-bottom:15px;
 }
 .ProductList li.no_product_found
 {    min-height:inherit !important; width:100%; padding:100px 0px; text-align:center;      
+}
+ul.blog-tags li
+{    background:#FFF;
+}
+div#uniform-brand {
+border: 2px solid #C1C1C1;
+border-bottom: 3px solid #C1C1C1;
+}
+select#brand {
+    border: 2px solid #C1C1C1;  border-bottom: 3px solid #C1C1C1;  height: 24px;
+}
+div#uniform-brand {
+    border: 2px solid #C1C1C1;  border-bottom: 3px solid #C1C1C1;  
+}
+select#featured {}
+div#uniform-featured {
+    border: 2px solid #C1C1C1;  border-bottom: 3px solid #C1C1C1;
+}
+div#uniform-shipping {
+    border: 2px solid #C1C1C1;  border-bottom: 3px solid #C1C1C1;
+}
+
+.productPage #ProductDetails
+{    margin-top:20px;
+}
+.productPage .recommended_right
+{    margin-top:20px;    
+}
+.product_zoom_icon
+{    display:none; 
+}
+#topcontrol
+{    opacity:1 !important; 
+}
+.CartTopBtn .btn,
+.CartTopBtn .PayPalExpressCheckout
+{    float:right; clear:right;  
+}
+.ExpressCheckoutContent .AddBillingAddress dd, 
+.ExpressCheckoutContent .AddShippingAddress dd
+{    width:auto; 
+}
+.NewShippingAddress .shippingButton
+{    clear:both;
+}
+#CheckoutStepConfirmation .CartContents tfoot .CheckoutRedeemCoupon
+{    background:none;
+}
+#CheckoutStepConfirmation .CartContents tfoot .CheckoutRedeemCoupon    label,
+#CheckoutStepConfirmation .CartContents tfoot .CheckoutRedeemCoupon    input
+{    display:inline-block;
+}
+.fastCartSummaryBox .ProceedToCheckout .CheckoutButton
+{    margin-left:0px; float:none;
+}
+.fastCartSummaryBox .ProceedToCheckout .PayPalExpressCheckout p
+{    clear:both; text-align:center; margin-bottom:0px;  
+}
+.fastCartSummaryBox .PayPalExpressCheckout
+{    text-align:center; 
+}
+div#uniform-giftwrapping_all span {
+overflow: visible;
+}
+#NewShippingAddress dd .selector
+{    width:238px !important;
+}
+#CategoryBreadcrumbMobile
+{	display:none; 
+}
+#ProductBreadcrumb ul
+{	display:none;
+}
+#ProductBreadcrumb ul.last
+{	display:block; 
 }

@@ -12,11 +12,14 @@ a,.header-logo a,.Left li li a,.Left #SideCategoryList li a,.Left .slist li a,.L
 a.alt:hover{background:#d42020;color:#000}    
 .multiStep li.ActivePage h4{border-bottom:4px solid #ccc}.icon-add{background:#ccc url("%%GLOBAL_TPL_PATH%%/images/add.png") no-repeat scroll 50% 50%}h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{color:#333}h1,.h1{color:#333}.productOptionViewProductPickListWithImage td{border-bottom:1px dotted #d9d9d9}.TopMenu li.Flag img.Selected{border:2px solid #d9d9d9}.productOptionViewRectangle .option.selectedValue label{border:1px solid #a6a6a6 !important}.productOptionPickListSwatch .selectedValue .textureContainer,.productOptionPickListSwatch .selectedValue .swatchColours{border:3 !important;border-color:#333 !important}.productOptionPickListSwatch .textureContainer,.productOptionPickListSwatch .swatchColours,.productOptionViewRectangle .option label,.recaptchatable #recaptcha_response_field,.zoomWrapper,#ProductDetails .ProductTinyImageList ul li.selected{border:3 !important}.CurrencyList dd,#SearchForm .Button,#SearchForm input.Textbox,select,hr,input.Textbox,textarea,input[type="text"],input[type="password"],.QuickSearch,.SharePublicWishList,.ExpressCheckoutBlock .ExpressCheckoutTitle,.TabNav li a,.HowToPay,.NotifyMessage,.QuickSearchResult .QuickSearchResultImage,.CurrencyChooser,.selected-currency,div.uploader,div.selector,.recaptchatable{border:3}.ExpressCheckoutBlockCompleted .ExpressCheckoutCompletedContent,div.uploader span.action{border-left:3}.TitleHeading,.TabNav{border-bottom:3}.ProductList.List .ProductDetails{border-top:3}
 .btn{background-color:#cac9c9;color:#000}
-.btn.alt{background:#d42020;color:#fff; text-transform:uppercase;}a.btn.alt{color:#FFF}.btn.text{color:#666}.TopMenu>.inner,#Header>.inner,.PageMenu>.inner,.main>.inner,.footer-main>.inner,.footer-links>.inner,.newsletter-subscription>.inner{max-width: 960px; width: 92%;}#home .ProductList li,.productPage .ProductList li{margin-bottom:0px; }@media screen and (max-width:768px){.TabNav li.Active a{border-bottom:3}}@media screen and (max-width:600px){.BillingDetails,.ShippingDetails{border-top:3}}@media screen and (max-width:480px){#cart-amount .Cart .total{background:#333;color:#fff}#cart-amount .Cart .bag-handle{border:2px solid #333}}
+.btn.alt{background:#d42020;color:#fff; text-transform:uppercase;}a.btn.alt{color:#FFF}.btn.text{color:#666}.TopMenu>.inner,#Header>.inner,.PageMenu>.inner,.main>.inner,.footer-main>.inner,.footer-links>.inner,.newsletter-subscription>.inner{max-width: 960px; width: 92%;}}
+@media screen and (max-width:768px){.TabNav li.Active a{border-bottom:3}}
+@media screen and (max-width:600px){.BillingDetails,.ShippingDetails{border-top:3}}
+@media screen and (max-width:480px){#cart-amount .Cart .total{background:#333;color:#fff}#cart-amount .Cart .bag-handle{border:2px solid #333}}
 
 
-#SideCategoryList .sf-menu .sf-sub-indicator
-{    width:13px; height:10px; display:block !important; right:0px;
+#SideCategoryList .sf-sub-indicator
+{    width:13px; height:10px; display:block !important; right:0px; top:8px; 
     background:url(../../__custom/images/icon_arrow_down.png) no-repeat !important;
 }
 #Header #CartContent
@@ -52,4 +55,54 @@ a.alt:hover{background:#d42020;color:#000}
 }
 #SimilarProductsByCustomerViews
 {    width:100%; float:left; margin-top:30px;
+}
+.SideCategoryListFlyout a
+{	display:block; position:relative;
+}
+.Left #SideCategoryList ul ul
+{	visibility:visible !important;
+}
+.Left li
+{	position:relative;
+}
+.Left #SideCategoryList ul li ul li
+{	border-bottom:0px solid #8b8b8b; padding-left:10px; 
+}
+.Left #SideCategoryList ul li.active .sf-sub-indicator
+{	background:url(../../__custom/images/icon_arrow_down1.png) no-repeat !important;
+}
+
+
+.treeview .hitarea.expandable-hitarea, .treeview .collapsable-hitarea {
+    top: 7px;
+}
+.treeview .collapsable-hitarea {
+    color: #999;
+}
+.treeview .hitarea {
+    cursor: pointer;
+    font-size: 13px;
+    position: absolute;  
+    right: 5px;
+}
+.hitarea.expandable-hitarea .fa-chevron-down,
+.hitarea.expandable-hitarea .fa-chevron-down
+{	background: url("../../__custom/images/icon_arrow_down.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    display: block !important; 
+    height: 10px;
+    right: 0;
+    top: 8px;
+    width: 13px;
+
+}
+.hitarea.collapsable-hitarea .fa-chevron-up
+{	background: url("../../__custom/images/icon_arrow_down1.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    display: block !important; 
+    height: 10px;
+    right: 0;
+    top: 8px;
+    width: 13px;
+}
+.Left li.collapsable a
+{	line-height:22px;     
 }

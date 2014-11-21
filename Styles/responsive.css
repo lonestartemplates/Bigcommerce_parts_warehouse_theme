@@ -1,6 +1,18 @@
 /* 1024px */
+.responsive_tagline
+{	display:none;
+} 
 @media screen and (max-width: 1024px) {
 	/* Hide */
+	#Header .header_mid
+	{	display:none;
+	}
+	.responsive_tagline 
+	{	display:block; width:100%; float:left; 
+	}
+	#Header .responsive_tagline .header_mid
+	{	display:block;       
+	}
 	.productOptionPreviewDisplay, .ExpressCheckoutBlockCompleted .ExpressCheckoutCompletedContent { display: none !important; }
 	/* Show */
 	/* Layout */
@@ -12,7 +24,9 @@
 	.header-secondary {float:left; width:100%; text-align:center;}
 	#SearchForm {float:none; display:inline-block; margin-top:0px;}
 	.PageMenu li {margin:0 13px;}
-	
+	.header-logo img
+	{	float:none;
+	}
 	.slide-show .slide-overlay {width:70%;}
 	.slide-show h2 {font-size:20px;}
 	.slide-show .slide-text {font-size:15px;}
@@ -29,7 +43,7 @@
 	#ProductDetails {width:70%;}
 	.recommended_right {width:28%;}
 	.product_details_page .left-content {width:100%;}
-	.ProductList .ProductImage, .brand-img, #ProductDetails .ProductThumbImage {width:100%;}
+	.ProductList .ProductImage, .brand-img, #ProductDetails .ProductThumbImage {width:95%;}
 	.product_details_page .ProductMain {width:100%;}
 	.product_detail ul li {width:24.8%;}
 	.BlockContent img {height:62px;}
@@ -43,6 +57,9 @@
 	div.selector {width:64%;}
 	.Block.SocialConnect.Moveable.Panel {width: 200px;}
 	.BlockContent img.__mce_add_custom__ {height:auto;}
+	#SimilarMultiProductsByCustomerViews .ProductList li
+	{	width: 24.3%;
+	}
 }
 
 /* 768px */
@@ -52,6 +69,7 @@
 	.toggle-menu span {background-color:rgba(255, 255, 255, 0.5); width:100%; height:2px; float:left; margin:2px 0px; border-radius:20px;}
 	.TopMenu .inner ul {display:none; position:absolute; z-index:2; top:27px; left:0px; max-width:94%; min-width:94%; width:94%; background-color:#393939; padding:0 3% !important;}
 	.TopMenu li {padding:0 1%; width:98%; line-height:28px;}
+	.brand-img, #ProductDetails .ProductThumbImage { padding:0px;}
 	
 	/* Hide */
 	#LayoutColumn1 #HomeSlideShow {display:none;}
@@ -113,7 +131,10 @@
 	.FormContainer .box {width:100%;}
 	div.selector {width:43%;}
 	.header {margin-bottom:20px;}
-	.Block.SocialConnect.Moveable.Panel {width: auto;}
+	.Block.SocialConnect.Moveable.Panel {width: auto;}	
+	#SimilarMultiProductsByCustomerViews .ProductList li a img
+	{	height:auto;
+	}
 }
 
 /* 600px */
@@ -134,7 +155,7 @@
 	.PageMenu li {margin:0 15px;}
 	#SideNewsletterBox .grid .grid {margin:0 0 20px 0px !important;}
 	#SideNewsletterBox .grid__item {padding:0px !important;}
-	.ProductList .ProductImage, .brand-img, #ProductDetails .ProductThumbImage {width:98%;}
+	.ProductList .ProductImage, .brand-img, #ProductDetails .ProductThumbImage {width:90%;}     
 	
 	/* Adjusting the size of the swatches for smaller screens */
 	.productOptionViewRectangle .option label { padding: 0 !important; line-height: 30px; height: 30px; width: 30px; }
@@ -172,12 +193,24 @@
 	.slide-show .slide-overlay {top:13%; left:20px; width:60%;}
 	.flex-direction-nav .flex-prev {left:0px;}
 	.flex-direction-nav .flex-next {right:0px;}
+	#SimilarMultiProductsByCustomerViews .ProductList li
+	{	width:32%;
+	}
 }
 
 /* 600px */
 @media screen and (max-width: 568px) {
 	.ProductList li, #home .ProductList li, .productPage .ProductList li {width:47.833%;}
 	.footer-columns .grid__item {width:100%; margin-bottom:20px;}
+	.brand-img, #ProductDetails .ProductThumbImage { padding:20px;}
+	div#fancy_outer, 
+	#fancy_overlay
+	{	display:none !important;
+	}
+	.footer .TopMenu
+	{	position:static;
+	}
+	
 	 
 }
 
@@ -185,8 +218,8 @@
 @media screen and (max-width: 480px) {
 	/* Hide */
 	
-	.header {position:fixed; width:100%; z-index:999999;}
-	.SlideShow-mobile {margin:100px 0 0 0;}
+	.header {position:fixed; width:100%; z-index:999; top:0px; left:0px; }
+	.SlideShow-mobile {margin:0px 0 0 0;}
 	.TopMenu .CartLink a span {display:none;}
 	.header_mid {display:none;}
 	.on-screen .inner .CategoryList .search_filter {display:none !important;}
@@ -216,16 +249,38 @@
 	.TopMenu .CartLink {margin:0px;}
 	#home .search_filter .search_txt {height:40px; padding:0 10px; margin:0 3% 5px !important; width:94% !important;}
 	.ProductList li,  #home .ProductList li,  .productPage .ProductList li { width: 100%; }
-	.TopMenu > .inner,  #Header > .inner,  .PageMenu > .inner,  .main > .inner,  .footer-main > .inner,  .footer-links > .inner,  .newsletter-subscription > .inner { width: 84%; }
-	#Header { position: relative; top: 0; z-index: 99999999; background-color: #fff; width: 100%; border-bottom: 1px solid #efefef; }
+	.TopMenu > .inner,  #Header > .inner,  .PageMenu > .inner,  .main > .inner,  .footer-main > .inner,  .footer-links > .inner,  .newsletter-subscription > .inner { width: 84%; margin:0px auto; }
+	#Header { position: relative; top: 0; z-index: 9999; background-color: #fff; width: 100%; border-bottom: 1px solid #efefef; }
 	#Header > .inner { width: 90%; display: table; padding: 10px 0; }
-	.header-secondary { float: none; position: absolute; top: -42px; left: 0; width: 100%;}
+.header-secondary {
+float: none;
+position: absolute;
+top: -42px;
+
+left: 0;
+
+width: 52%;
+text-align: center;
+}
 	.header-secondary .currency-converter { display: none; }
-	.header-secondary #SearchForm { float: none; width:175px;  }
-	.header-secondary #SearchForm input.Textbox { border: 0; background: none; color: #d6d6d6; height: 50px; }
-	.header-secondary #SearchForm input.Button { background-color: transparent; position: absolute; border: 0; height: 100%; }
+.header-secondary #SearchForm {
+float: none;
+width: 115%;
+margin-left: 33%; border:2px solid #c1c1c1;
+ background: url("../../__custom/images/search_bg1.png") no-repeat right center #FFF; margin-top:11px;
+}
+#DrawerMenu.on-screen
+{	top:125px;
+}
+	.header-secondary #SearchForm input.Textbox { border: 0; background: none; color: #d6d6d6; height:24px; line-height:24px; padding:0px 10px; text-indent:0px; margin-top:0px; }
+.header-secondary #SearchForm input.Button {
+background-color: rgba(0, 0, 0, 0);
+position: absolute;
+border: 0;
+height: 100%;
+margin-left: -29px;
+}
 	.header-logo { display: table-cell; width:auto; float: none; vertical-align: middle; text-align: center; overflow: hidden; }
-	.header-logo img { max-height: 60px; }
 	.header-logo h1 { padding: 0; }
 	#cart-amount { vertical-align: middle; width: 60px; }
 	#cart-amount .Cart { font-weight: bold; padding: 1em 0px; display: block; text-align: center; width: 60px; position: relative; }
@@ -241,8 +296,8 @@
 	.SubCategoryList li { padding: 0.9em; background: none; border-bottom: 1px solid #efefef; }
 	#fastCartContainer { max-height: none; }
 	.footer-columns .grid__item,  .CartCode .grid__item { width: 100%; }
-	#fancy_outer { z-index: 110 !important; }
-	#fancy_overlay { z-index: 105 !important; }
+	#fancy_outer { z-index: 9999 !important; }
+	#fancy_overlay { z-index: 9999 !important; }
 	.footer-links { text-align: center; }
 	.footer .powered-by { float: none; display: block; margin-top: 10px; }
 	.LittleNotePassword { padding: 0; margin-bottom: 20px; }
@@ -264,7 +319,7 @@
 	.BlockContent img.__mce_add_custom__ {height:auto;}
 	.PinterestButtonContainer img { height:auto !important;}
 	.ProductList .ProductImage {width:100%;}
-	.brand-img, #ProductDetails .ProductThumbImage {width:98%;}
+	.brand-img, #ProductDetails .ProductThumbImage {width:auto; padding:0px; }
 	.CartCode .CouponCode form .CouponCode input {width:83% !important; float:left; margin-right:20px;}
 	.CartCode .CouponCode form .CouponCode input.btn {width:40px !important; margin:0px;}
 	.CartCode .GiftCertificate form .GiftCertificateCode input {width:83% !important; float:left; margin-right:20px;}
@@ -281,6 +336,34 @@
 	.productlist-page .FloatRight.SortBox {width:100%; float:left;}
 	.SortBox div.selector, .SearchSorting div.selector {float:left; width:99% !important;}
 	.productlist-page .CompareButton .btn.alt {float:right; width:auto !important;}
+	.ProductList .ProductImage img 
+	{	width:auto; height:auto;
+	}
+	#ProductDetails .ProductThumbImage img {height:auto; width:100%;}
+	#ProductDetails .ProductThumbImage img.product_zoom_icon
+	{	 display: none;
+    position: absolute;
+    z-index: 99;
+    width: auto;
+    height: auto;
+    bottom: 10px;
+    right: 10px;
+	}
+	#Header
+	{	border-bottom:0px;
+	}
+	.header
+	{	background:#FFF; height:124px;
+	}
+	.ProductZoomImageBox
+	{	height:150px !important;
+	}
+	.ProductZoomImageBox.center-container img
+	{	min-height:150px;   
+	}
+	#SimilarMultiProductsByCustomerViews .ProductList li {
+    width: 48%;
+}
 }
 
 
@@ -298,6 +381,16 @@
 	.form dt,  .FormContainer dt { text-align: left; width: auto; clear: both; float: none; }
 	.form dd,  .FormContainer dd { padding: 0; margin: 0; }
 	#Header.off-screen {transform: translateY(0px);}
+	.main {margin-top:125px;}
+		.header-logo img
+		{	height:70px;
+		}
+.responsive_tagline 
+{	display:none;
+}
+#Header
+{	height:92px; 
+}
 	
 }
 
@@ -322,27 +415,52 @@
 	.slide-show .slide-text {font-size:13px; line-height:20px;}
 	.slide-show .btn {height:35px; line-height:35px; font-size:13px;}
 	.Block.SocialConnect.Moveable.Panel {width: auto;}
+	.main {margin-top:125px;}	 
+	#Header
+	{	height:92px;
+	}
+	.header-logo
+	{	height:70px;
+	}
+	.ind_save_row
+	{	margin-top:10px;
+	}
+	#DrawerMenu.on-screen { top:74px; position:fixed;} 
 }
 
 /* 320px */
 @media screen and (max-width: 360px) {
-	.header-logo img { width:90%;}
-	#DrawerMenu.on-screen {	margin:53px 0 0 0;}
+	.header-logo img { width:auto; height:70px;}	
+	#DrawerMenu.on-screen {	margin:32px 0 0 0;}
 	.header-logo h1 a {font-size:30px;}
-	.BlockContent img {height:64px;}
+	.BlockContent img {height:auto;}
 	.slide-show .slide-overlay {display:none;}
 	.PinterestButtonContainer img { height:auto !important;}
 	.Block.SocialConnect.Moveable.Panel {width: auto;} 
 	.TopMenu .CartLink {margin:0 0px 0 0;}
 	#ToggleMenu {left:0px; top:-33px;}
 	#Header > .inner {width:84%;}
-	.brand-img, #ProductDetails .ProductThumbImage {width:96%;}
+	.brand-img, #ProductDetails .ProductThumbImage {width:auto; padding:0px;}
 	.SortBox div.selector, .SearchSorting div.selector {width:98.6% !important;}
-	.main {margin-top:92px;}
+
 	.SlideShow-mobile {display:none;}
+		.ProductList .ProductImage img
+		{	width:auto; height:auto; 
+		}
+		#ProductDetails .ProductThumbImage img {height:auto; width:100%;}
+		#DrawerMenu.on-screen {
+    top: 93px;
 }
 
-@media screen and (max-width: 320px) {
-#DrawerMenu.on-screen { top:24px;}              
-       
+.main {
+    margin-top: 136px;
 }
+ #SimilarMultiProductsByCustomerViews .ProductList li {
+    width: auto;
+}
+}
+
+@media screen and (max-width: 340px) {
+#DrawerMenu.on-screen { top:74px;}              
+ #DrawerMenu.on-screen {	margin:53px 0 0 0;}      
+} 

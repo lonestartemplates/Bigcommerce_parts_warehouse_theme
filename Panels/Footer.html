@@ -8,7 +8,7 @@
                 <div class="footer-columns grid">
                     <div class="grid__item one-fifth">
                         <div class="Block CategoryList Panel">
-                            <h4>partswarehouse.com</h4>
+                            <h4>Contact Us</h4>
                             <div class="BlockContent">
                                 <div class="footer-address">
                                     %%GLOBAL_StoreAddress%%
@@ -17,7 +17,8 @@
                                     %%GLOBAL_StorePhoneNumber%%
                                 </div>
                                 <div class="footer-email">
-                                    %%GLOBAL_AdminEmail%%
+                           
+                            %%GLOBAL_AdminEmail%%
                                 </div>
                             </div>
                         </div>
@@ -32,7 +33,7 @@
                             </div>
                                 <div class="grid__item one-fifth">
                                     <div class="Block CategoryList Panel">
-                                        <h4>Customer service</h4>
+                                        <h4>Quick Links</h4>
                                         <div id="Footer-page-menu">
                                             %%Panel.PagesMenu%%
                                         </div>
@@ -67,9 +68,9 @@
                                 </div>
                                 
                             </div>
-      <div id="topcontrol" style="position: fixed; bottom: 5px; right: 5px; opacity: 0; cursor: pointer;" title="Scroll Back to Top">test 
-		  
-	  </div>
+      <div id="topcontrol" class="backtoTop" style="position: fixed; bottom: 5px; right: 5px; opacity: 0; cursor: pointer;" title="Scroll Back to Top">
+          <img src="%%GLOBAL_IMG_PATH%%/up.png" alt="" />  
+      </div>
                             </div> 
                                 
                                 %%GLOBAL_DesignModeHTML%%
@@ -127,3 +128,32 @@
                                     });
                                     });
                                 </script>
+                                <script>
+
+
+jQuery(window).scroll(function() {
+    
+    if (jQuery(this).scrollTop()>0)
+     {
+      jQuery('.backtoTop').fadeIn(); 
+     }
+    else
+     {
+      
+      jQuery('.backtoTop').fadeOut();  
+     }
+ });
+
+
+
+
+
+    jQuery('.backtoTop').click(function(){
+    jQuery("html, body").animate({ scrollTop: 0 }, 600);
+    
+    
+    return false;
+    });
+    
+
+</script>
