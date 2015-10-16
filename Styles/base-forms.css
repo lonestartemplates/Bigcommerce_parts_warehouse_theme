@@ -114,11 +114,11 @@ select {
     height: 20px;
 }
 
-.HorizontalFormContainer dd div,
+/*.HorizontalFormContainer dd div,
 .form dd div {
     display: inline-block;
 }
-
+*/
 .HorizontalFormContainer dd .selector span,
 .form dd .selector span {
     font-size: 13px;

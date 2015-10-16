@@ -1,0 +1,19 @@
+<li>
+    <label id="shippingMethod_%%GLOBAL_AddressId%%_%%GLOBAL_ShippingQuoteId%%">
+        <input type="radio"
+               name="selectedShippingMethod[%%GLOBAL_AddressId%%]"
+               id="shippingCheck_%%GLOBAL_AddressId%%"
+               value="%%GLOBAL_ShippingQuoteId%%"
+                %%GLOBAL_ShippingQuoteSelected%% />
+        <img style='margin: 0 5px -5px 0' src="%%GLOBAL_ProviderLogoPath%%" alt="Provider Logo" />
+        <span class="quote-description">
+            %%GLOBAL_QuoteDescription%%
+        </span>
+        <span class="quote-price">
+            %%GLOBAL_QuotePrice%%
+        </span>
+        <span class="method-display-name" style="%%GLOBAL_HideMethodName%%">
+            (%%GLOBAL_MethodName%%)
+        </span>
+    </label>
+</li>

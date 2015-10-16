@@ -1,0 +1,52 @@
+<ul style="list-style-type: none;">
+    <li>
+        <a href="#" class="shipping-quote-separator-show">
+            <strong>%%LNG_ShowUPS%%</strong>
+        </a>
+        <a style="display: none;" href="#" class="shipping-quote-separator-hide">
+            <strong>%%LNG_HideUPS%%</strong>
+        </a>
+    </li>
+</ul>
+<script>
+    (function upsRateToggler($) {
+        if (!$) {
+            return;
+        }
+        var $hide = $('.shipping-quote-separator-hide'),
+            $show = $('.shipping-quote-separator-show'),
+            $separate = $('.shipping-quote-separator');
+
+        function upsRateTogglerShow(event) {
+            if (event) {
+                event.preventDefault();
+            }
+            $separate.prevAll("*").hide();
+            $separate.nextAll("*").show();
+            $hide.show();
+            $show.hide()
+        }
+
+        function upsRateTogglerHide(event) {
+            if (event) {
+                event.preventDefault();
+            }
+            $separate.prevAll("*").show();
+            $separate.nextAll("*").hide();
+            $hide.hide();
+            $show.show()
+        }
+
+        if ($separate.prevAll('*').length > 0) {
+            // Hide all quotes after the seperator on load, as long as there are other quotes to show
+            $separate.nextAll('*').hide();
+        } else {
+            // If UPS Ready are the only quotes, show them without a toggle button
+            upsRateTogglerShow();
+            $hide.hide();
+        }
+
+        $show.click(upsRateTogglerShow);
+        $hide.click(upsRateTogglerHide);
+    }(jQuery));
+</script>

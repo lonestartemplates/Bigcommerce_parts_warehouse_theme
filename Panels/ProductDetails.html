@@ -120,7 +120,8 @@ var productId = %%GLOBAL_ProductId%%;
     <div class="tab-box"> 
         <a href="javascript:;" class="tabLink activeLink" id="cont-1"><span>Overview</span></a>                         
         <a href="javascript:;" class="tabLink" id="cont-2"><span>Reviews</span></a> 
-        <a href="javascript:;" class="tabLink" id="cont-3"><span>Similar Products</span></a>         
+        <a href="javascript:;" class="tabLink" id="cont-3"><span>Similar Products</span></a>    
+          <a href="javascript:;" class="tabLink" id="cont-4"><span>Product Videos</span></a>    
     </div>
     <div class="tabcontent paddingAll" id="cont-1-1"> 
         %%Panel.ProductDescription%%
@@ -128,8 +129,12 @@ var productId = %%GLOBAL_ProductId%%;
     <div class="tabcontent paddingAll hide" id="cont-2-1"> 
         %%Panel.ProductReviews%%
     </div>
+        
+           <div class="tabcontent paddingAll hide" id="cont-4-1"> 
+          %%Panel.ProductVideos%%
+        </div>
     <div class="tabcontent paddingAll hide" id="cont-3-1"> 
-        %%Panel.ProductVideos%%
+       
             %%Panel.ProductWarranty%%
             %%Panel.ProductOtherDetails%%
             %%Panel.SimilarProductsByTag%%            

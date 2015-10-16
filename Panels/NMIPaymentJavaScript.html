@@ -1,0 +1,61 @@
+<script type="text/javascript">
+    //<![CDATA[
+    /* Make sure all credit card details have been provided and are valid */
+    function check_NMI_payment_form() {
+        var nmi_name = g("NMI_name");
+        var nmi_ccno = g("NMI_ccno");
+        var nmi_ccexpm = g("NMI_ccexpm");
+        var nmi_ccexpy = g("NMI_ccexpy");
+
+        if(nmi_name.value == "") {
+            alert("%%LNG_NMIEnterName%%");
+            nmi_name.focus();
+            return false;
+        }
+
+        if(isNaN(nmi_ccno.value) || nmi_ccno.value == "") {
+            alert("%%LNG_NMIEnterCardNumber%%");
+            nmi_ccno.focus();
+            nmi_ccno.select();
+            return false;
+        }
+
+        if(nmi_ccexpm.selectedIndex == 0) {
+            alert("%%LNG_NMIEnterCreditCardMonth%%");
+            nmi_ccexpm.focus();
+            return false;
+        }
+
+        if(nmi_ccexpy.selectedIndex == 0) {
+            alert("%%LNG_NMIEnterCreditCardYear%%");
+            nmi_ccexpy.focus();
+            return false;
+        }
+
+        if(requiresCVV2() && ($('#cc_cvv2').val() == '' || isNaN($('#cc_cvv2').val()) || $('#cc_cvv2').val().length > 4)) {
+            alert('%%LNG_NMIEnterCVV2Number%%');
+            $('#cc_cvv2').focus();
+            $('#cc_cvv2').select();
+            return false;
+        }
+
+        return true;
+    }
+
+    function requiresCVV2() {
+        if($('#CVV2Input').css('display') != 'none') {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    $(document).ready(function() {
+        $('#CVV2Help').click(function() {
+            alert('%%LNG_CreditCardCVV2Help%%');
+            return false;
+        });
+    });
+    //]]>
+</script>

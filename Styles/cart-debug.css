@@ -1,0 +1,40 @@
+table.price-calculation {
+    border: 0;
+    border-left: 3px solid darkorange;
+    background-color: rgba(255, 205, 102, 0.2);
+    margin: 0 0 10px 0;
+}
+table.price-calculation table.price-calculation {
+    width: 100%;
+}
+table.price-calculation tr.sub-calculation > td:first {
+    padding-left: 10px;
+}
+table.price-calculation td {
+    padding: 10px 0 10px 10px;
+    border: 0;
+}
+table.price-calculation td.component-amount {
+    font-family: monospace;
+    text-align: right;
+    padding-right: 0;
+}
+table.price-calculation tr.component-total {
+    background-color: darkorange;
+    color: #fff;
+    font-weight: bold;
+}
+table.price-calculation td.component-total {
+    font-family: monospace;
+    padding-right: 0;
+    text-align: right;
+}
+table.price-calculation tr.sub-calculation {
+    display: none;
+}
+table.price-calculation tr.sub-calculation > td {
+    border: 0;
+}
+table.price-calculation td.component-show-details {
+    width: 50px;
+}

@@ -1,8 +1,8 @@
 %%Panel.HTMLHead%%
     <body class="productPage">
-		<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/validate/jquery.validate.js?%%GLOBAL_JSCacheToken%%"></script>
-		<script type="text/javascript" src="%%GLOBAL_TPL_PATH%%/js/product.functions.js?%%GLOBAL_JSCacheToken%%"></script>
-		<script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/product.js?%%GLOBAL_JSCacheToken%%"></script>
+        <script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/jquery/plugins/validate/jquery.validate.js?%%GLOBAL_JSCacheToken%%"></script>
+        <script type="text/javascript" src="%%GLOBAL_TPL_PATH%%/js/product.functions.js?%%GLOBAL_JSCacheToken%%"></script>
+        <script type="text/javascript" src="%%GLOBAL_CdnAppPath%%/javascript/product.js?%%GLOBAL_JSCacheToken%%"></script>
         %%Panel.DrawerMenu%%
         <div class="page">
             %%Panel.Header%%
@@ -33,6 +33,7 @@
                         selectCurrentVideo(videoId);
                     });
                 }
+              if( !$.trim( $('#ProductVideos').html() ).length ) { $("#cont-4").hide();   }
             });
             </script>
         </div>

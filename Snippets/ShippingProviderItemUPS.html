@@ -1,0 +1,16 @@
+<li style="line-height: 1.5;">
+    <input type="radio"
+           class="RadioButton"
+           name="shipping_provider[%%GLOBAL_AddressId%%]"
+           id="shipping_provider_%%GLOBAL_AddressId%%_%%GLOBAL_ShipperId%%"
+           onclick="provider_chosen=true"
+           value="%%GLOBAL_ShippingData%%" />
+    <label for="shipping_provider_%%GLOBAL_AddressId%%_%%GLOBAL_ShipperId%%">
+        <img style='margin: 0 5px -5px 0' src="%%GLOBAL_ProviderLogoPath%%" alt="Provider Logo" />
+        %%GLOBAL_QuoteDescription%%
+        <strong>%%GLOBAL_QuotePrice%%</strong>
+        <span class="method-display-name" style="%%GLOBAL_HideMethodName%%">
+            (%%GLOBAL_MethodName%%)
+        </span>
+    </label>
+</li>

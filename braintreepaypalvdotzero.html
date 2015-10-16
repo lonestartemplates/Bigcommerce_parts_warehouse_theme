@@ -1,0 +1,24 @@
+<p class="ErrorMessage" style="%%GLOBAL_HideCreditCardError%%">
+    <strong>%%LNG_CreditCardProcessingError%%</strong><br />
+    %%GLOBAL_CreditCardErrorMessage%%
+</p>
+<p class="ErrorMessage" id="braintree-paypal-error-message-container" style="display: none">
+    <strong>%%LNG_CreditCardProcessingError%%</strong><br />
+    <!-- JS based error messages are pre defined here -->
+    <span style="%%GLOBAL_HideExpressCheckout%%">
+        It appears that your browser is not supported by PayPal.
+        <a href="#" onclick="return ExpressCheckout.ChangeStep('Confirmation');">Click here</a>
+        to choose a different payment method.
+        <br />
+    </span>
+    <span style="%%GLOBAL_HideMultiPageCheckout%%">
+        It appears that your browser is not supported by PayPal.
+        <a href="/checkout.php?action=confirm_order">Click here</a>
+        to choose a different payment method.
+        <br />
+    </span>
+</p>
+<p class="InfoMessage Message">
+    %%LNG_CreditCardPaypalPaymentIntro%%
+</p>
+%%GLOBAL_BraintreePayPalCheckoutButton%%
