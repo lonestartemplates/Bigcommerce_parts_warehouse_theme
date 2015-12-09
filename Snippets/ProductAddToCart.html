@@ -103,6 +103,11 @@
 			<div class="Value AddCartButton">
 				%%GLOBAL_AddToCartQty%%
 			</div>
+			<div class="InfoMessage" style="display: %%GLOBAL_HideBulkDiscountLink%%;">
+				<a href="#" onclick="$.iModal({data: $('#ProductDetailsBulkDiscountThickBox').html(), width: 600}); return false;">
+					%%LNG_BulkDiscountLink%%
+				</a>
+			</div>
 		</div>
 
 		<div class="OutOfStockMessage InfoMessage" style="%%GLOBAL_ItemSoldOut%%">
@@ -110,11 +115,6 @@
 		</div>
 
 		<div class="addto">
-			<div class="InfoMessage" style="display: %%GLOBAL_HideBulkDiscountLink%%;">
-				<a href="#" onclick="$.iModal({data: $('#ProductDetailsBulkDiscountThickBox').html(), width: 600}); return false;">
-					%%LNG_BulkDiscountLink%%
-				</a>
-			</div>
 
 			<div class="BulkDiscount" style="display: %%GLOBAL_DisplayAdd%%">
 				%%GLOBAL_AddToCartButtonOptimizerScriptTag%%

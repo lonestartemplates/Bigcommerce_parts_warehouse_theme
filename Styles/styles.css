@@ -5715,7 +5715,7 @@ overflow: visible;
 
 
 .Left #SideCategoryList .BlockContent > div
-{    margin-left:-12px; margin-right:-20px; 
+{    /*margin-left:-12px;*/ margin-right:-20px; 
 }
 .Left #SideCategoryList .BlockContent > div.SideCategoryListClassic
 {    margin-left:0px; margin-right:0px; 
@@ -5754,3 +5754,56 @@ overflow: visible;
 .footer #topcontrol
 {    visibility:visible;
 }
+
+/*BEGIN Fix for Safari font-weight changing when slider control is clicked*/
+.flex-viewport {
+    position: relative;
+    z-index: 1;
+}
+/*END Fix for Safari font-weight changing when slider control is clicked*/
+
+/*BEGIN show submenu items in Main Nav if Simple-list is used*/
+.PageMenu .HasSubMenu:hover > ul {
+    display: block;
+}
+/*END show submenu items in Main Nav if Simple-list is used*/
+
+.Value.AddCartButton {
+    float: left;
+}
+
+.productPage .SuccessMessage, .ErrorMessage, .InfoMessage {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.productPage .InfoMessage {
+    background: none;
+    text-decoration: underline;
+    float: left;
+    line-height: 35px;
+    margin-left: 15px !important;
+}
+
+.productPage .InfoMessage a {
+    color: #d42020;
+}
+
+.Label.QuantityInput {
+    line-height: 35px;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.TopMenu a {
+    line-height: 20px;
+}
+
+.TopMenu .inner .js-drawermenu-store-phone-container {
+    line-height: 20px;
+}
+
+.footer li.js-drawermenu-currency-converter {
+    display: none !important;
+}
+
